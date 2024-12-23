@@ -1,0 +1,1136 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@web-clients-backend/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@web-clients-backend/source documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content class">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Classes</li>
+  <li class="breadcrumb-item" >ClientDataDTO</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>libs/shared/src/lib/dto/search-client/client.dto.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p><code>ClientDataDTO</code> - объектный тип для представления данных клиента.
+Содержит всю информацию о клиенте, включая персональные данные, контакты, баланс, паспортные данные и другие.</p>
+
+            </p>
+
+
+            <p class="comment">
+                <h3>Implements</h3>
+            </p>
+            <p class="comment">
+                            <code><a href="../interfaces/IClientSearch.html" target="_self" >IClientSearch</a></code>
+            </p>
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#account" >account</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#additionalPhone" >additionalPhone</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#balance" >balance</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#birthDate" >birthDate</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#contractNumber" >contractNumber</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#fio" >fio</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#iccId" >iccId</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#juridicalType" >juridicalType</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#msisdn" >msisdn</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#passport" >passport</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#region" >region</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#segment" >segment</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#state" >state</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(fio: <a href="../undefineds/SN.html" target="_self">SN</a>, msisdn: <a href="../undefineds/NN.html" target="_self">NN</a>, birthDate: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, balance: <a href="../undefineds/NN.html" target="_self">NN</a>, passport: <a href="../classes/PassportClientSearchDTO.html" target="_self">PassportClientSearchDTO</a>, additionalPhone: <a href="../undefineds/NN.html" target="_self">NN</a>, region: <a href="../undefineds/SN.html" target="_self">SN</a>, iccId: <a href="../undefineds/NN.html" target="_self">NN</a>, account: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank">number</a>, juridicalType: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, contractNumber: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, segment: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, state: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:125</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>fio</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/typealiases.html#SN" target="_self" >SN</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>msisdn</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/typealiases.html#NN" target="_self" >NN</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>birthDate</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>balance</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/typealiases.html#NN" target="_self" >NN</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>passport</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/PassportClientSearchDTO.html" target="_self" >PassportClientSearchDTO</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>additionalPhone</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/typealiases.html#NN" target="_self" >NN</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>region</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/typealiases.html#SN" target="_self" >SN</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>iccId</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../miscellaneous/typealiases.html#NN" target="_self" >NN</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>account</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>juridicalType</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>contractNumber</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>segment</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>state</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="account"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>account</b></span>
+                        <a href="#account"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {description: &#x27;Лицевой счет клиента&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="107" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:107</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="additionalPhone"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>additionalPhone</b></span>
+                        <a href="#additionalPhone"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#NN" target="_self" >NN</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {nullable: true, description: &#x27;Дополнительный номер телефона клиента (если есть)&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="92" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="balance"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>balance</b></span>
+                        <a href="#balance"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#NN" target="_self" >NN</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {nullable: true, description: &#x27;Баланс клиента&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="74" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:74</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="birthDate"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>birthDate</b></span>
+                        <a href="#birthDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {nullable: true, description: &#x27;Дата рождения клиента в формате YYYY-MM-DD&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="80" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:80</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="contractNumber"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>contractNumber</b></span>
+                        <a href="#contractNumber"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {description: &#x27;Номер договора клиента&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="110" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:110</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="fio"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>fio</b></span>
+                        <a href="#fio"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#SN" target="_self" >SN</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {description: &#x27;Полное имя клиента (ФИО)&#x27;, nullable: true})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="65" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:65</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="iccId"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>iccId</b></span>
+                        <a href="#iccId"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#NN" target="_self" >NN</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {nullable: true, description: &#x27;ICCID сим-карты клиента&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="104" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:104</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="juridicalType"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>juridicalType</b></span>
+                        <a href="#juridicalType"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {description: &#x27;Юридический тип клиента&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="125" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:125</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="msisdn"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>msisdn</b></span>
+                        <a href="#msisdn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#NN" target="_self" >NN</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {nullable: true, description: &#x27;Номер телефона клиента (MSISDN)&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="71" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="passport"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>passport</b></span>
+                        <a href="#passport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../classes/PassportClientSearchDTO.html" target="_self" >PassportClientSearchDTO</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {description: &#x27;Данные паспорта клиента&#x27;, nullable: true})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="86" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="region"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>region</b></span>
+                        <a href="#region"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../miscellaneous/typealiases.html#SN" target="_self" >SN</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {nullable: true, description: &#x27;Регион проживания клиента&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="98" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:98</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="segment"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>segment</b></span>
+                        <a href="#segment"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {description: &#x27;Сегмент клиента (например, Корпоративный, Индивидуальный)&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="115" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:115</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="state"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>state</b></span>
+                        <a href="#state"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <b>Decorators : </b>
+                        <br />
+                        <code>
+                            @Field(undefined, {description: &#x27;Статус клиента&#x27;})<br />
+                        </code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="120" class="link-to-prism">libs/shared/src/lib/dto/search-client/client.dto.ts:120</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+
+
+
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { ObjectType, Field, Float } from &#x27;@nestjs/graphql&#x27;;
+import { IClientSearch } from &#x27;../../interfaces&#x27;;
+import { PassportClientSearchDTO } from &#x27;./passport.dto&#x27;;
+
+import { NN, SN } from &#x27;../../types&#x27;;
+
+// @ObjectType()
+// export class ClientApiMeDTO implements IClientSearchResult {
+//   @Field(() &#x3D;&gt; Int, { description: &#x27;Идентификатор клиента&#x27; })
+//   id: number;
+
+//   @Field(() &#x3D;&gt; BalanceClientSearchDTO, { description: &#x27;Баланс клиента&#x27; })
+//   balance: BalanceClientSearchDTO;
+
+//   @Field(() &#x3D;&gt; String, {
+//     description: &#x27;Тип клиента (например, Корпоративный или Кредит)&#x27;,
+//   })
+//   clientType: string;
+
+//   @Field(() &#x3D;&gt; String, {
+//     description: &#x27;Тип юридического лица (например, Физическое лицо)&#x27;,
+//   })
+//   juridicalType: string;
+
+//   @Field(() &#x3D;&gt; NameClientSearchDTO, {
+//     description: &#x27;Имя клиента (структурированное и неструктурированное)&#x27;,
+//   })
+//   name: NameClientSearchDTO;
+
+//   @Field(() &#x3D;&gt; String, { description: &#x27;Дата рождения клиента&#x27; })
+//   birthDate: string;
+
+//   @Field(() &#x3D;&gt; DocumentClientSearchDTO, {
+//     description: &#x27;Документ клиента (например, паспорт)&#x27;,
+//   })
+//   document: DocumentClientSearchDTO;
+
+//   @Field(() &#x3D;&gt; Int, { description: &#x27;Номер лицевого счета клиента&#x27; })
+//   account: number;
+
+//   @Field(() &#x3D;&gt; String, { description: &#x27;Номер договора клиента&#x27; })
+//   contractNumber: string;
+
+//   @Field(() &#x3D;&gt; String, {
+//     description: &#x27;Состояние клиента (например, Активен или Блокирован)&#x27;,
+//   })
+//   state: string;
+
+//   @Field(() &#x3D;&gt; [SubscriberClientSearchDTO], {
+//     description: &#x27;Список абонентов клиента&#x27;,
+//   })
+//   subscribers: SubscriberClientSearchDTO[];
+// }
+
+/**
+ * &#x60;ClientDataDTO&#x60; - объектный тип для представления данных клиента.
+ * Содержит всю информацию о клиенте, включая персональные данные, контакты, баланс, паспортные данные и другие.
+ */
+@ObjectType({ description: &#x27;Объектный тип для представления данных клиента.&#x27; })
+export class ClientDataDTO implements IClientSearch {
+  @Field(() &#x3D;&gt; String, {
+    description: &#x27;Полное имя клиента (ФИО)&#x27;,
+    nullable: true,
+  })
+  fio: SN;
+
+  @Field(() &#x3D;&gt; Number, {
+    nullable: true,
+    description: &#x27;Номер телефона клиента (MSISDN)&#x27;,
+  })
+  msisdn: NN;
+
+  @Field(() &#x3D;&gt; Float, { nullable: true, description: &#x27;Баланс клиента&#x27; })
+  balance: NN;
+
+  @Field(() &#x3D;&gt; String, {
+    nullable: true,
+    description: &#x27;Дата рождения клиента в формате YYYY-MM-DD&#x27;,
+  })
+  birthDate: string;
+
+  @Field(() &#x3D;&gt; PassportClientSearchDTO, {
+    description: &#x27;Данные паспорта клиента&#x27;,
+    nullable: true,
+  })
+  passport: PassportClientSearchDTO;
+
+  @Field(() &#x3D;&gt; Number, {
+    nullable: true,
+    description: &#x27;Дополнительный номер телефона клиента (если есть)&#x27;,
+  })
+  additionalPhone: NN;
+
+  @Field(() &#x3D;&gt; String, {
+    nullable: true,
+    description: &#x27;Регион проживания клиента&#x27;,
+  })
+  region: SN;
+
+  @Field(() &#x3D;&gt; Number, {
+    nullable: true,
+    description: &#x27;ICCID сим-карты клиента&#x27;,
+  })
+  iccId: NN;
+
+  @Field(() &#x3D;&gt; Number, { description: &#x27;Лицевой счет клиента&#x27; })
+  account: number;
+
+  @Field(() &#x3D;&gt; String, { description: &#x27;Номер договора клиента&#x27; })
+  contractNumber: string;
+
+  @Field(() &#x3D;&gt; String, {
+    description: &#x27;Сегмент клиента (например, Корпоративный, Индивидуальный)&#x27;,
+  })
+  segment: string;
+
+  @Field(() &#x3D;&gt; String, {
+    description: &#x27;Статус клиента&#x27;,
+  })
+  state: string;
+
+  @Field(() &#x3D;&gt; String, {
+    description: &#x27;Юридический тип клиента&#x27;,
+  })
+  juridicalType: string;
+
+  constructor(
+    fio: SN,
+    msisdn: NN,
+    birthDate: string,
+    balance: NN,
+    passport: PassportClientSearchDTO,
+    additionalPhone: NN,
+    region: SN,
+    iccId: NN,
+    account: number,
+    juridicalType: string,
+    contractNumber: string,
+    segment: string,
+    state: string
+  ) {
+    this.fio &#x3D; fio;
+    this.msisdn &#x3D; msisdn;
+    this.birthDate &#x3D; birthDate;
+    this.balance &#x3D; balance;
+    this.passport &#x3D; passport;
+    this.additionalPhone &#x3D; additionalPhone;
+    this.region &#x3D; region;
+    this.iccId &#x3D; iccId;
+    this.account &#x3D; account;
+    this.contractNumber &#x3D; contractNumber;
+    this.segment &#x3D; segment;
+    this.state &#x3D; state;
+    this.juridicalType &#x3D; juridicalType;
+  }
+}
+</code></pre>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'class';
+            var COMPODOC_CURRENT_PAGE_URL = 'ClientDataDTO.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

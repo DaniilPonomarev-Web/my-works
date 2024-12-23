@@ -1,0 +1,31 @@
+{{- $name := pluck $.Values.global.env .Values.ingress.name | first | default .Values.ingress.name._default }}
+{{- $domain := pluck $.Values.global.env .Values.ingress.domain | first | default .Values.ingress.domain._default }}
+{{- $issuer := pluck $.Values.global.env .Values.ingress.cert_manager_issuer | first | default .Values.ingress.cert_manager_issuer._default }}
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: {{ $.Release.Name }} 
+  annotations:
+    # nginx.ingress.kubernetes.io/ssl-redirect: "false"
+    # nginx.ingress.kubernetes.io/force-ssl-redirect: "false"
+    cert-manager.io/cluster-issuer: {{ $issuer }}
+    cert-manager.io/common-name: {{ $name }}{{ $domain }}
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - {{ $name }}{{ $domain }}
+      secretName: {{ $name }}-tls
+  rules:
+  - host: {{ $name }}{{ $domain }}
+    http:
+      paths:
+      - path: "/"
+        pathType: Prefix
+        backend:
+          service:
+            name: "{{ tpl .Values.ingress.service . }}"
+            port:
+              number: {{ pluck $.Values.global.env .Values.envs.PORT_GQL | first | default .Values.envs.PORT_GQL._default }}
+

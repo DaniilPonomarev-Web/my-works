@@ -1,0 +1,11 @@
+node_modules
+dist
+tmp
+.vscode
+session_db.json
+docker-data
+.helm
+.git*
+.gitlab-ci*
+werf.yaml
+README.md

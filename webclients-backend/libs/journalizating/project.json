@@ -1,0 +1,9 @@
+{
+  "name": "journalizating",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/journalizating/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project journalizating --web",
+  "targets": {}
+}

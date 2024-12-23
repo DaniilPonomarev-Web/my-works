@@ -1,0 +1,1070 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@web-clients-backend/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@web-clients-backend/source documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >SearchClientsService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>libs/search-clients/src/lib/search-clients.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#filterClients" >filterClients</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#normalizeClient" >normalizeClient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#searchClientsByArea" >searchClientsByArea</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sortClients" >sortClients</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(rabbitService: <a href="../injectables/RabbitMQService.html" target="_self">RabbitMQService</a>, logsAdminService: <a href="../injectables/LogsAndJournalsService.html" target="_self">LogsAndJournalsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">libs/search-clients/src/lib/search-clients.service.ts:30</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>rabbitService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RabbitMQService.html" target="_self" >RabbitMQService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>logsAdminService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/LogsAndJournalsService.html" target="_self" >LogsAndJournalsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filterClients"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>filterClients</b></span>
+                        <a href="#filterClients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>filterClients(clients: <a href="../interfaces/IClientSearch.html" target="_self">IClientSearch[]</a>, segmentType?: <a href="../undefineds/MarketSegmentEnum.html" target="_self">MarketSegmentEnum</a>, juridicalType?: <a href="../undefineds/JuridicalTypeClientEnum.html" target="_self">JuridicalTypeClientEnum</a>, clientState?: <a href="../undefineds/StateClientEnum.html" target="_self">StateClientEnum</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="231"
+                                    class="link-to-prism">libs/search-clients/src/lib/search-clients.service.ts:231</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Фильтрует клиентов по заданным критериям сегмента, юридического типа и состояния контракта.</p>
+<ul>
+<li>Функция фильтрует клиентов по трем параметрам: тип сегмента (<code>segmentType</code>), юридический тип (<code>juridicalType</code>) и состояние контракта (<code>clientState</code>).</li>
+<li>Если какой-либо из параметров не указан, он пропускается при фильтрации.</li>
+<li>Вернет клиентов, которые соответствуют всем указанным критериям.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>clients</td>
+                                            <td>
+                                                            <code><a href="../interfaces/IClientSearch.html" target="_self" >IClientSearch[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Массив клиентов для фильтрации (<code>IClientSearch[]</code>).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>segmentType</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/enumerations.html#MarketSegmentEnum" target="_self" >MarketSegmentEnum</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Тип сегмента клиента (<code>MarketSegmentEnum</code>).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>juridicalType</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/enumerations.html#JuridicalTypeClientEnum" target="_self" >JuridicalTypeClientEnum</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Тип клиента (юридический или физический) (<code>JuridicalTypeClientEnum</code>).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>clientState</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/enumerations.html#StateClientEnum" target="_self" >StateClientEnum</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Состояние контракта клиента (<code>StateClientEnum</code>).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/IClientSearch.html" target="_self" >Promise&lt;IClientSearch[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Фильтрованный массив клиентов, соответствующих заданным критериям.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="normalizeClient"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>normalizeClient</b></span>
+                        <a href="#normalizeClient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>normalizeClient(clients: IClientSearchResult[])</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="171"
+                                    class="link-to-prism">libs/search-clients/src/lib/search-clients.service.ts:171</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Нормализует данные о клиентах для упрощенной модели.</p>
+<ul>
+<li>Функция преобразует каждый объект <code>IClientSearchResult</code> в объект <code>IClientSearch</code>.</li>
+<li>Основной баланс клиента ищется в массиве <code>client.balance.monetary</code> и возвращается <code>null</code>, если не найден.</li>
+<li>Если у клиента есть подписчики, то сначала пытается получить основной номер <code>msisdn</code>. Если он отсутствует, то возвращает <code>null</code>.</li>
+<li>Данные паспорта собираются из полей <code>client.document</code>.</li>
+<li>Ожидается, что у клиента может отсутствовать информация о подписчиках, дополнительном телефоне и ICCID.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>clients</td>
+                                            <td>
+                                                        <code>IClientSearchResult[]</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Массив объектов результатов поиска клиентов (<code>IClientSearchResult[]</code>).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/IClientSearch.html" target="_self" >Promise&lt;IClientSearch[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Преобразованные данные о клиентах в упрощенном формате (<code>IClientSearch[]</code>).</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchClientsByArea"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>searchClientsByArea</b></span>
+                        <a href="#searchClientsByArea"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>searchClientsByArea(payload: <a href="../interfaces/ISearchClientPayload.html" target="_self">ISearchClientPayload</a>, area: <a href="../undefineds/SearchAreaEnum.html" target="_self">SearchAreaEnum</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="129"
+                                    class="link-to-prism">libs/search-clients/src/lib/search-clients.service.ts:129</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Производит поиск клиентов по заданной области.</p>
+<ul>
+<li>Для выполнения поиска используется карта <code>searchMap</code>, которая связывает <code>SearchAreaEnum</code> с соответствующей командой в <code>rabbitService</code>.</li>
+<li>Если поиск возвращает <code>null</code>, значит, клиентов не найдено.</li>
+<li>Функция отправляет сообщение через <code>rabbitService</code> с указанной командой и полученными данными, затем обрабатывает результаты.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ISearchClientPayload.html" target="_self" >ISearchClientPayload</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Параметры запроса для поиска клиентов (<code>ISearchClientPayload</code>).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>area</td>
+                                            <td>
+                                                            <code><a href="../miscellaneous/enumerations.html#SearchAreaEnum" target="_self" >SearchAreaEnum</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Область поиска клиента, например, FIO, TITLE, PROCESSES и так далее (<code>SearchAreaEnum</code>).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/IDataClientSearchResponse.html" target="_self" >Promise&lt;IDataClientSearchResponse | null&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Возвращает результат поиска в виде данных клиента (<code>IDataClientSearchResponse</code>) или <code>null</code>, если поиск не дал результатов.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sortClients"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sortClients</b></span>
+                        <a href="#sortClients"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sortClients(clients: <a href="../interfaces/IClientSearch.html" target="_self">IClientSearch[]</a>, sort: <a href="../classes/SortInput.html" target="_self">SortInput</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="273"
+                                    class="link-to-prism">libs/search-clients/src/lib/search-clients.service.ts:273</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Сортирует клиентов по заданным параметрам.</p>
+<ul>
+<li>Функция сортирует клиентов в зависимости от заданного поля (<code>field</code>) и направления (<code>direction</code>).</li>
+<li>Для поля <code>passport.serialNumber</code> производится приведение строки к числу, удаляя пробелы.</li>
+<li>Поддерживаемые типы данных для сортировки: строка (<code>string</code>), число (<code>number</code>) и дата (<code>Date</code>).</li>
+<li>Сортировка строки производится с учетом локали (коллекция строк).</li>
+<li>Сортировка чисел и дат производится в соответствии с указанным направлением: возрастание или убывание.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>clients</td>
+                                            <td>
+                                                            <code><a href="../interfaces/IClientSearch.html" target="_self" >IClientSearch[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Массив клиентов для сортировки (<code>IClientSearch[]</code>).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>sort</td>
+                                            <td>
+                                                            <code><a href="../classes/SortInput.html" target="_self" >SortInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Объект с параметрами сортировки (<code>SortInput</code>), содержащий поле (<code>field</code>) и направление (<code>direction</code>).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/IClientSearch.html" target="_self" >Promise&lt;IClientSearch[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Отсортированный массив клиентов.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { RabbitMQService } from &#x27;@web-clients-backend/rabbit&#x27;;
+import { LogsAndJournalsService } from &#x27;@web-clients-backend/logs&#x27;;
+import {
+  IClientSearch,
+  IClientSearchResult,
+  IDataClientSearchResponse,
+  IMonetaryClient,
+  ISearchClientPayload,
+  JuridicalTypeClientEnum,
+  MarketSegmentEnum,
+  SEARCH_CLIENT_ACCOUNT_NUMBER,
+  SEARCH_CLIENT_BY_FIO,
+  SEARCH_CLIENT_BY_PROCESSES,
+  SEARCH_CLIENT_BY_SERVICES,
+  SEARCH_CLIENT_BY_TARIFFS,
+  SEARCH_CLIENT_BY_TITLE,
+  SEARCH_CLIENT_CONTRACT_NUMBER,
+  SEARCH_CLIENT_DGN,
+  SEARCH_CLIENT_ICC,
+  SEARCH_CLIENT_MSISDN,
+  SEARCH_CLIENT_PASSPORT,
+  SEARCH_CLIENT_SUBSCRIBER_NUMBER,
+  SearchAreaEnum,
+  StateClientEnum,
+} from &#x27;@web-clients-backend/shared&#x27;;
+import { SortInput } from &#x27;./other/clients.dto&#x27;;
+
+@Injectable()
+export class SearchClientsService {
+  constructor(
+    private readonly rabbitService: RabbitMQService,
+    private readonly logsAdminService: LogsAndJournalsService
+  ) {}
+
+  // async searchClientsByArea(
+  //   payload: ISearchClientPayload,
+  //   area: SearchAreaEnum
+  // ): Promise&lt;IDataClientSearchResponse | null&gt; {
+  //   switch (area) {
+  //     /* Буквы */
+  //     case SearchAreaEnum.FIO:
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_BY_FIO,
+  //         payload
+  //       );
+  //     case SearchAreaEnum.TITLE:
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_BY_TITLE,
+  //         payload
+  //       );
+  //     /* Наши данные */
+  //     case SearchAreaEnum.PROCESSES:
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_BY_PROCESSES,
+  //         payload
+  //       );
+  //     case SearchAreaEnum.SERVICES:
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_BY_SERVICES,
+  //         payload
+  //       );
+  //     case SearchAreaEnum.TARIFFS:
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_BY_TARIFFS,
+  //         payload
+  //       );
+
+  //     /* Цифры */
+  //     case SearchAreaEnum.SUBSCRIBER_NUMBER:
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_SUBSCRIBER_NUMBER,
+  //         payload
+  //       );
+  //     case SearchAreaEnum.MSISDN:
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_MSISDN,
+  //         payload
+  //       );
+  //     case SearchAreaEnum.PASSPORT:
+  //       if (payload.input.toString().length &lt; 10) {
+  //         throw new HttpException(
+  //           &#x27;Введите корректный номер документа&#x27;,
+  //           HttpStatus.BAD_REQUEST
+  //         );
+  //       }
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_PASSPORT,
+  //         payload
+  //       );
+  //     case SearchAreaEnum.ACCOUNT_NUMBER:
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_ACCOUNT_NUMBER,
+  //         payload
+  //       );
+  //     case SearchAreaEnum.CONTRACT_NUMBER:
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_CONTRACT_NUMBER,
+  //         payload
+  //       );
+  //     case SearchAreaEnum.DGN:
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_DGN,
+  //         payload
+  //       );
+  //     case SearchAreaEnum.ICC:
+  //       return await this.rabbitService.sendMessageSearch(
+  //         SEARCH_CLIENT_ICC,
+  //         payload
+  //       );
+
+  //     default:
+  //       return null;
+  //   }
+  // }
+
+  /**
+   * Производит поиск клиентов по заданной области.
+   *
+   * @param payload - Параметры запроса для поиска клиентов (&#x60;ISearchClientPayload&#x60;).
+   * @param area - Область поиска клиента, например, FIO, TITLE, PROCESSES и так далее (&#x60;SearchAreaEnum&#x60;).
+   * @returns {Promise&lt;IDataClientSearchResponse | null&gt;} - Возвращает результат поиска в виде данных клиента (&#x60;IDataClientSearchResponse&#x60;) или &#x60;null&#x60;, если поиск не дал результатов.
+   *
+   * @remarks
+   * - Для выполнения поиска используется карта &#x60;searchMap&#x60;, которая связывает &#x60;SearchAreaEnum&#x60; с соответствующей командой в &#x60;rabbitService&#x60;.
+   * - Если поиск возвращает &#x60;null&#x60;, значит, клиентов не найдено.
+   * - Функция отправляет сообщение через &#x60;rabbitService&#x60; с указанной командой и полученными данными, затем обрабатывает результаты.
+   */
+  async searchClientsByArea(
+    payload: ISearchClientPayload,
+    area: SearchAreaEnum
+  ): Promise&lt;IDataClientSearchResponse | null&gt; {
+    const searchMap &#x3D; {
+      [SearchAreaEnum.FIO]: SEARCH_CLIENT_BY_FIO,
+      [SearchAreaEnum.TITLE]: SEARCH_CLIENT_BY_TITLE,
+      [SearchAreaEnum.PROCESSES]: SEARCH_CLIENT_BY_PROCESSES,
+      [SearchAreaEnum.SERVICES]: SEARCH_CLIENT_BY_SERVICES,
+      [SearchAreaEnum.TARIFFS]: SEARCH_CLIENT_BY_TARIFFS,
+      [SearchAreaEnum.SUBSCRIBER_NUMBER]: SEARCH_CLIENT_SUBSCRIBER_NUMBER,
+      [SearchAreaEnum.MSISDN]: SEARCH_CLIENT_MSISDN,
+      [SearchAreaEnum.PASSPORT]: SEARCH_CLIENT_PASSPORT,
+      [SearchAreaEnum.ACCOUNT_NUMBER]: SEARCH_CLIENT_ACCOUNT_NUMBER,
+      [SearchAreaEnum.CONTRACT_NUMBER]: SEARCH_CLIENT_CONTRACT_NUMBER,
+      [SearchAreaEnum.DGN]: SEARCH_CLIENT_DGN,
+      [SearchAreaEnum.ICC]: SEARCH_CLIENT_ICC,
+    };
+    const data &#x3D; await this.rabbitService.sendMessageSearch&lt;
+      ISearchClientPayload,
+      IDataClientSearchResponse
+    &gt;(searchMap[area], payload);
+
+    if (!data) {
+      return null;
+    }
+    return data;
+  }
+
+  /**
+   * Нормализует данные о клиентах для упрощенной модели.
+   *
+   * @param clients - Массив объектов результатов поиска клиентов (&#x60;IClientSearchResult[]&#x60;).
+   * @returns {Promise&lt;IClientSearch[]&gt;} - Преобразованные данные о клиентах в упрощенном формате (&#x60;IClientSearch[]&#x60;).
+   *
+   * @remarks
+   * - Функция преобразует каждый объект &#x60;IClientSearchResult&#x60; в объект &#x60;IClientSearch&#x60;.
+   * - Основной баланс клиента ищется в массиве &#x60;client.balance.monetary&#x60; и возвращается &#x60;null&#x60;, если не найден.
+   * - Если у клиента есть подписчики, то сначала пытается получить основной номер &#x60;msisdn&#x60;. Если он отсутствует, то возвращает &#x60;null&#x60;.
+   * - Данные паспорта собираются из полей &#x60;client.document&#x60;.
+   * - Ожидается, что у клиента может отсутствовать информация о подписчиках, дополнительном телефоне и ICCID.
+   */
+  async normalizeClient(
+    clients: IClientSearchResult[]
+  ): Promise&lt;IClientSearch[]&gt; {
+    const data &#x3D; clients.map((client: IClientSearchResult) &#x3D;&gt; {
+      let mainBalance &#x3D; null;
+
+      if (client.balance?.monetary?.length) {
+        mainBalance &#x3D;
+          (client.balance.monetary as IMonetaryClient[]).find(
+            (monetary) &#x3D;&gt; monetary.name &#x3D;&#x3D;&#x3D; &#x27;Основной баланс&#x27;
+          )?.value ?? null;
+      }
+
+      //TODO сабскрайберов может быть не быть
+      return {
+        fio: client.name.unstructured,
+        msisdn: client.subscribers?.[0]?.msisdn
+          ? Number(client.subscribers[0].msisdn)
+          : null,
+        balance: mainBalance,
+        birthDate: client.birthDate || null,
+        passport: {
+          serialNumber:
+            client.document &amp;&amp; client.document.series &amp;&amp; client.document.number
+              ? client.document.series + &#x27; &#x27; + client.document.number
+              : null,
+          date: client.document ? client.document.issueDate : null,
+        },
+        additionalPhone: client.subscribers?.[0]?.additionalPhoneNumber
+          ? Number(client.subscribers[0].additionalPhoneNumber)
+          : null,
+        region: client.subscribers?.[0]?.region ?? null,
+        iccId: client.subscribers?.[0]?.equipment?.iccId
+          ? Number(client.subscribers[0].equipment.iccId)
+          : null,
+        account: client.account,
+        juridicalType: client.juridicalType,
+        contractNumber: client.contractNumber,
+        segment: client.clientType,
+        state: client.state,
+      };
+    });
+
+    return data;
+  }
+
+  /**
+   * Фильтрует клиентов по заданным критериям сегмента, юридического типа и состояния контракта.
+   *
+   * @param clients - Массив клиентов для фильтрации (&#x60;IClientSearch[]&#x60;).
+   * @param segmentType - Тип сегмента клиента (&#x60;MarketSegmentEnum&#x60;).
+   * @param juridicalType - Тип клиента (юридический или физический) (&#x60;JuridicalTypeClientEnum&#x60;).
+   * @param clientState - Состояние контракта клиента (&#x60;StateClientEnum&#x60;).
+   * @returns {Promise&lt;IClientSearch[]&gt;} - Фильтрованный массив клиентов, соответствующих заданным критериям.
+   *
+   * @remarks
+   * - Функция фильтрует клиентов по трем параметрам: тип сегмента (&#x60;segmentType&#x60;), юридический тип (&#x60;juridicalType&#x60;) и состояние контракта (&#x60;clientState&#x60;).
+   * - Если какой-либо из параметров не указан, он пропускается при фильтрации.
+   * - Вернет клиентов, которые соответствуют всем указанным критериям.
+   */
+  async filterClients(
+    clients: IClientSearch[],
+    segmentType?: MarketSegmentEnum,
+    juridicalType?: JuridicalTypeClientEnum,
+    clientState?: StateClientEnum
+  ): Promise&lt;IClientSearch[]&gt; {
+    // console.warn(segmentType, juridicalType, clientState);
+    return clients.filter((client) &#x3D;&gt; {
+      const matchesJuridicalType &#x3D; juridicalType
+        ? client.juridicalType &#x3D;&#x3D;&#x3D; juridicalType
+        : true;
+
+      const matchesContractState &#x3D; clientState
+        ? client.state &#x3D;&#x3D;&#x3D; clientState
+        : true;
+
+      const matchesJuridicalTypeState &#x3D; segmentType
+        ? client.segment &#x3D;&#x3D;&#x3D; segmentType
+        : true;
+
+      return (
+        matchesJuridicalType &amp;&amp;
+        matchesContractState &amp;&amp;
+        matchesJuridicalTypeState
+      );
+    });
+  }
+
+  /**
+   * Сортирует клиентов по заданным параметрам.
+   *
+   * @param clients - Массив клиентов для сортировки (&#x60;IClientSearch[]&#x60;).
+   * @param sort - Объект с параметрами сортировки (&#x60;SortInput&#x60;), содержащий поле (&#x60;field&#x60;) и направление (&#x60;direction&#x60;).
+   * @returns {Promise&lt;IClientSearch[]&gt;} - Отсортированный массив клиентов.
+   *
+   * @remarks
+   * - Функция сортирует клиентов в зависимости от заданного поля (&#x60;field&#x60;) и направления (&#x60;direction&#x60;).
+   * - Для поля &#x60;passport.serialNumber&#x60; производится приведение строки к числу, удаляя пробелы.
+   * - Поддерживаемые типы данных для сортировки: строка (&#x60;string&#x60;), число (&#x60;number&#x60;) и дата (&#x60;Date&#x60;).
+   * - Сортировка строки производится с учетом локали (коллекция строк).
+   * - Сортировка чисел и дат производится в соответствии с указанным направлением: возрастание или убывание.
+   */
+  async sortClients(
+    clients: IClientSearch[],
+    sort: SortInput
+  ): Promise&lt;IClientSearch[]&gt; {
+    const { field, direction } &#x3D; sort;
+
+    return clients.sort((a, b) &#x3D;&gt; {
+      let valA &#x3D; a[field as keyof IClientSearch];
+      let valB &#x3D; b[field as keyof IClientSearch];
+
+      // обработка для serialNumber (убираем пробелы и приводим к числу)
+      if (field &#x3D;&#x3D;&#x3D; &#x27;passport.serialNumber&#x27;) {
+        valA &#x3D; parseInt((a.passport.serialNumber || &#x27;&#x27;).replace(/\s/g, &#x27;&#x27;), 10);
+        valB &#x3D; parseInt((b.passport.serialNumber || &#x27;&#x27;).replace(/\s/g, &#x27;&#x27;), 10);
+      }
+
+      if (typeof valA &#x3D;&#x3D;&#x3D; &#x27;string&#x27; &amp;&amp; typeof valB &#x3D;&#x3D;&#x3D; &#x27;string&#x27;) {
+        return direction &#x3D;&#x3D;&#x3D; &#x27;asc&#x27;
+          ? valA.localeCompare(valB)
+          : valB.localeCompare(valA);
+      }
+
+      if (typeof valA &#x3D;&#x3D;&#x3D; &#x27;number&#x27; &amp;&amp; typeof valB &#x3D;&#x3D;&#x3D; &#x27;number&#x27;) {
+        return direction &#x3D;&#x3D;&#x3D; &#x27;asc&#x27; ? valA - valB : valB - valA;
+      }
+
+      if (valA instanceof Date &amp;&amp; valB instanceof Date) {
+        return direction &#x3D;&#x3D;&#x3D; &#x27;asc&#x27;
+          ? +new Date(valA) - +new Date(valB)
+          : +new Date(valB) - +new Date(valA);
+      }
+
+      return 0;
+    });
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SearchClientsService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

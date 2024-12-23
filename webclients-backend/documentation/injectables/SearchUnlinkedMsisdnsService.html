@@ -1,0 +1,869 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@web-clients-backend/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@web-clients-backend/source documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >SearchUnlinkedMsisdnsService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>libs/search-unlinked-msisdns/src/lib/search-unlinked-msisdns.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#filter" >filter</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#normalizedMsisdns" >normalizedMsisdns</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#searchUnlinkedMsisdns" >searchUnlinkedMsisdns</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sort" >sort</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(rabbitService: <a href="../injectables/RabbitMQService.html" target="_self">RabbitMQService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">libs/search-unlinked-msisdns/src/lib/search-unlinked-msisdns.service.ts:14</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>rabbitService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/RabbitMQService.html" target="_self" >RabbitMQService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="filter"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>filter</b></span>
+                        <a href="#filter"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>filter(data: <a href="../classes/UnlinkedMsisdnsDto.html" target="_self">UnlinkedMsisdnsDto[]</a>, filter?: <a href="../classes/MsisdnFilterDTO.html" target="_self">MsisdnFilterDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="142"
+                                    class="link-to-prism">libs/search-unlinked-msisdns/src/lib/search-unlinked-msisdns.service.ts:142</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Фильтрует массив объектов <code>UnlinkedMsisdnsDto</code> на основе заданных критериев.</p>
+<ul>
+<li>Убедись, что фильтры в <code>MsisdnFilterDTO</code> заданы корректно.</li>
+<li>Фильтрация осуществляется следующим образом:<ul>
+<li>Если указан <code>filter.status</code>, данные фильтруются по совпадению статуса <code>item.status</code>.</li>
+<li>Если указана <code>filter.category</code>, данные фильтруются по совпадению категории <code>item.categoryName</code>.</li>
+<li>Если указан <code>filter.region</code>, данные фильтруются по совпадению региона <code>item.region</code>.</li>
+</ul>
+</li>
+<li>Если ни один из фильтров не задан, возвращаются исходные данные.</li>
+<li>Логика фильтрации допускает пропуск критериев, что делает их необязательными.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/UnlinkedMsisdnsDto.html" target="_self" >UnlinkedMsisdnsDto[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Массив объектов <code>UnlinkedMsisdnsDto</code>, которые нужно отфильтровать.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>filter</td>
+                                            <td>
+                                                            <code><a href="../classes/MsisdnFilterDTO.html" target="_self" >MsisdnFilterDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Объект <code>MsisdnFilterDTO</code>, содержащий параметры фильтрации (статус, категория, регион).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/UnlinkedMsisdnsDto.html" target="_self" >Promise&lt;UnlinkedMsisdnsDto[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Возвращает массив объектов, соответствующих критериям фильтрации.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="normalizedMsisdns"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>normalizedMsisdns</b></span>
+                        <a href="#normalizedMsisdns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>normalizedMsisdns(payload: <a href="../interfaces/IMsisdn.html" target="_self">IMsisdn[]</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="60"
+                                    class="link-to-prism">libs/search-unlinked-msisdns/src/lib/search-unlinked-msisdns.service.ts:60</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Нормализует массив MSISDN данных в стандартный формат.</p>
+<p>Этот метод обрабатывает массив объектов <code>IMsisdn</code>, извлекая необходимые поля
+и преобразуя их в формат, соответствующий DTO <code>UnlinkedMsisdnsDto</code>.</p>
+<ul>
+<li>Убедись, что входной массив <code>payload</code> не содержит <code>null</code> значений, иначе раскомментируй <code>.filter</code>.</li>
+<li>Каждое поле объекта проверяется на наличие данных, чтобы избежать ошибок.</li>
+<li>Используется вспомогательная функция <code>generateStringFromDate</code> для форматирования даты.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="../interfaces/IMsisdn.html" target="_self" >IMsisdn[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Массив объектов типа <code>IMsisdn</code>, которые нужно нормализовать.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/UnlinkedMsisdnsDto.html" target="_self" >Promise&lt;UnlinkedMsisdnsDto[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Возвращает массив нормализованных объектов типа <code>UnlinkedMsisdnsDto</code>.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchUnlinkedMsisdns"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>searchUnlinkedMsisdns</b></span>
+                        <a href="#searchUnlinkedMsisdns"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>searchUnlinkedMsisdns(payload: <a href="../interfaces/ISearchUnlinkedMsisdnsPayload.html" target="_self">ISearchUnlinkedMsisdnsPayload</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="33"
+                                    class="link-to-prism">libs/search-unlinked-msisdns/src/lib/search-unlinked-msisdns.service.ts:33</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Выполняет поиск несвязанных MSISDN (номеров) на основе заданных параметров.</p>
+<p>Этот метод отправляет запрос в RabbitMQ с заданной полезной нагрузкой <code>payload</code>
+и получает ответ, содержащий данные о несвязанных MSISDN.</p>
+<p>содержащая параметры поиска несвязанных MSISDN.
+<code>ISearchUnlinkedMsisdnsResponse</code>, содержащий данные о несвязанных MSISDN,
+или <code>null</code>, если данные не были получены.</p>
+<p>Этот метод использует <code>sendMessageSearch</code> из <code>rabbitService</code> для выполнения асинхронного запроса
+через RabbitMQ. Убедись, что структура запроса и ответа согласована с RabbitMQ.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ISearchUnlinkedMsisdnsPayload.html" target="_self" >ISearchUnlinkedMsisdnsPayload</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Полезная нагрузка типа <code>ISearchUnlinkedMsisdnsPayload</code>,
+содержащая параметры поиска несвязанных MSISDN.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/ISearchUnlinkedMsisdnsResponse.html" target="_self" >Promise&lt;ISearchUnlinkedMsisdnsResponse | null&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Возвращает объект ответа типа
+<code>ISearchUnlinkedMsisdnsResponse</code>, содержащий данные о несвязанных MSISDN,
+или <code>null</code>, если данные не были получены.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sort"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sort</b></span>
+                        <a href="#sort"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sort(data: <a href="../classes/UnlinkedMsisdnsDto.html" target="_self">UnlinkedMsisdnsDto[]</a>, sort?: <a href="../classes/SortInputDTO.html" target="_self">SortInputDTO</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="92"
+                                    class="link-to-prism">libs/search-unlinked-msisdns/src/lib/search-unlinked-msisdns.service.ts:92</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Сортирует массив объектов <code>UnlinkedMsisdnsDto</code> на основе указанных полей и направления.</p>
+<ul>
+<li>Убедись, что поле сортировки <code>sort.field</code> и направление <code>sort.direction</code> заданы.</li>
+<li>Специальная обработка применяется для следующих полей:<ul>
+<li><code>dateStatus</code>: сортируется по времени на основе даты.</li>
+<li><code>msisdn</code>: сортируется как числовое значение.</li>
+</ul>
+</li>
+<li>Для всех остальных полей применяется строковая сортировка с использованием <code>localeCompare</code>.</li>
+<li>Если значения полей равны <code>null</code>, сортировка игнорируется.</li>
+<li>Если параметры сортировки не указаны, данные возвращаются без изменений.</li>
+</ul>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../classes/UnlinkedMsisdnsDto.html" target="_self" >UnlinkedMsisdnsDto[]</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Массив объектов <code>UnlinkedMsisdnsDto</code>, которые нужно отсортировать.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>sort</td>
+                                            <td>
+                                                            <code><a href="../classes/SortInputDTO.html" target="_self" >SortInputDTO</a></code>
+                                            </td>
+
+                                            <td>
+                                                    Yes
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Объект <code>SortInputDTO</code>, содержащий параметры сортировки (поле и направление).</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../classes/UnlinkedMsisdnsDto.html" target="_self" >Promise&lt;UnlinkedMsisdnsDto[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Возвращает отсортированный массив объектов <code>UnlinkedMsisdnsDto</code>.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Injectable } from &#x27;@nestjs/common&#x27;;
+import {
+  generateStringFromDate,
+  IMsisdn,
+  ISearchUnlinkedMsisdnsPayload,
+  ISearchUnlinkedMsisdnsResponse,
+  SEARCH_UNLINKED_MSISDNS,
+  UnlinkedMsisdnsDto,
+} from &#x27;@web-clients-backend/shared&#x27;;
+import { RabbitMQService } from &#x27;@web-clients-backend/rabbit&#x27;;
+import { MsisdnFilterDTO, SortInputDTO } from &#x27;./dto/payload.dto&#x27;;
+
+@Injectable()
+export class SearchUnlinkedMsisdnsService {
+  constructor(private readonly rabbitService: RabbitMQService) {}
+
+  /**
+   * Выполняет поиск несвязанных MSISDN (номеров) на основе заданных параметров.
+   *
+   * Этот метод отправляет запрос в RabbitMQ с заданной полезной нагрузкой &#x60;payload&#x60;
+   * и получает ответ, содержащий данные о несвязанных MSISDN.
+   *
+   * @param payload - Полезная нагрузка типа &#x60;ISearchUnlinkedMsisdnsPayload&#x60;,
+   * содержащая параметры поиска несвязанных MSISDN.
+   * @returns {Promise&lt;ISearchUnlinkedMsisdnsResponse | null&gt;} - Возвращает объект ответа типа
+   * &#x60;ISearchUnlinkedMsisdnsResponse&#x60;, содержащий данные о несвязанных MSISDN,
+   * или &#x60;null&#x60;, если данные не были получены.
+   *
+   * @remarks
+   * Этот метод использует &#x60;sendMessageSearch&#x60; из &#x60;rabbitService&#x60; для выполнения асинхронного запроса
+   * через RabbitMQ. Убедись, что структура запроса и ответа согласована с RabbitMQ.
+   */
+  async searchUnlinkedMsisdns(
+    payload: ISearchUnlinkedMsisdnsPayload
+  ): Promise&lt;ISearchUnlinkedMsisdnsResponse | null&gt; {
+    const data &#x3D; await this.rabbitService.sendMessageSearch&lt;
+      ISearchUnlinkedMsisdnsPayload,
+      ISearchUnlinkedMsisdnsResponse
+    &gt;(SEARCH_UNLINKED_MSISDNS, payload);
+    if (!data) {
+      return null;
+    }
+    return data;
+  }
+
+  /**
+   * Нормализует массив MSISDN данных в стандартный формат.
+   *
+   * Этот метод обрабатывает массив объектов &#x60;IMsisdn&#x60;, извлекая необходимые поля
+   * и преобразуя их в формат, соответствующий DTO &#x60;UnlinkedMsisdnsDto&#x60;.
+   *
+   * @param payload - Массив объектов типа &#x60;IMsisdn&#x60;, которые нужно нормализовать.
+   * @returns {Promise&lt;UnlinkedMsisdnsDto[]&gt;} - Возвращает массив нормализованных объектов типа &#x60;UnlinkedMsisdnsDto&#x60;.
+   *
+   * @remarks
+   * - Убедись, что входной массив &#x60;payload&#x60; не содержит &#x60;null&#x60; значений, иначе раскомментируй &#x60;.filter&#x60;.
+   * - Каждое поле объекта проверяется на наличие данных, чтобы избежать ошибок.
+   * - Используется вспомогательная функция &#x60;generateStringFromDate&#x60; для форматирования даты.
+   */
+  async normalizedMsisdns(payload: IMsisdn[]): Promise&lt;UnlinkedMsisdnsDto[]&gt; {
+    return Promise.all(
+      payload
+        // .filter((data): data is IMsisdn &#x3D;&gt; data !&#x3D;&#x3D; null) // минус &#x60;null&#x60; //TODO
+        .map(async (data) &#x3D;&gt; ({
+          status: data.state.name || null,
+          dateStatus:
+            (await generateStringFromDate(data.state.changedAt)) || null,
+          msisdn: data.msisdn.toString() || null,
+          region: data.region.name || null,
+          categoryName: data.category.name || null,
+          comment: data?.comment || &#x27;&#x27;,
+        }))
+    );
+  }
+
+  /**
+   * Сортирует массив объектов &#x60;UnlinkedMsisdnsDto&#x60; на основе указанных полей и направления.
+   *
+   * @param data - Массив объектов &#x60;UnlinkedMsisdnsDto&#x60;, которые нужно отсортировать.
+   * @param sort - Объект &#x60;SortInputDTO&#x60;, содержащий параметры сортировки (поле и направление).
+   * @returns {Promise&lt;UnlinkedMsisdnsDto[]&gt;} - Возвращает отсортированный массив объектов &#x60;UnlinkedMsisdnsDto&#x60;.
+   *
+   * @remarks
+   * - Убедись, что поле сортировки &#x60;sort.field&#x60; и направление &#x60;sort.direction&#x60; заданы.
+   * - Специальная обработка применяется для следующих полей:
+   *   - &#x60;dateStatus&#x60;: сортируется по времени на основе даты.
+   *   - &#x60;msisdn&#x60;: сортируется как числовое значение.
+   * - Для всех остальных полей применяется строковая сортировка с использованием &#x60;localeCompare&#x60;.
+   * - Если значения полей равны &#x60;null&#x60;, сортировка игнорируется.
+   * - Если параметры сортировки не указаны, данные возвращаются без изменений.
+   */
+  async sort(
+    data: UnlinkedMsisdnsDto[],
+    sort?: SortInputDTO
+  ): Promise&lt;UnlinkedMsisdnsDto[]&gt; {
+    if (sort?.field &amp;&amp; sort?.direction) {
+      return data.sort((a, b) &#x3D;&gt; {
+        const field &#x3D; sort.field as keyof UnlinkedMsisdnsDto;
+        const valueA &#x3D; a[field];
+        const valueB &#x3D; b[field];
+
+        if (valueA &#x3D;&#x3D;&#x3D; null || valueB &#x3D;&#x3D;&#x3D; null) return 0;
+
+        switch (sort.field) {
+          case &#x27;dateStatus&#x27;: {
+            const dateA &#x3D; new Date(valueA).getTime();
+            const dateB &#x3D; new Date(valueB).getTime();
+            return sort.direction &#x3D;&#x3D;&#x3D; &#x27;asc&#x27; ? dateA - dateB : dateB - dateA;
+          }
+          case &#x27;msisdn&#x27;: {
+            const numA &#x3D; parseInt(valueA, 10);
+            const numB &#x3D; parseInt(valueB, 10);
+            return sort.direction &#x3D;&#x3D;&#x3D; &#x27;asc&#x27; ? numA - numB : numB - numA;
+          }
+          default: {
+            return sort.direction &#x3D;&#x3D;&#x3D; &#x27;asc&#x27;
+              ? valueA.localeCompare(valueB)
+              : valueB.localeCompare(valueA);
+          }
+        }
+      });
+    }
+    return data;
+  }
+
+  /**
+   * Фильтрует массив объектов &#x60;UnlinkedMsisdnsDto&#x60; на основе заданных критериев.
+   *
+   * @param data - Массив объектов &#x60;UnlinkedMsisdnsDto&#x60;, которые нужно отфильтровать.
+   * @param filter - Объект &#x60;MsisdnFilterDTO&#x60;, содержащий параметры фильтрации (статус, категория, регион).
+   * @returns {Promise&lt;UnlinkedMsisdnsDto[]&gt;} - Возвращает массив объектов, соответствующих критериям фильтрации.
+   *
+   * @remarks
+   * - Убедись, что фильтры в &#x60;MsisdnFilterDTO&#x60; заданы корректно.
+   * - Фильтрация осуществляется следующим образом:
+   *   - Если указан &#x60;filter.status&#x60;, данные фильтруются по совпадению статуса &#x60;item.status&#x60;.
+   *   - Если указана &#x60;filter.category&#x60;, данные фильтруются по совпадению категории &#x60;item.categoryName&#x60;.
+   *   - Если указан &#x60;filter.region&#x60;, данные фильтруются по совпадению региона &#x60;item.region&#x60;.
+   * - Если ни один из фильтров не задан, возвращаются исходные данные.
+   * - Логика фильтрации допускает пропуск критериев, что делает их необязательными.
+   */
+  async filter(
+    data: UnlinkedMsisdnsDto[],
+    filter?: MsisdnFilterDTO
+  ): Promise&lt;UnlinkedMsisdnsDto[]&gt; {
+    if (!filter) return data;
+
+    return data.filter((item) &#x3D;&gt; {
+      const matchStatus &#x3D; filter.status ? item.status &#x3D;&#x3D;&#x3D; filter.status : true;
+      const matchCategory &#x3D; filter.category
+        ? item.categoryName &#x3D;&#x3D;&#x3D; filter.category
+        : true;
+      const matchRegion &#x3D; filter.region ? item.region &#x3D;&#x3D;&#x3D; filter.region : true;
+
+      return matchStatus &amp;&amp; matchCategory &amp;&amp; matchRegion;
+    });
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'SearchUnlinkedMsisdnsService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,22 @@
+FROM harbor.corp.motiv/docker/library/node:22.9.0-alpine AS base
+
+FROM base AS builder
+ARG DEPS_IMAGE
+WORKDIR /app
+
+COPY --from=${DEPS_IMAGE} /app/node_modules ./node_modules
+COPY . .
+
+RUN yarn nx build graphql
+
+FROM base AS runner
+ARG DEPS_IMAGE
+WORKDIR /app
+USER 1000
+
+COPY --chown=1000 --from=builder /app/dist/apps/graphql/ .
+# COPY --from=builder /app/ormconfig.js .
+
+COPY --chown=1000 --from=${DEPS_IMAGE} /app/node_modules ./node_modules
+
+CMD ["node", "main.js"]

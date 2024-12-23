@@ -1,0 +1,11 @@
+FROM harbor.corp.motiv/docker/library/node:22.9.0-alpine AS base
+FROM base AS deps
+ENV NODE_EXTRA_CA_CERTS motivca.crt
+WORKDIR /app
+COPY motivca.crt package.json yarn.lock ./
+# RUN yarn config set registry http://localhost:4873
+RUN yarn config set registry https://nexus.corp.motiv/repository/npm
+RUN yarn config set network-timeout 600000
+#RUN yarn
+RUN yarn install && \
+    yarn cache clean

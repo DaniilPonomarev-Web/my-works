@@ -1,0 +1,86 @@
+{{- $name := pluck $.Values.global.env .Values.ingress.name | first | default .Values.ingress.name._default }}
+{{- $domain := pluck $.Values.global.env .Values.ingress.domain | first | default .Values.ingress.domain._default }}
+{{- range  $app := $.Values.apps }}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: "{{ $.Release.Name }}-{{ $app.name }}"
+spec:
+  selector:
+    matchLabels:
+      app: "{{ $.Release.Name }}-{{ $app.name }}"
+  revisionHistoryLimit: 3
+  strategy:
+    type: RollingUpdate
+  replicas: {{ pluck $.Values.global.env $app.replicas | first | default $app.replicas._default |int }}
+  template:
+    metadata:
+      labels:
+        app: "{{ $.Release.Name }}-{{ $app.name }}"
+    spec:
+      securityContext: 
+{{ toYaml $.Values.securityContext | indent 8 }}
+      imagePullSecrets:                           
+        - name: "{{ $.Values.imagePullSecrets.name }}"
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+            - weight: 100
+              podAffinityTerm:
+                labelSelector:
+                  matchExpressions:
+                    - key: app
+                      operator: In
+                      values:
+                        - "{{ $.Release.Name }}-{{ $app.name }}"
+                topologyKey: kubernetes.io/hostname
+      containers:
+      - name: "{{ $app.name }}"
+        image: {{ index $.Values.werf.image $app.name  }}
+        env:
+          {{- range $name, $value := $.Values.envs }}
+          - name: {{ $name }}
+            value: {{ pluck $.Values.global.env $value | first | default $value._default | quote }}
+          {{- end }}
+          {{- range $name, $value := $.Values.senvs }}
+          - name: {{ $name }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ $.Release.Name }}
+                key: {{ $name }}
+          {{- end }}
+        {{- if $app.port }} 
+        ports:
+        - name: http
+          containerPort: {{ $app.port }}
+          protocol: TCP
+        {{- end }}
+        {{- with $app.probe }}
+        {{- if .enabled }}
+        livenessProbe:
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          timeoutSeconds: 3
+          successThreshold: 1
+          failureThreshold: 10
+          httpGet:
+            path: {{ $app.probe.url }}
+            port: {{ $app.port }}
+            scheme: HTTP
+        readinessProbe:
+          initialDelaySeconds: 30
+          periodSeconds: 10
+          timeoutSeconds: 3
+          successThreshold: 1
+          failureThreshold: 5
+          httpGet:
+            path: {{ $app.probe.url }}
+            port: {{ $app.port }}
+            scheme: HTTP
+        {{- end }}
+        {{- end }}
+
+        resources:
+{{ toYaml $app.resources | indent 12 }}
+{{- end }}

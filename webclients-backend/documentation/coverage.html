@@ -1,0 +1,2551 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@web-clients-backend/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+	   <link rel="stylesheet" href="./styles/style.css">
+        <link rel="stylesheet" href="./styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="./" class="navbar-brand">@web-clients-backend/source documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content coverage">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+    <li class="breadcrumb-item">Documentation coverage</li>
+</ol>
+
+<div>
+    <img src="./images/coverage-badge-documentation.svg">
+</div>
+
+<table class="table table-bordered coverage" id="coverage-table">
+    <thead class="coverage-header">
+        <tr>
+            <th>File</th>
+            <th>Type</th>
+            <th>Identifier</th>
+            <th style="text-align:right" class="statements" data-sort-default>Statements</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#__TEARDOWN_MESSAGE__">apps/data-loader-e2e/src/support/global-setup.ts</a>
+            </td>
+            <td>variable</td>
+            <td>__TEARDOWN_MESSAGE__</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#validationSchema">apps/data-loader/src/app/config/validation.ts</a>
+            </td>
+            <td>variable</td>
+            <td>validationSchema</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/DLMessagePattern.html">apps/data-loader/src/app/dl.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>DLMessagePattern</td>
+            <td align="right" data-sort="8">
+                <span class="coverage-percent">8 %</span>
+                <span class="coverage-count">(1/12)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/DLService.html">apps/data-loader/src/app/dl.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>DLService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/functions.html#bootstrap">apps/data-loader/src/main.ts</a>
+            </td>
+            <td>function</td>
+            <td>bootstrap</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#__TEARDOWN_MESSAGE__">apps/graphql-e2e/src/support/global-setup.ts</a>
+            </td>
+            <td>variable</td>
+            <td>__TEARDOWN_MESSAGE__</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/BrokerMessage.html">apps/graphql/src/app/app.broker.ts</a>
+            </td>
+            <td>controller</td>
+            <td>BrokerMessage</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/AppController.html">apps/graphql/src/app/app.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>AppController</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/AppService.html">apps/graphql/src/app/app.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>AppService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#validationSchema">apps/graphql/src/app/config/validation.ts</a>
+            </td>
+            <td>variable</td>
+            <td>validationSchema</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#graphqlRequestsTotal">apps/graphql/src/graphql-metrics.middleware.ts</a>
+            </td>
+            <td>variable</td>
+            <td>graphqlRequestsTotal</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#metricsClient">apps/graphql/src/graphql-metrics.middleware.ts</a>
+            </td>
+            <td>variable</td>
+            <td>metricsClient</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#metricsMiddleware">apps/graphql/src/graphql-metrics.middleware.ts</a>
+            </td>
+            <td>variable</td>
+            <td>metricsMiddleware</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/functions.html#bootstrap">apps/graphql/src/main.ts</a>
+            </td>
+            <td>function</td>
+            <td>bootstrap</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#__TEARDOWN_MESSAGE__">apps/journalization-e2e/src/support/global-setup.ts</a>
+            </td>
+            <td>variable</td>
+            <td>__TEARDOWN_MESSAGE__</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#validationSchema">apps/journalization/src/app/config/validation.ts</a>
+            </td>
+            <td>variable</td>
+            <td>validationSchema</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/JournalizationController.html">apps/journalization/src/app/journalization.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>JournalizationController</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/functions.html#bootstrap">apps/journalization/src/main.ts</a>
+            </td>
+            <td>function</td>
+            <td>bootstrap</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./guards/ApimeConnectionGuard.html">libs/apime-integration/src/lib/ApiMeConnectionGuard.ts</a>
+            </td>
+            <td>guard</td>
+            <td>ApimeConnectionGuard</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/ApimeIntegrationService.html">libs/apime-integration/src/lib/apime-integration.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>ApimeIntegrationService</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(2/4)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/ApimeTokenInterceptor.html">libs/apime-integration/src/lib/apimeTokenInterceptor.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>ApimeTokenInterceptor</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/SearchDictionaryService.html">libs/apime-integration/src/lib/dictionary/dictionary-apime.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>SearchDictionaryService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/13)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IRequestParams.html">libs/apime-integration/src/lib/dictionary/dictionary-apime.service.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IRequestParams</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#prefix">libs/apime-integration/src/lib/other/api-methods.ts</a>
+            </td>
+            <td>variable</td>
+            <td>prefix</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#webClientsApiMethods">libs/apime-integration/src/lib/other/api-methods.ts</a>
+            </td>
+            <td>variable</td>
+            <td>webClientsApiMethods</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IApiMeHealth.html">libs/apime-integration/src/lib/other/static.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IApiMeHealth</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/SearchApimeService.html">libs/apime-integration/src/lib/search/search-apime.service copy.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>SearchApimeService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/11)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/SearchApimeService.html">libs/apime-integration/src/lib/search/search-apime.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>SearchApimeService</td>
+            <td align="right" data-sort="83">
+                <span class="coverage-percent">83 %</span>
+                <span class="coverage-count">(10/12)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/AuthService.html">libs/auth/src/lib/auth.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>AuthService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ClientResolver.html">libs/client/src/lib/client.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>ClientResolver</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/ClientService.html">libs/client/src/lib/client.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>ClientService</td>
+            <td align="right" data-sort="20">
+                <span class="coverage-percent">20 %</span>
+                <span class="coverage-count">(1/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CoreResolver.html">libs/core/src/lib/core.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>CoreResolver</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/UptimeController.html">libs/core/src/lib/uptime.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>UptimeController</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/JournalizatingService.html">libs/journalizating/src/lib/journalizating.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>JournalizatingService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/KeycloakIntegrationService.html">libs/keycloak-integration/src/lib/keycloak-integration.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>KeycloakIntegrationService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#keycloakMethods">libs/keycloak/src/lib/keycloak-methods.ts</a>
+            </td>
+            <td>variable</td>
+            <td>keycloakMethods</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./controllers/KeycloakController.html">libs/keycloak/src/lib/keycloak.controller.ts</a>
+            </td>
+            <td>controller</td>
+            <td>KeycloakController</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/KeycloakService.html">libs/keycloak/src/lib/keycloak.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>KeycloakService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./guards/KeycloakTokenGuard.html">libs/keycloak/src/lib/tokenGuard.guard.ts</a>
+            </td>
+            <td>guard</td>
+            <td>KeycloakTokenGuard</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/AppLoggerLoki.html">libs/logs/src/lib/loggerloki.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>AppLoggerLoki</td>
+            <td align="right" data-sort="16">
+                <span class="coverage-percent">16 %</span>
+                <span class="coverage-count">(1/6)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/LogsAndJournalsResolver.html">libs/logs/src/lib/logs-journals.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>LogsAndJournalsResolver</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/LogsAndJournalsService.html">libs/logs/src/lib/logs-journals.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>LogsAndJournalsService</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(2/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#mockCreateLog">libs/logs/src/lib/logs-journals.service.ts</a>
+            </td>
+            <td>variable</td>
+            <td>mockCreateLog</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#METRICS_PLUGIN_KEY">libs/metrics/src/lib/metrics.module.ts</a>
+            </td>
+            <td>variable</td>
+            <td>METRICS_PLUGIN_KEY</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#TRACING_PLUGIN_KEY">libs/metrics/src/lib/metrics.module.ts</a>
+            </td>
+            <td>variable</td>
+            <td>TRACING_PLUGIN_KEY</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/RabbitMQService.html">libs/rabbit/src/lib/rabbit.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>RabbitMQService</td>
+            <td align="right" data-sort="83">
+                <span class="coverage-percent">83 %</span>
+                <span class="coverage-count">(5/6)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/SearchService.html">libs/rabbit/src/lib/searchСlientService/rabbit.search-client.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>SearchService</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ClientFilterInput.html">libs/search-clients/src/lib/other/clients.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>ClientFilterInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ClientsSearchedDTO.html">libs/search-clients/src/lib/other/clients.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>ClientsSearchedDTO</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ClientsSearchInputDTO.html">libs/search-clients/src/lib/other/clients.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>ClientsSearchInputDTO</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SortInput.html">libs/search-clients/src/lib/other/clients.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>SortInput</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/GetSearchAreasInputDTO.html">libs/search-clients/src/lib/other/searchAreas.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>GetSearchAreasInputDTO</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SearchAreasDTO.html">libs/search-clients/src/lib/other/searchAreas.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>SearchAreasDTO</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SearchAreaWithLabelDTO.html">libs/search-clients/src/lib/other/searchAreas.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>SearchAreaWithLabelDTO</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SearchAreasResolver.html">libs/search-clients/src/lib/search-areas.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>SearchAreasResolver</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/SearchAreasService.html">libs/search-clients/src/lib/search-areas.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>SearchAreasService</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SearchClientsResolver.html">libs/search-clients/src/lib/search-clients.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>SearchClientsResolver</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/SearchClientsService.html">libs/search-clients/src/lib/search-clients.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>SearchClientsService</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(4/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/MsisdnFilterDTO.html">libs/search-unlinked-msisdns/src/lib/dto/payload.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>MsisdnFilterDTO</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SearchUnlinkedMsisdnsQueryDto.html">libs/search-unlinked-msisdns/src/lib/dto/payload.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>SearchUnlinkedMsisdnsQueryDto</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SortInputDTO.html">libs/search-unlinked-msisdns/src/lib/dto/payload.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>SortInputDTO</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SearchUnlinkedMsisdnsResolver.html">libs/search-unlinked-msisdns/src/lib/search-unlinked-msisdns.resolver.ts</a>
+            </td>
+            <td>class</td>
+            <td>SearchUnlinkedMsisdnsResolver</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./injectables/SearchUnlinkedMsisdnsService.html">libs/search-unlinked-msisdns/src/lib/search-unlinked-msisdns.service.ts</a>
+            </td>
+            <td>injectable</td>
+            <td>SearchUnlinkedMsisdnsService</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(4/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/functions.html#PaginatedResponseType">libs/shared/src/lib/dto/helpersGql/helper.ts</a>
+            </td>
+            <td>function</td>
+            <td>PaginatedResponseType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PaginationDTO.html">libs/shared/src/lib/dto/helpersGql/pagination.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>PaginationDTO</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/JournalDTO.html">libs/shared/src/lib/dto/journals/journals.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>JournalDTO</td>
+            <td align="right" data-sort="14">
+                <span class="coverage-percent">14 %</span>
+                <span class="coverage-count">(1/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/JournalsDTO.html">libs/shared/src/lib/dto/journals/journals.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>JournalsDTO</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/BalanceClientSearchDTO.html">libs/shared/src/lib/dto/search-client/balance.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>BalanceClientSearchDTO</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ClientDataDTO.html">libs/shared/src/lib/dto/search-client/client.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>ClientDataDTO</td>
+            <td align="right" data-sort="6">
+                <span class="coverage-percent">6 %</span>
+                <span class="coverage-count">(1/15)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/NameClientSearchDTO.html">libs/shared/src/lib/dto/search-client/clientName.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>NameClientSearchDTO</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/DocumentClientSearchDTO.html">libs/shared/src/lib/dto/search-client/document.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>DocumentClientSearchDTO</td>
+            <td align="right" data-sort="16">
+                <span class="coverage-percent">16 %</span>
+                <span class="coverage-count">(1/6)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/EquipmentClientSearchDTO.html">libs/shared/src/lib/dto/search-client/equipment.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>EquipmentClientSearchDTO</td>
+            <td align="right" data-sort="14">
+                <span class="coverage-percent">14 %</span>
+                <span class="coverage-count">(1/7)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/MonetaryClientSearchDTO.html">libs/shared/src/lib/dto/search-client/monetary.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>MonetaryClientSearchDTO</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/PassportClientSearchDTO.html">libs/shared/src/lib/dto/search-client/passport.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>PassportClientSearchDTO</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StructuredNameClientSearchDTO.html">libs/shared/src/lib/dto/search-client/structuredClientName.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>StructuredNameClientSearchDTO</td>
+            <td align="right" data-sort="20">
+                <span class="coverage-percent">20 %</span>
+                <span class="coverage-count">(1/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SubscriberClientSearchDTO.html">libs/shared/src/lib/dto/search-client/subscriber.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>SubscriberClientSearchDTO</td>
+            <td align="right" data-sort="12">
+                <span class="coverage-percent">12 %</span>
+                <span class="coverage-count">(1/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/CategoryDto.html">libs/shared/src/lib/dto/search-unlinked-msisdns/response.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>CategoryDto</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/MsisdnDto.html">libs/shared/src/lib/dto/search-unlinked-msisdns/response.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>MsisdnDto</td>
+            <td align="right" data-sort="12">
+                <span class="coverage-percent">12 %</span>
+                <span class="coverage-count">(1/8)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/RegionDto.html">libs/shared/src/lib/dto/search-unlinked-msisdns/response.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>RegionDto</td>
+            <td align="right" data-sort="25">
+                <span class="coverage-percent">25 %</span>
+                <span class="coverage-count">(1/4)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SearchUnlinkedMsisdnsDTO.html">libs/shared/src/lib/dto/search-unlinked-msisdns/response.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>SearchUnlinkedMsisdnsDTO</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/SearchUnlinkedMsisdnsResponseDto.html">libs/shared/src/lib/dto/search-unlinked-msisdns/response.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>SearchUnlinkedMsisdnsResponseDto</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/StateDto.html">libs/shared/src/lib/dto/search-unlinked-msisdns/response.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>StateDto</td>
+            <td align="right" data-sort="20">
+                <span class="coverage-percent">20 %</span>
+                <span class="coverage-count">(1/5)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/UnlinkedMsisdnsDto.html">libs/shared/src/lib/dto/search-unlinked-msisdns/response.dto.ts</a>
+            </td>
+            <td>class</td>
+            <td>UnlinkedMsisdnsDto</td>
+            <td align="right" data-sort="12">
+                <span class="coverage-percent">12 %</span>
+                <span class="coverage-count">(1/8)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./entitys/Journal.html">libs/shared/src/lib/entities/logs-admin/logs-admin.entity.ts</a>
+            </td>
+            <td>entity</td>
+            <td>Journal</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/Journal.html">libs/shared/src/lib/entities/logs-admin/logs-admin.entity.ts</a>
+            </td>
+            <td>class</td>
+            <td>Journal</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#searchAreaLabels">libs/shared/src/lib/enums/search-area.enum.ts</a>
+            </td>
+            <td>variable</td>
+            <td>searchAreaLabels</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IAccessTokenInput.html">libs/shared/src/lib/interfaces/apimeInputs/apime-inputs.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IAccessTokenInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ITraceId.html">libs/shared/src/lib/interfaces/apimeInputs/apime-inputs.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ITraceId</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IBalanceClient.html">libs/shared/src/lib/interfaces/client/balance.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IBalanceClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IClientApiResult.html">libs/shared/src/lib/interfaces/client/client.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IClientApiResult</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(18/18)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IContactClient.html">libs/shared/src/lib/interfaces/client/contact.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IContactClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IContractClient.html">libs/shared/src/lib/interfaces/client/contract.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IContractClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(9/9)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IDocumentClient.html">libs/shared/src/lib/interfaces/client/document.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IDocumentClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(8/8)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IDocumentTypeClient.html">libs/shared/src/lib/interfaces/client/document.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IDocumentTypeClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IEquipmentClient.html">libs/shared/src/lib/interfaces/client/equipment.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IEquipmentClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(6/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IGenderClient.html">libs/shared/src/lib/interfaces/client/gender.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IGenderClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IMonetaryClient.html">libs/shared/src/lib/interfaces/client/monetary.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IMonetaryClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/INameClient.html">libs/shared/src/lib/interfaces/client/name.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>INameClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IOptionalPropertyClient.html">libs/shared/src/lib/interfaces/client/optionalProperty.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IOptionalPropertyClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IPaymentTypeClient.html">libs/shared/src/lib/interfaces/client/paymentType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IPaymentTypeClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IRelationClient.html">libs/shared/src/lib/interfaces/client/relation.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IRelationClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IStateClient.html">libs/shared/src/lib/interfaces/client/state.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IStateClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ISubscriberClient.html">libs/shared/src/lib/interfaces/client/subscriber.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ISubscriberClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ICityType.html">libs/shared/src/lib/interfaces/dictionary/address/cityType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ICityType</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ICityTypesResponse.html">libs/shared/src/lib/interfaces/dictionary/address/cityType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ICityTypesResponse</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ICountryType.html">libs/shared/src/lib/interfaces/dictionary/address/countryType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ICountryType</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ICountryTypesResponse.html">libs/shared/src/lib/interfaces/dictionary/address/countryType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ICountryTypesResponse</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IDistrictType.html">libs/shared/src/lib/interfaces/dictionary/address/districtType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IDistrictType</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IDistrictTypesResponse.html">libs/shared/src/lib/interfaces/dictionary/address/districtType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IDistrictTypesResponse</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IRegionType.html">libs/shared/src/lib/interfaces/dictionary/address/regionType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IRegionType</td>
+            <td align="right" data-sort="33">
+                <span class="coverage-percent">33 %</span>
+                <span class="coverage-count">(1/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IRegionTypesResponse.html">libs/shared/src/lib/interfaces/dictionary/address/regionType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IRegionTypesResponse</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IStreetType.html">libs/shared/src/lib/interfaces/dictionary/address/streetType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IStreetType</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IStreetTypesResponse.html">libs/shared/src/lib/interfaces/dictionary/address/streetType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IStreetTypesResponse</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IAddressType.html">libs/shared/src/lib/interfaces/dictionary/client/addressType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IAddressType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(5/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IAddressTypesResponse.html">libs/shared/src/lib/interfaces/dictionary/client/addressType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IAddressTypesResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IBillingDeliveryType.html">libs/shared/src/lib/interfaces/dictionary/client/billingDeliveryType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IBillingDeliveryType</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IBillingDeliveryTypesResponse.html">libs/shared/src/lib/interfaces/dictionary/client/billingDeliveryType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IBillingDeliveryTypesResponse</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IClientType.html">libs/shared/src/lib/interfaces/dictionary/client/clientType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IClientType</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IClientTypesResponse.html">libs/shared/src/lib/interfaces/dictionary/client/clientType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IClientTypesResponse</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IDocumentType.html">libs/shared/src/lib/interfaces/dictionary/client/documentType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IDocumentType</td>
+            <td align="right" data-sort="75">
+                <span class="coverage-percent">75 %</span>
+                <span class="coverage-count">(3/4)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IDocumentTypesResponse.html">libs/shared/src/lib/interfaces/dictionary/client/documentType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IDocumentTypesResponse</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IJuridicalType.html">libs/shared/src/lib/interfaces/dictionary/client/juridicalType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IJuridicalType</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IJuridicalTypesResponse.html">libs/shared/src/lib/interfaces/dictionary/client/juridicalType.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IJuridicalTypesResponse</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/PostSearchBody.html">libs/shared/src/lib/interfaces/elasticsearch/postSearchBody.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>PostSearchBody</td>
+            <td align="right" data-sort="80">
+                <span class="coverage-percent">80 %</span>
+                <span class="coverage-count">(4/5)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/PostSearchResult.html">libs/shared/src/lib/interfaces/elasticsearch/postSearchBody.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>PostSearchResult</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ICreateJournal.html">libs/shared/src/lib/interfaces/journals/journals.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ICreateJournal</td>
+            <td align="right" data-sort="80">
+                <span class="coverage-percent">80 %</span>
+                <span class="coverage-count">(4/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IJournal.html">libs/shared/src/lib/interfaces/journals/journals.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IJournal</td>
+            <td align="right" data-sort="85">
+                <span class="coverage-percent">85 %</span>
+                <span class="coverage-count">(6/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ISearchJournal.html">libs/shared/src/lib/interfaces/journals/journals.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ISearchJournal</td>
+            <td align="right" data-sort="85">
+                <span class="coverage-percent">85 %</span>
+                <span class="coverage-count">(6/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IClientSearch.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IClientSearch</td>
+            <td align="right" data-sort="92">
+                <span class="coverage-percent">92 %</span>
+                <span class="coverage-count">(13/14)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IClientSearchResult.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IClientSearchResult</td>
+            <td align="right" data-sort="91">
+                <span class="coverage-percent">91 %</span>
+                <span class="coverage-count">(11/12)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IDataClientSearchResponse.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IDataClientSearchResponse</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IDocumentClientSearch.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IDocumentClientSearch</td>
+            <td align="right" data-sort="80">
+                <span class="coverage-percent">80 %</span>
+                <span class="coverage-count">(4/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IEquipmentClientSearch.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IEquipmentClientSearch</td>
+            <td align="right" data-sort="83">
+                <span class="coverage-percent">83 %</span>
+                <span class="coverage-count">(5/6)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/INameClientSearch.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>INameClientSearch</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IQueryStructured.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IQueryStructured</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="medium">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IQueryUnStructured.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IQueryUnStructured</td>
+            <td align="right" data-sort="50">
+                <span class="coverage-percent">50 %</span>
+                <span class="coverage-count">(1/2)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ISearchClientPayload.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ISearchClientPayload</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IStructuredClientName.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IStructuredClientName</td>
+            <td align="right" data-sort="80">
+                <span class="coverage-percent">80 %</span>
+                <span class="coverage-count">(4/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IStructuredNameClientSearch.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IStructuredNameClientSearch</td>
+            <td align="right" data-sort="80">
+                <span class="coverage-percent">80 %</span>
+                <span class="coverage-count">(4/5)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ISubscriberClientSearch.html">libs/shared/src/lib/interfaces/search-client/search.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ISubscriberClientSearch</td>
+            <td align="right" data-sort="85">
+                <span class="coverage-percent">85 %</span>
+                <span class="coverage-count">(6/7)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ISearchUnlinkedMsisdnsPayload.html">libs/shared/src/lib/interfaces/search-unlinked-msisdns/payload.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ISearchUnlinkedMsisdnsPayload</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/SearchUnlinkedMsisdnsInput.html">libs/shared/src/lib/interfaces/search-unlinked-msisdns/payload.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>SearchUnlinkedMsisdnsInput</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ICategory.html">libs/shared/src/lib/interfaces/search-unlinked-msisdns/response.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ICategory</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IMsisdn.html">libs/shared/src/lib/interfaces/search-unlinked-msisdns/response.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IMsisdn</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IRegion.html">libs/shared/src/lib/interfaces/search-unlinked-msisdns/response.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IRegion</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ISearchUnlinkedMsisdnsResponse.html">libs/shared/src/lib/interfaces/search-unlinked-msisdns/response.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ISearchUnlinkedMsisdnsResponse</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IState.html">libs/shared/src/lib/interfaces/search-unlinked-msisdns/response.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IState</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/Configuration.html">libs/shared/src/lib/interfaces/technical/configuration.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>Configuration</td>
+            <td align="right" data-sort="90">
+                <span class="coverage-percent">90 %</span>
+                <span class="coverage-count">(9/10)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ConfigurationApiMe.html">libs/shared/src/lib/interfaces/technical/configuration.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ConfigurationApiMe</td>
+            <td align="right" data-sort="66">
+                <span class="coverage-percent">66 %</span>
+                <span class="coverage-count">(2/3)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ConfigurationBroker.html">libs/shared/src/lib/interfaces/technical/configuration.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ConfigurationBroker</td>
+            <td align="right" data-sort="75">
+                <span class="coverage-percent">75 %</span>
+                <span class="coverage-count">(3/4)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ConfigurationBrokerQueue.html">libs/shared/src/lib/interfaces/technical/configuration.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ConfigurationBrokerQueue</td>
+            <td align="right" data-sort="75">
+                <span class="coverage-percent">75 %</span>
+                <span class="coverage-count">(3/4)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ConfigurationKafka.html">libs/shared/src/lib/interfaces/technical/configuration.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ConfigurationKafka</td>
+            <td align="right" data-sort="75">
+                <span class="coverage-percent">75 %</span>
+                <span class="coverage-count">(3/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ConfigurationKeycloak.html">libs/shared/src/lib/interfaces/technical/configuration.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ConfigurationKeycloak</td>
+            <td align="right" data-sort="83">
+                <span class="coverage-percent">83 %</span>
+                <span class="coverage-count">(5/6)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ConfigurationPostgres.html">libs/shared/src/lib/interfaces/technical/configuration.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ConfigurationPostgres</td>
+            <td align="right" data-sort="85">
+                <span class="coverage-percent">85 %</span>
+                <span class="coverage-count">(6/7)</span>
+            </td>
+        </tr>
+        <tr class="good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ConfigurationRedis.html">libs/shared/src/lib/interfaces/technical/configuration.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ConfigurationRedis</td>
+            <td align="right" data-sort="75">
+                <span class="coverage-percent">75 %</span>
+                <span class="coverage-count">(3/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IEnum.html">libs/shared/src/lib/interfaces/technical/enum.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IEnum</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/HttpError.html">libs/shared/src/lib/interfaces/technical/errors.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>HttpError</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(7/7)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IError.html">libs/shared/src/lib/interfaces/technical/errors.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IError</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/ILogger.html">libs/shared/src/lib/interfaces/technical/errors.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>ILogger</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(4/4)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IValidationError.html">libs/shared/src/lib/interfaces/technical/errors.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IValidationError</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IValidationVariables.html">libs/shared/src/lib/interfaces/technical/errors.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IValidationVariables</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(3/3)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./interfaces/IGqlError.html">libs/shared/src/lib/interfaces/technical/gql-error.interface.ts</a>
+            </td>
+            <td>interface</td>
+            <td>IGqlError</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./classes/ErrorFilter.html">libs/shared/src/lib/technical/error.filter.ts</a>
+            </td>
+            <td>class</td>
+            <td>ErrorFilter</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(2/2)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#errorMessages">libs/shared/src/lib/technical/errors/http-exceptions-messages.ts</a>
+            </td>
+            <td>variable</td>
+            <td>errorMessages</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#EXCEPTIONMSGQL">libs/shared/src/lib/technical/errors/http-exceptions-messages.ts</a>
+            </td>
+            <td>variable</td>
+            <td>EXCEPTIONMSGQL</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/functions.html#createEnumMap">libs/shared/src/lib/technical/generators.ts</a>
+            </td>
+            <td>function</td>
+            <td>createEnumMap</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/functions.html#mapJuridicalType">libs/shared/src/lib/technical/generators.ts</a>
+            </td>
+            <td>function</td>
+            <td>mapJuridicalType</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/functions.html#mapMarketSegment">libs/shared/src/lib/technical/generators.ts</a>
+            </td>
+            <td>function</td>
+            <td>mapMarketSegment</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/functions.html#mapStateClient">libs/shared/src/lib/technical/generators.ts</a>
+            </td>
+            <td>function</td>
+            <td>mapStateClient</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#escapePercent">libs/shared/src/lib/technical/generators.ts</a>
+            </td>
+            <td>variable</td>
+            <td>escapePercent</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#generateDocumentPassport">libs/shared/src/lib/technical/generators.ts</a>
+            </td>
+            <td>variable</td>
+            <td>generateDocumentPassport</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#generatePaginationArray">libs/shared/src/lib/technical/generators.ts</a>
+            </td>
+            <td>variable</td>
+            <td>generatePaginationArray</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#generateStringFromDate">libs/shared/src/lib/technical/generators.ts</a>
+            </td>
+            <td>variable</td>
+            <td>generateStringFromDate</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="low">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#generateTokenContext">libs/shared/src/lib/technical/generators.ts</a>
+            </td>
+            <td>variable</td>
+            <td>generateTokenContext</td>
+            <td align="right" data-sort="0">
+                <span class="coverage-percent">0 %</span>
+                <span class="coverage-count">(0/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#getHeaders">libs/shared/src/lib/technical/generators.ts</a>
+            </td>
+            <td>variable</td>
+            <td>getHeaders</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#mockContext">libs/shared/src/lib/technical/generators.ts</a>
+            </td>
+            <td>variable</td>
+            <td>mockContext</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#NOTIFICATION_EMAIL_NEW_USER">libs/shared/src/lib/technical/message-broker/kafka.ts</a>
+            </td>
+            <td>variable</td>
+            <td>NOTIFICATION_EMAIL_NEW_USER</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#GET_ALL">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>GET_ALL</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#GET_CLIENT">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>GET_CLIENT</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_ACCOUNT_NUMBER">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_ACCOUNT_NUMBER</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_BY_FIO">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_BY_FIO</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_BY_PROCESSES">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_BY_PROCESSES</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_BY_SERVICES">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_BY_SERVICES</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_BY_TARIFFS">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_BY_TARIFFS</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_BY_TITLE">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_BY_TITLE</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_CONTRACT_NUMBER">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_CONTRACT_NUMBER</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_DGN">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_DGN</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_ICC">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_ICC</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_MSISDN">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_MSISDN</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_PASSPORT">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_PASSPORT</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_CLIENT_SUBSCRIBER_NUMBER">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_CLIENT_SUBSCRIBER_NUMBER</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#SEARCH_UNLINKED_MSISDNS">libs/shared/src/lib/technical/message-broker/rmq.ts</a>
+            </td>
+            <td>variable</td>
+            <td>SEARCH_UNLINKED_MSISDNS</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#CREATE_LOG">libs/shared/src/lib/technical/message-broker/rmq_journal.ts</a>
+            </td>
+            <td>variable</td>
+            <td>CREATE_LOG</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#GET_LOGS">libs/shared/src/lib/technical/message-broker/rmq_journal.ts</a>
+            </td>
+            <td>variable</td>
+            <td>GET_LOGS</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#UserTypeArg">libs/shared/src/lib/types/optional-property.type.ts</a>
+            </td>
+            <td>variable</td>
+            <td>UserTypeArg</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+        <tr class="very-good">
+            <td>
+                <!-- miscellaneous -->
+                <a href="./miscellaneous/variables.html#StateSubscriberArgs">libs/shared/src/lib/types/state.type.ts</a>
+            </td>
+            <td>variable</td>
+            <td>StateSubscriberArgs</td>
+            <td align="right" data-sort="100">
+                <span class="coverage-percent">100 %</span>
+                <span class="coverage-count">(1/1)</span>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+<script src="js/libs/tablesort.min.js"></script>
+<script src="js/libs/tablesort.number.min.js"></script>
+<script>
+    new Tablesort(document.getElementById('coverage-table'));
+</script>
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 0;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'coverage';
+            var COMPODOC_CURRENT_PAGE_URL = 'coverage.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="./js/libs/custom-elements.min.js"></script>
+       <script src="./js/libs/lit-html.js"></script>
+
+       <script src="./js/menu-wc.js" defer></script>
+       <script nomodule src="./js/menu-wc_es5.js" defer></script>
+
+       <script src="./js/libs/bootstrap-native.js"></script>
+
+       <script src="./js/libs/es6-shim.min.js"></script>
+       <script src="./js/libs/EventDispatcher.js"></script>
+       <script src="./js/libs/promise.min.js"></script>
+       <script src="./js/libs/zepto.min.js"></script>
+
+       <script src="./js/compodoc.js"></script>
+
+       <script src="./js/tabs.js"></script>
+       <script src="./js/menu.js"></script>
+       <script src="./js/libs/clipboard.min.js"></script>
+       <script src="./js/libs/prism.js"></script>
+       <script src="./js/sourceCode.js"></script>
+          <script src="./js/search/search.js"></script>
+          <script src="./js/search/lunr.min.js"></script>
+          <script src="./js/search/search-lunr.js"></script>
+          <script src="./js/search/search_index.js"></script>
+       <script src="./js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,837 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@web-clients-backend/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@web-clients-backend/source documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >RabbitMQService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>libs/rabbit/src/lib/rabbit.service.ts</code>
+        </p>
+
+
+            <p class="comment">
+                <h3>Description</h3>
+            </p>
+            <p class="comment">
+                <p>Позволяет отправлять и получать сообщения через микросервисные клиенты.</p>
+
+            </p>
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#emitToJournalization" >emitToJournalization</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getClient" >getClient</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendMessageSearch" >sendMessageSearch</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#sendToJournalization" >sendToJournalization</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(webClientsClient: ClientProxy, journalizationClient: ClientProxy, searchService: <a href="../injectables/SearchService.html" target="_self">SearchService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="23" class="link-to-prism">libs/rabbit/src/lib/rabbit.service.ts:23</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>webClientsClient</td>
+                                                  
+                                                        <td>
+                                                                    <code>ClientProxy</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>journalizationClient</td>
+                                                  
+                                                        <td>
+                                                                    <code>ClientProxy</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>searchService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/SearchService.html" target="_self" >SearchService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="emitToJournalization"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>emitToJournalization</b></span>
+                        <a href="#emitToJournalization"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>emitToJournalization(event: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, data: <a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank">any</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="97"
+                                    class="link-to-prism">libs/rabbit/src/lib/rabbit.service.ts:97</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Отправляет событие в систему журналирования.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>event</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Имя события.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Данные события.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;void&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Возвращает пустое значение при успешной отправке.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getClient"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getClient</b></span>
+                        <a href="#getClient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getClient(payload: <a href="../interfaces/IAccessTokenInput.html" target="_self">IAccessTokenInput</a>, clientId: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="37"
+                                    class="link-to-prism">libs/rabbit/src/lib/rabbit.service.ts:37</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Получает данные клиента через API /clients.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="../interfaces/IAccessTokenInput.html" target="_self" >IAccessTokenInput</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Данные для запроса клиента, реализующие интерфейс IAccessTokenInput.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>clientId</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/IClientApiResult.html" target="_self" >Promise&lt;IClientApiResult | null&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Возвращает данные клиента или null в случае ошибки.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendMessageSearch"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendMessageSearch</b></span>
+                        <a href="#sendMessageSearch"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendMessageSearch(cmd: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>, payload: P)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="69"
+                                    class="link-to-prism">libs/rabbit/src/lib/rabbit.service.ts:69</a></div>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <b>Type parameters :</b>
+                            <ul class="type-parameters">
+                                    <li>P</li>
+                                    <li>R</li>
+                            </ul>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Отправка сообщения и получение ответа по заданным параметрам.</p>
+<p>Этот метод отправляет данные в RabbitMQ с указанной командой <code>cmd</code> и полезной нагрузкой <code>payload</code>,
+а затем возвращает результат, тип которого ожидается как <code>R</code>.</p>
+<p>Важно понимать, что тип <code>P</code> (payload) и тип <code>R</code> (результат) не связаны напрямую.
+В данном методе выполняется приведение типа <code>payload</code> к <code>R</code> через конструкцию <code>as unknown as R</code>,
+чтобы удовлетворить требования метода <code>sendMessage</code>. Это безопасно, потому что:</p>
+<ol>
+<li><code>payload</code> просто отправляется в RabbitMQ, не изменяя своей структуры.</li>
+<li>Ответ, возвращаемый RabbitMQ, интерпретируется как <code>R</code>, согласно ожиданиям.</li>
+</ol>
+<p>Используй этот метод, если уверены, что соответствие между запросом <code>P</code> и ответом <code>R</code> гарантировано
+логикой работы RabbitMQ.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>cmd</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Команда, определяющая действие, которое должно быть выполнено на стороне RabbitMQ.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                        <code>P</code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Данные для запроса, соответствующие типу <code>P</code>. Это структура, отправляемая в RabbitMQ.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;R | null&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Возвращает результат типа <code>R</code> или <code>null</code>, если что-то пошло не так.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="sendToJournalization"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>sendToJournalization</b></span>
+                        <a href="#sendToJournalization"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>sendToJournalization(payload: <a href="../interfaces/ISearchJournal.html" target="_self">ISearchJournal</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="82"
+                                    class="link-to-prism">libs/rabbit/src/lib/rabbit.service.ts:82</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                        <div class="io-description"><p>Отправляет запрос для получения журналов в систему журналирования.</p>
+</div>
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ISearchJournal.html" target="_self" >ISearchJournal</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Данные для поиска журналов, реализующие интерфейс ISearchJournal.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;[] | null&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <ul>
+<li>Возвращает массив журналов или null в случае ошибки.</li>
+</ul>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Inject, Injectable } from &#x27;@nestjs/common&#x27;;
+import { ClientProxy } from &#x27;@nestjs/microservices&#x27;;
+import {
+  IAccessTokenInput,
+  GET_CLIENT,
+  ISearchClientPayload,
+  ISearchJournal,
+  IJournal,
+  GET_LOGS,
+  IClientApiResult,
+  ISearchUnlinkedMsisdnsPayload,
+  ISearchUnlinkedMsisdnsResponse,
+} from &#x27;@web-clients-backend/shared&#x27;;
+import { firstValueFrom } from &#x27;rxjs&#x27;;
+import { SearchService } from &#x27;./searchСlientService/rabbit.search-client.service&#x27;;
+
+/**
+ * @service RabbitMQService
+ * @description Сервис для взаимодействия с RabbitMQ.
+ * Позволяет отправлять и получать сообщения через микросервисные клиенты.
+ */
+@Injectable()
+export class RabbitMQService {
+  constructor(
+    @Inject(&#x27;WEB_CLIENTS&#x27;) // Внедрение клиента для работы с API клиентов
+    private readonly webClientsClient: ClientProxy,
+    @Inject(&#x27;JOURNALIZATION&#x27;) // Внедрение клиента для отправки данных в систему журналирования
+    private readonly journalizationClient: ClientProxy,
+    private readonly searchService: SearchService
+  ) {}
+
+  /**
+   * Получает данные клиента через API /clients.
+   * @param payload - Данные для запроса клиента, реализующие интерфейс IAccessTokenInput.
+   * @returns {Promise&lt;ClientData | null&gt;} - Возвращает данные клиента или null в случае ошибки.
+   */
+  async getClient(
+    payload: IAccessTokenInput,
+    clientId: string
+  ): Promise&lt;IClientApiResult | null&gt; {
+    return await firstValueFrom(
+      this.webClientsClient.send({ cmd: GET_CLIENT }, { payload, clientId })
+    );
+  }
+
+  /**
+   * Отправка сообщения и получение ответа по заданным параметрам.
+   *
+   * Этот метод отправляет данные в RabbitMQ с указанной командой &#x60;cmd&#x60; и полезной нагрузкой &#x60;payload&#x60;,
+   * а затем возвращает результат, тип которого ожидается как &#x60;R&#x60;.
+   *
+   * @template P - Тип полезной нагрузки (payload), отправляемой в RabbitMQ.
+   * @template R - Тип ответа, который возвращается после обработки сообщения RabbitMQ.
+   *
+   * @param cmd - Команда, определяющая действие, которое должно быть выполнено на стороне RabbitMQ.
+   * @param payload - Данные для запроса, соответствующие типу &#x60;P&#x60;. Это структура, отправляемая в RabbitMQ.
+   * @returns {Promise&lt;R | null&gt;} - Возвращает результат типа &#x60;R&#x60; или &#x60;null&#x60;, если что-то пошло не так.
+   *
+   * @remarks
+   * Важно понимать, что тип &#x60;P&#x60; (payload) и тип &#x60;R&#x60; (результат) не связаны напрямую.
+   * В данном методе выполняется приведение типа &#x60;payload&#x60; к &#x60;R&#x60; через конструкцию &#x60;as unknown as R&#x60;,
+   * чтобы удовлетворить требования метода &#x60;sendMessage&#x60;. Это безопасно, потому что:
+   * 1. &#x60;payload&#x60; просто отправляется в RabbitMQ, не изменяя своей структуры.
+   * 2. Ответ, возвращаемый RabbitMQ, интерпретируется как &#x60;R&#x60;, согласно ожиданиям.
+   *
+   * Используй этот метод, если уверены, что соответствие между запросом &#x60;P&#x60; и ответом &#x60;R&#x60; гарантировано
+   * логикой работы RabbitMQ.
+   */
+  async sendMessageSearch&lt;P, R&gt;(cmd: string, payload: P): Promise&lt;R | null&gt; {
+    // payload остается типом P
+    return await this.searchService.sendMessage&lt;R&gt;(
+      cmd,
+      payload as unknown as R
+    );
+  }
+
+  /**
+   * Отправляет запрос для получения журналов в систему журналирования.
+   * @param payload - Данные для поиска журналов, реализующие интерфейс ISearchJournal.
+   * @returns {Promise&lt;IJournal[] | null&gt;} - Возвращает массив журналов или null в случае ошибки.
+   */
+  async sendToJournalization(
+    payload: ISearchJournal
+  ): Promise&lt;IJournal[] | null&gt; {
+    const data &#x3D; payload;
+    return await firstValueFrom(
+      this.journalizationClient.send({ cmd: GET_LOGS }, data)
+    );
+  }
+
+  /**
+   * Отправляет событие в систему журналирования.
+   * @param event - Имя события.
+   * @param data - Данные события.
+   * @returns {Promise&lt;void&gt;} - Возвращает пустое значение при успешной отправке.
+   */
+  async emitToJournalization(event: string, data: any): Promise&lt;void&gt; {
+    return firstValueFrom(this.journalizationClient.emit(event, data));
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'RabbitMQService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

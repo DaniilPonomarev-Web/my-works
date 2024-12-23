@@ -1,0 +1,1831 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@web-clients-backend/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@web-clients-backend/source documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-variables">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Variables</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#__TEARDOWN_MESSAGE__" title="apps/data-loader-e2e/src/support/global-setup.ts" ><b>__TEARDOWN_MESSAGE__</b>&nbsp;&nbsp;&nbsp;(apps/.../global-setup.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#__TEARDOWN_MESSAGE__" title="apps/graphql-e2e/src/support/global-setup.ts" ><b>__TEARDOWN_MESSAGE__</b>&nbsp;&nbsp;&nbsp;(apps/.../global-setup.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#__TEARDOWN_MESSAGE__" title="apps/journalization-e2e/src/support/global-setup.ts" ><b>__TEARDOWN_MESSAGE__</b>&nbsp;&nbsp;&nbsp;(apps/.../global-setup.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#CREATE_LOG" title="libs/shared/src/lib/technical/message-broker/rmq_journal.ts" ><b>CREATE_LOG</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq_journal.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#errorMessages" title="libs/shared/src/lib/technical/errors/http-exceptions-messages.ts" ><b>errorMessages</b>&nbsp;&nbsp;&nbsp;(libs/.../http-exceptions-messages.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#escapePercent" title="libs/shared/src/lib/technical/generators.ts" ><b>escapePercent</b>&nbsp;&nbsp;&nbsp;(libs/.../generators.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EXCEPTIONMSGQL" title="libs/shared/src/lib/technical/errors/http-exceptions-messages.ts" ><b>EXCEPTIONMSGQL</b>&nbsp;&nbsp;&nbsp;(libs/.../http-exceptions-messages.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#generateDocumentPassport" title="libs/shared/src/lib/technical/generators.ts" ><b>generateDocumentPassport</b>&nbsp;&nbsp;&nbsp;(libs/.../generators.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#generatePaginationArray" title="libs/shared/src/lib/technical/generators.ts" ><b>generatePaginationArray</b>&nbsp;&nbsp;&nbsp;(libs/.../generators.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#generateStringFromDate" title="libs/shared/src/lib/technical/generators.ts" ><b>generateStringFromDate</b>&nbsp;&nbsp;&nbsp;(libs/.../generators.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#generateTokenContext" title="libs/shared/src/lib/technical/generators.ts" ><b>generateTokenContext</b>&nbsp;&nbsp;&nbsp;(libs/.../generators.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#GET_ALL" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>GET_ALL</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#GET_CLIENT" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>GET_CLIENT</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#GET_LOGS" title="libs/shared/src/lib/technical/message-broker/rmq_journal.ts" ><b>GET_LOGS</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq_journal.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#getHeaders" title="libs/shared/src/lib/technical/generators.ts" ><b>getHeaders</b>&nbsp;&nbsp;&nbsp;(libs/.../generators.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#graphqlRequestsTotal" title="apps/graphql/src/graphql-metrics.middleware.ts" ><b>graphqlRequestsTotal</b>&nbsp;&nbsp;&nbsp;(apps/.../graphql-metrics.middleware.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#keycloakMethods" title="libs/keycloak/src/lib/keycloak-methods.ts" ><b>keycloakMethods</b>&nbsp;&nbsp;&nbsp;(libs/.../keycloak-methods.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#METRICS_PLUGIN_KEY" title="libs/metrics/src/lib/metrics.module.ts" ><b>METRICS_PLUGIN_KEY</b>&nbsp;&nbsp;&nbsp;(libs/.../metrics.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#metricsClient" title="apps/graphql/src/graphql-metrics.middleware.ts" ><b>metricsClient</b>&nbsp;&nbsp;&nbsp;(apps/.../graphql-metrics.middleware.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#metricsMiddleware" title="apps/graphql/src/graphql-metrics.middleware.ts" ><b>metricsMiddleware</b>&nbsp;&nbsp;&nbsp;(apps/.../graphql-metrics.middleware.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mockContext" title="libs/shared/src/lib/technical/generators.ts" ><b>mockContext</b>&nbsp;&nbsp;&nbsp;(libs/.../generators.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#mockCreateLog" title="libs/logs/src/lib/logs-journals.service.ts" ><b>mockCreateLog</b>&nbsp;&nbsp;&nbsp;(libs/.../logs-journals.service.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#NOTIFICATION_EMAIL_NEW_USER" title="libs/shared/src/lib/technical/message-broker/kafka.ts" ><b>NOTIFICATION_EMAIL_NEW_USER</b>&nbsp;&nbsp;&nbsp;(libs/.../kafka.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#prefix" title="libs/apime-integration/src/lib/other/api-methods.ts" ><b>prefix</b>&nbsp;&nbsp;&nbsp;(libs/.../api-methods.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_ACCOUNT_NUMBER" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_ACCOUNT_NUMBER</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_BY_FIO" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_BY_FIO</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_BY_PROCESSES" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_BY_PROCESSES</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_BY_SERVICES" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_BY_SERVICES</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_BY_TARIFFS" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_BY_TARIFFS</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_BY_TITLE" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_BY_TITLE</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_CONTRACT_NUMBER" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_CONTRACT_NUMBER</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_DGN" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_DGN</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_ICC" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_ICC</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_MSISDN" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_MSISDN</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_PASSPORT" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_PASSPORT</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_CLIENT_SUBSCRIBER_NUMBER" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_CLIENT_SUBSCRIBER_NUMBER</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SEARCH_UNLINKED_MSISDNS" title="libs/shared/src/lib/technical/message-broker/rmq.ts" ><b>SEARCH_UNLINKED_MSISDNS</b>&nbsp;&nbsp;&nbsp;(libs/.../rmq.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#searchAreaLabels" title="libs/shared/src/lib/enums/search-area.enum.ts" ><b>searchAreaLabels</b>&nbsp;&nbsp;&nbsp;(libs/.../search-area.enum.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StateSubscriberArgs" title="libs/shared/src/lib/types/state.type.ts" ><b>StateSubscriberArgs</b>&nbsp;&nbsp;&nbsp;(libs/.../state.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#TRACING_PLUGIN_KEY" title="libs/metrics/src/lib/metrics.module.ts" ><b>TRACING_PLUGIN_KEY</b>&nbsp;&nbsp;&nbsp;(libs/.../metrics.module.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UserTypeArg" title="libs/shared/src/lib/types/optional-property.type.ts" ><b>UserTypeArg</b>&nbsp;&nbsp;&nbsp;(libs/.../optional-property.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#validationSchema" title="apps/data-loader/src/app/config/validation.ts" ><b>validationSchema</b>&nbsp;&nbsp;&nbsp;(apps/.../validation.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#validationSchema" title="apps/journalization/src/app/config/validation.ts" ><b>validationSchema</b>&nbsp;&nbsp;&nbsp;(apps/.../validation.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#validationSchema" title="apps/graphql/src/app/config/validation.ts" ><b>validationSchema</b>&nbsp;&nbsp;&nbsp;(apps/.../validation.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#webClientsApiMethods" title="libs/apime-integration/src/lib/other/api-methods.ts" ><b>webClientsApiMethods</b>&nbsp;&nbsp;&nbsp;(libs/.../api-methods.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>apps/data-loader-e2e/src/support/global-setup.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="__TEARDOWN_MESSAGE__"></a>
+                    <span class="name">
+                        <span ><b>__TEARDOWN_MESSAGE__</b></span>
+                        <a href="#__TEARDOWN_MESSAGE__"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/graphql-e2e/src/support/global-setup.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="__TEARDOWN_MESSAGE__"></a>
+                    <span class="name">
+                        <span ><b>__TEARDOWN_MESSAGE__</b></span>
+                        <a href="#__TEARDOWN_MESSAGE__"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/journalization-e2e/src/support/global-setup.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="__TEARDOWN_MESSAGE__"></a>
+                    <span class="name">
+                        <span ><b>__TEARDOWN_MESSAGE__</b></span>
+                        <a href="#__TEARDOWN_MESSAGE__"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/shared/src/lib/technical/message-broker/rmq_journal.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="CREATE_LOG"></a>
+                    <span class="name">
+                        <span ><b>CREATE_LOG</b></span>
+                        <a href="#CREATE_LOG"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;create_log&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Команда <code>CREATE_LOG</code> используется для создания нового логирования.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="GET_LOGS"></a>
+                    <span class="name">
+                        <span ><b>GET_LOGS</b></span>
+                        <a href="#GET_LOGS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;get_logs&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Команда <code>GET_LOGS</code> используется для получение лога.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/shared/src/lib/technical/errors/http-exceptions-messages.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="errorMessages"></a>
+                    <span class="name">
+                        <span ><b>errorMessages</b></span>
+                        <a href="#errorMessages"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  files: {
+    errorLoadToMinio: &#x27; Ошибка при загрузке файла в хранилище&#x27;,
+  },
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа для хранения сообщений об ошибках.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EXCEPTIONMSGQL"></a>
+                    <span class="name">
+                        <span ><b>EXCEPTIONMSGQL</b></span>
+                        <a href="#EXCEPTIONMSGQL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  apime: {
+    errorAuthApiMe: &#x27;Не могу авторизаваиться в APIME&#x27;,
+    errorHealthApiMe: &#x27;Нет подключения к ApiME&#x27;,
+  },
+  /* Авторизация  */
+  errorToken: &#x27;Ошибка проверки токена.&#x27;,
+  errorTokenTime: &#x27;Токен истек.&#x27;,
+  /* Авторизация  */
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа для хранения сообщений об ошибках.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/shared/src/lib/technical/generators.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="escapePercent"></a>
+                    <span class="name">
+                        <span ><b>escapePercent</b></span>
+                        <a href="#escapePercent"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(msisdn: string): string &#x3D;&gt; {
+  return msisdn.replace(/%/g, &#x27;%25&#x27;);
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Экранирование символов <code>%</code> в строке, заменяя их на <code>%25</code>.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateDocumentPassport"></a>
+                    <span class="name">
+                        <span ><b>generateDocumentPassport</b></span>
+                        <a href="#generateDocumentPassport"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>async (
+  passport: string
+): Promise&lt;{ typeId: number; series: string; number: string }&gt; &#x3D;&gt; {
+  return {
+    typeId: 1,
+    series: passport.slice(0, 4),
+    number: passport.slice(4, 10),
+  };
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generatePaginationArray"></a>
+                    <span class="name">
+                        <span ><b>generatePaginationArray</b></span>
+                        <a href="#generatePaginationArray"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>async (
+  array: any,
+  paginationPage: number,
+  paginationPerPage: number
+) &#x3D;&gt; {
+  const total &#x3D; array.length;
+  const startIndex &#x3D; (paginationPage - 1) * paginationPerPage;
+  const endIndex &#x3D; startIndex + paginationPerPage;
+  const arraySlice &#x3D; array.slice(startIndex, endIndex);
+  return {
+    arraySlice,
+    total,
+  };
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateStringFromDate"></a>
+                    <span class="name">
+                        <span ><b>generateStringFromDate</b></span>
+                        <a href="#generateStringFromDate"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>async (
+  dateString: string
+): Promise&lt;string&gt; &#x3D;&gt; {
+  const date &#x3D; new Date(dateString);
+  const day &#x3D; String(date.getDate()).padStart(2, &#x27;0&#x27;);
+  const month &#x3D; String(date.getMonth() + 1).padStart(2, &#x27;0&#x27;);
+  const year &#x3D; date.getFullYear();
+  return &#x60;${day}.${month}.${year}&#x60;;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="generateTokenContext"></a>
+                    <span class="name">
+                        <span ><b>generateTokenContext</b></span>
+                        <a href="#generateTokenContext"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>async (context: any): Promise&lt;string&gt; &#x3D;&gt; {
+  const token &#x3D; context.req.headers.authorization?.replace(&#x27;Bearer &#x27;, &#x27;&#x27;);
+  return token;
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getHeaders"></a>
+                    <span class="name">
+                        <span ><b>getHeaders</b></span>
+                        <a href="#getHeaders"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>(payload: ISearchClientPayload) &#x3D;&gt; {
+  return {
+    &#x27;Content-Type&#x27;: &#x27;application/json&#x27;,
+    TRACE_ID: payload.tokenInput.traceId?.traceID || &#x27;not-trace&#x27;,
+    Authorization: &#x60;Bearer ${payload.tokenInput.access_token}&#x60;,
+  };
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Генерирует заголовки для HTTP-запросов на основе переданных данных клиента.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mockContext"></a>
+                    <span class="name">
+                        <span ><b>mockContext</b></span>
+                        <a href="#mockContext"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  req: {
+    headers: {
+      authorization:
+        &#x27;Bearer eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICI0X3owZE02MlM0WnFEcURzOTBCa0V1ZnRQbkhURV94TEhtbVJNaE9jTFY0In0.eyJleHAiOjE3MzE5MzI1NjcsImlhdCI6MTczMTkzMjI2NywianRpIjoiZjViZjZhNDEtYmYzYS00ODc4LTg1NjUtNDAzYjBmNjIzZTEwIiwiaXNzIjoiaHR0cHM6Ly93ZWItY2xpZW50cy1rZXljbG9hay50ZXN0LmNvcnAubW90aXYvYXV0aC9yZWFsbXMvd2MiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiMDk0N2JhM2ItMThjYy00MGUyLWI1NzEtYmZjMWEyNmUyOTAyIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoid2MiLCJzaWQiOiJjZGNkZDdlMy02YjRiLTQ3OWItOTdiOS1hZGM2MmJhNjhkYmIiLCJhY3IiOiIxIiwiYWxsb3dlZC1vcmlnaW5zIjpbIioiXSwicmVhbG1fYWNjZXNzIjp7InJvbGVzIjpbIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJkZWZhdWx0LXJvbGVzLXdjIl19LCJyZXNvdXJjZV9hY2Nlc3MiOnsid2MiOnsicm9sZXMiOlsid2Nfc2hvdyIsImJhbl9zZXJ2X3Byb21vIl19LCJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiaW52b2ljZV9sb2dpbiI6ImFzcl92bGFkIiwibmFtZSI6ItCS0LvQsNC0INCR0YPQu9GD0YjQtdCyIiwicHJlZmVycmVkX3VzZXJuYW1lIjoidmxhZCIsImdpdmVuX25hbWUiOiLQktC70LDQtCIsImZhbWlseV9uYW1lIjoi0JHRg9C70YPRiNC10LIiLCJlbWFpbCI6ImJ1bHVzaGV2dmFAaXRlYW15LnBybyJ9.dvg5IZrTOT24ZHYuxaKPzpOStrDPpEuO2JlVDH5TcUPoGfEP0RTPmHbND0oP9Fn815K8qrbYkMCkrhTFkJb9oWYW9oYjP6MQzQpOEWoqlqUyO7Aky-10_fSf2BNDTFA20nJM8hjzYlRwWHjNOgASTCGZ9O7mHyQe-CDGEpETh6eiISonpZCmNMxVHfANwNM-H7bzuMufZIOvWPIEhTw42GBf0rTIEDVQ-Zd9Sc_S9EXAa1tLRZfJKBJsKLGjB5jW00wwvyvXjoraUxRj4QXTs5KW_KiCll0xiJp6x1E-p2SLzs4okqixRGKQ83tBjj18tn4VYMHY_p50LVlDVtb6AA&#x27;,
+    },
+  },
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Mock контекст для тестирования, включающий заголовки HTTP-запроса.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/shared/src/lib/technical/message-broker/rmq.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="GET_ALL"></a>
+                    <span class="name">
+                        <span ><b>GET_ALL</b></span>
+                        <a href="#GET_ALL"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;get_all&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>GET_ALL</code> используется для получения всех данных.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="GET_CLIENT"></a>
+                    <span class="name">
+                        <span ><b>GET_CLIENT</b></span>
+                        <a href="#GET_CLIENT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;get_client&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>GET_CLIENT</code> используется для получения данных конкретного клиента.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_ACCOUNT_NUMBER"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_ACCOUNT_NUMBER</b></span>
+                        <a href="#SEARCH_CLIENT_ACCOUNT_NUMBER"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_account_number&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_ACCOUNT_NUMBER</code> используется для поиска клиентов по номеру счета.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_BY_FIO"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_BY_FIO</b></span>
+                        <a href="#SEARCH_CLIENT_BY_FIO"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_fio&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_BY_FIO</code> используется для поиска клиентов по фамилии, имени и отчеству.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_BY_PROCESSES"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_BY_PROCESSES</b></span>
+                        <a href="#SEARCH_CLIENT_BY_PROCESSES"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_processes&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_BY_PROCESSES</code> используется для поиска клиентов по связанным процессам.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_BY_SERVICES"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_BY_SERVICES</b></span>
+                        <a href="#SEARCH_CLIENT_BY_SERVICES"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_services&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_BY_SERVICES</code> используется для поиска клиентов по предоставляемым услугам.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_BY_TARIFFS"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_BY_TARIFFS</b></span>
+                        <a href="#SEARCH_CLIENT_BY_TARIFFS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_tariffs&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_BY_TARIFFS</code> используется для поиска клиентов по тарифам.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_BY_TITLE"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_BY_TITLE</b></span>
+                        <a href="#SEARCH_CLIENT_BY_TITLE"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_title&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_BY_TITLE</code> используется для поиска клиентов по названию.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_CONTRACT_NUMBER"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_CONTRACT_NUMBER</b></span>
+                        <a href="#SEARCH_CLIENT_CONTRACT_NUMBER"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_contract_number&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_CONTRACT_NUMBER</code> используется для поиска клиентов по контрактному номеру.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_DGN"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_DGN</b></span>
+                        <a href="#SEARCH_CLIENT_DGN"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_dgn&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_DGN</code> используется для поиска клиентов по номеру DGN.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_ICC"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_ICC</b></span>
+                        <a href="#SEARCH_CLIENT_ICC"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_icc&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_ICC</code> используется для поиска клиентов по ICC.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_MSISDN"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_MSISDN</b></span>
+                        <a href="#SEARCH_CLIENT_MSISDN"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_msisdn&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_MSISDN</code> используется для поиска клиентов по MSISDN.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_PASSPORT"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_PASSPORT</b></span>
+                        <a href="#SEARCH_CLIENT_PASSPORT"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_passport&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_PASSPORT</code> используется для поиска клиентов по номеру паспорта.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_CLIENT_SUBSCRIBER_NUMBER"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_CLIENT_SUBSCRIBER_NUMBER</b></span>
+                        <a href="#SEARCH_CLIENT_SUBSCRIBER_NUMBER"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_client_by_subscriber_number&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_CLIENT_SUBSCRIBER_NUMBER</code> используется для поиска клиентов по абонентскому номеру.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SEARCH_UNLINKED_MSISDNS"></a>
+                    <span class="name">
+                        <span ><b>SEARCH_UNLINKED_MSISDNS</b></span>
+                        <a href="#SEARCH_UNLINKED_MSISDNS"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;search_unlinked_msisdns&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константа <code>SEARCH_UNLINKED_MSISDNS</code> используется для поиска не связанных MSISDN.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/graphql/src/graphql-metrics.middleware.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="graphqlRequestsTotal"></a>
+                    <span class="name">
+                        <span ><b>graphqlRequestsTotal</b></span>
+                        <a href="#graphqlRequestsTotal"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new promClient.Counter({
+  name: &#x27;graphql_requests_total&#x27;,
+  help: &#x27;Total GraphQL requests&#x27;,
+  labelNames: [&#x27;method&#x27;, &#x27;path&#x27;, &#x27;status&#x27;],
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="metricsClient"></a>
+                    <span class="name">
+                        <span ><b>metricsClient</b></span>
+                        <a href="#metricsClient"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>promClient</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="metricsMiddleware"></a>
+                    <span class="name">
+                        <span ><b>metricsMiddleware</b></span>
+                        <a href="#metricsMiddleware"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>promBundle({
+  includeMethod: true,
+  promClient: {
+    collectDefaultMetrics: {},
+  },
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/keycloak/src/lib/keycloak-methods.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="keycloakMethods"></a>
+                    <span class="name">
+                        <span ><b>keycloakMethods</b></span>
+                        <a href="#keycloakMethods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  introspect: &#x60;/protocol/openid-connect/token/introspect&#x60;,
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/metrics/src/lib/metrics.module.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="METRICS_PLUGIN_KEY"></a>
+                    <span class="name">
+                        <span ><b>METRICS_PLUGIN_KEY</b></span>
+                        <a href="#METRICS_PLUGIN_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;METRICS_PLUGIN_KEY&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="TRACING_PLUGIN_KEY"></a>
+                    <span class="name">
+                        <span ><b>TRACING_PLUGIN_KEY</b></span>
+                        <a href="#TRACING_PLUGIN_KEY"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;TRACING_PLUGIN_KEY&#x27;</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/logs/src/lib/logs-journals.service.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="mockCreateLog"></a>
+                    <span class="name">
+                        <span ><b>mockCreateLog</b></span>
+                        <a href="#mockCreateLog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="../interfaces/ICreateJournal.html" target="_self" >ICreateJournal</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  service: &#x27;Client&#x27;,
+  admin: &#x27;admin&#x27;,
+  text: &#x60;Запросил клиентов на стороне сервера&#x60;,
+  additionalData: {
+    id: &#x27;7c62f2db-098f-462b-a6b1-bb1024d4f0d1&#x27;,
+    name: &#x27;Какая-то хрень тест 123 iqjsi авыавыав&#x27;,
+    sortOrder: 3,
+  },
+}</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/shared/src/lib/technical/message-broker/kafka.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NOTIFICATION_EMAIL_NEW_USER"></a>
+                    <span class="name">
+                        <span ><b>NOTIFICATION_EMAIL_NEW_USER</b></span>
+                        <a href="#NOTIFICATION_EMAIL_NEW_USER"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;notification_email_new_user&#x27;</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>ЭТО ПРИМЕР ДЛЯ БУДУЩИХ НЕЙМИНГОВ
+Константа <code>NOTIFICATION_EMAIL_NEW_USER</code> используется для отправки уведомлений на email новым пользователям.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/apime-integration/src/lib/other/api-methods.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="prefix"></a>
+                    <span class="name">
+                        <span ><b>prefix</b></span>
+                        <a href="#prefix"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  api_v1: &#x27;/v1&#x27;, // Путь к версии API v1
+  api_v1_search: &#x27;/v1/search&#x27;, // Путь к разделу поиска API v1
+  api_v1_dictionary: &#x27;/v1/search/dictionary&#x27;, // Путь к словарю API v1
+  api_v2: &#x27;//v2&#x27;, // Путь к версии API v2
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Константы и переменные для определения префиксов путей API</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="webClientsApiMethods"></a>
+                    <span class="name">
+                        <span ><b>webClientsApiMethods</b></span>
+                        <a href="#webClientsApiMethods"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  health: {
+    apime_check: &#x27;/health&#x27;,
+  },
+  client: {
+    getClientById: (id: string) &#x3D;&gt; &#x60;${prefix.api_v1}/client/${id}&#x60;,
+  },
+  search: {
+    clients: {
+      byAccount: &#x60;${prefix.api_v1_search}/clients/account&#x60;, // Номер лицевого счета
+      byName: &#x60;${prefix.api_v1_search}/clients/name&#x60;, // ФИО
+      byContract: &#x60;${prefix.api_v1_search}/clients/contract&#x60;, // Номер договора
+      byDocument: &#x60;${prefix.api_v1_search}/clients/document&#x60;, // Серия и номер паспорта
+      byMsisdn: &#x60;${prefix.api_v1_search}/clients/msisdn&#x60;, // Абонентский номеру
+      additionalPhoneNumber: &#x60;${prefix.api_v1_search}/clients/additional-phone-number&#x60;, // Дополнительный городской номер
+      byEquipment: &#x60;${prefix.api_v1_search}/clients/equipment&#x60;, // Номер Sim-карты ICC ID
+      byTitle: &#x60;${prefix.api_v1_search}/clients/name&#x60;, // Наименованию TODO допустить другое название метода
+    },
+    freeMsisdns: (payload: ISearchUnlinkedMsisdnsPayload) &#x3D;&gt; {
+      // Поиск свободных номеров MSISDN генерация строки с костылем в виде escapePercent экранизации
+      const { msisdn, categoryId, regionId } &#x3D; payload.input;
+      let query &#x3D; &#x60;${
+        prefix.api_v1_search
+      }/unlinked-msisdns?msisdn&#x3D;${escapePercent(msisdn)}&#x60;;
+      if (categoryId &amp;&amp; categoryId.length &gt; 0) {
+        query +&#x3D; categoryId
+          .map((id) &#x3D;&gt; &#x60;&amp;categoryId&#x3D;${encodeURIComponent(id)}&#x60;)
+          .join(&#x27;&#x27;);
+      }
+      if (regionId &amp;&amp; regionId.length &gt; 0) {
+        query +&#x3D; regionId
+          .map((id) &#x3D;&gt; &#x60;&amp;regionId&#x3D;${encodeURIComponent(id)}&#x60;)
+          .join(&#x27;&#x27;);
+      }
+
+      return query;
+    },
+  },
+  dictionary: {
+    client: {
+      clientType: &#x60;${prefix.api_v1_dictionary}/client/clientType&#x60;, // Тип клиента
+      juridicalType: &#x60;${prefix.api_v1_dictionary}/client/juridicalType&#x60;, // Тип юридического лица
+      documentType: &#x60;${prefix.api_v1_dictionary}/client/documentType&#x60;, // Тип документа клиента
+      addressType: &#x60;${prefix.api_v1_dictionary}/client/addressType&#x60;, // Тип адреса клиента
+      billingDeliveryType: &#x60;${prefix.api_v1_dictionary}/client/billingDeliveryType&#x60;, // Тип доставки счета клиента
+    },
+    address: {
+      country: &#x60;${prefix.api_v1_dictionary}/address/country&#x60;, // Словарь стран
+      regionType: &#x60;${prefix.api_v1_dictionary}/address/regionType&#x60;, // Тип региона
+      districtType: &#x60;${prefix.api_v1_dictionary}/address/districtType&#x60;, // Тип района
+      cityType: &#x60;${prefix.api_v1_dictionary}/address/cityType&#x60;, // Тип города
+      streetType: &#x60;${prefix.api_v1_dictionary}/address/streetType&#x60;, // Тип улицы
+    },
+  },
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Эндпоинты методов для работы через API.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/shared/src/lib/enums/search-area.enum.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchAreaLabels"></a>
+                    <span class="name">
+                        <span ><b>searchAreaLabels</b></span>
+                        <a href="#searchAreaLabels"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" target="_blank" >object</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>{
+  /* Ввод текста*/
+  [SearchAreaEnum.FIO]: &#x27;ФИО&#x27;,
+  [SearchAreaEnum.TITLE]: &#x27;Название&#x27;,
+  [SearchAreaEnum.PROCESSES]: &#x27;Процессы&#x27;, //таблица на бэке
+  [SearchAreaEnum.SERVICES]: &#x27;Услуги&#x27;, //таблица на бэке
+  [SearchAreaEnum.TARIFFS]: &#x27;Тарифы&#x27;, //таблица на бэке
+
+  /* Ввод цифр*/
+  [SearchAreaEnum.SUBSCRIBER_NUMBER]: &#x27;Абонентский номер&#x27;,
+  [SearchAreaEnum.MSISDN]: &#x27;Номер телефона (свободный номер)&#x27;,
+  [SearchAreaEnum.PASSPORT]: &#x27;Паспорт&#x27;,
+  [SearchAreaEnum.ACCOUNT_NUMBER]: &#x27;Номер лицевого счета&#x27;,
+  [SearchAreaEnum.CONTRACT_NUMBER]: &#x27;Номер договора&#x27;,
+  [SearchAreaEnum.DGN]: &#x27;ДГН&#x27;,
+  [SearchAreaEnum.ICC]: &#x27;Номер sim-карты ICC&#x27;,
+}</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Области поиска меток для пользователя.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/shared/src/lib/types/state.type.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StateSubscriberArgs"></a>
+                    <span class="name">
+                        <span ><b>StateSubscriberArgs</b></span>
+                        <a href="#StateSubscriberArgs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Args(&#x27;state&#x27;, {
+  nullable: true,
+  description: &#x27; Сортировка по статусу абонента&#x27;,
+  type: () &#x3D;&gt; StateSubscriber,
+})</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Аргумент <code>StateSubscriberArgs</code> используется в GraphQL для фильтрации по статусу абонента.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>libs/shared/src/lib/types/optional-property.type.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="UserTypeArg"></a>
+                    <span class="name">
+                        <span ><b>UserTypeArg</b></span>
+                        <a href="#UserTypeArg"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Args(&#x27;userType&#x27;, {
+  nullable: true,
+  description: &#x27;Сортировка по типу пользователя&#x27;,
+  type: () &#x3D;&gt; OptionalPropertyName,
+})</code>
+                    </td>
+                </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Аргумент <code>UserTypeArg</code> используется в GraphQL для фильтрации по типу пользователя.</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/data-loader/src/app/config/validation.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validationSchema"></a>
+                    <span class="name">
+                        <span ><b>validationSchema</b></span>
+                        <a href="#validationSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Joi.object({
+  NODE_ENV: Joi.string().valid(&#x27;development&#x27;, &#x27;production&#x27;, &#x27;test&#x27;).required(),
+  TZ: Joi.string().default(&#x27;Asia/Yekaterinburg&#x27;),
+  RMQ_URL: Joi.string().required(),
+  RMQ_VHOST: Joi.string().default(&#x27;&#x27;),
+  RMQ_QUEUE_DATA_LOADER: Joi.string().required(),
+  APIME_URI: Joi.string().required(),
+  APIME_PASS: Joi.string().required(),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/journalization/src/app/config/validation.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validationSchema"></a>
+                    <span class="name">
+                        <span ><b>validationSchema</b></span>
+                        <a href="#validationSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Joi.object({
+  NODE_ENV: Joi.string().valid(&#x27;development&#x27;, &#x27;production&#x27;, &#x27;test&#x27;).required(),
+  TZ: Joi.string().default(&#x27;Asia/Yekaterinburg&#x27;),
+  RMQ_URL: Joi.string().required(),
+  RMQ_VHOST: Joi.string().default(&#x27;&#x27;),
+  RMQ_QUEUE_JOURNALIZATION: Joi.string().required(),
+  PG_USER: Joi.string().required(),
+  PG_PASS: Joi.string().required(),
+  PG_DB: Joi.string().required(),
+  PG_PORT: Joi.number().default(5432),
+  PG_LOG: Joi.boolean().default(false),
+  DB_SYNC: Joi.boolean().default(false),
+  ELASTICSEARCH_NODE: Joi.string().uri().required(),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+    <h3>apps/graphql/src/app/config/validation.ts</h3>
+    <section data-compodoc="block-properties">
+    <h3></h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="validationSchema"></a>
+                    <span class="name">
+                        <span ><b>validationSchema</b></span>
+                        <a href="#validationSchema"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>Joi.object({
+  NODE_ENV: Joi.string().valid(&#x27;development&#x27;, &#x27;production&#x27;, &#x27;test&#x27;).required(),
+  TZ: Joi.string().default(&#x27;Asia/Yekaterinburg&#x27;),
+  PORT_GQL: Joi.number().default(3015),
+  RMQ_URL: Joi.string().required(),
+  RMQ_VHOST: Joi.string().default(&#x27;&#x27;),
+  RMQ_QUEUE_GQL: Joi.string().required(),
+  RMQ_QUEUE_DATA_LOADER: Joi.string().required(),
+  RMQ_QUEUE_JOURNALIZATION: Joi.string().required(),
+  REDIS_HOST: Joi.string().default(&#x27;localhost&#x27;),
+  REDIS_PORT: Joi.number().default(6379),
+  REDIS_PASS: Joi.string().required(),
+  KAFKA_BROKER: Joi.string().required(),
+  KAFKA_CLIENT_ID: Joi.string().required(),
+  KAFKA_GROUP_ID: Joi.string().required(),
+  // LOKI_HOST: Joi.string().uri().required(),
+  PLAYGROUND_GQL: Joi.boolean().default(false),
+
+  KEYCLOAK_HOST_PORT: Joi.string().required(),
+  KEYCLOAK_REALM: Joi.string().required(),
+  KEYCLOAK_CLIENT_ID: Joi.string().required(),
+  KEYCLOAK_CLIENT_SECRET: Joi.string().required(),
+})</code>
+                    </td>
+                </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-variables';
+            var COMPODOC_CURRENT_PAGE_URL = 'variables.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

@@ -1,0 +1,142 @@
+### Переменные, которые будут установлены в переменное окружение внутри контейнера
+envs:
+  ENV:
+    _default: 'staging'
+    production: 'production'
+  TZ:
+    _default: 'Asia/Yekaterinburg'
+  NODE_ENV:
+    _default: 'production'
+  PORT_GQL:
+    _default: 3010
+  PLAYGROUND_GQL:
+    _default: false
+  PG_USER:
+    _default: webclients_user
+  PG_HOST:
+    _default: web-db-test.corp.motiv
+    production: web-db.corp.motiv
+  PG_DB:
+    _default: webclients_st
+    production: webclients
+  PG_PORT:
+    _default: 5432
+  PG_LOG:
+    _default: true
+  DB_SYNC:
+    _default: true
+  REDIS_HOST:
+    _default: redis-webclients-infr
+  REDIS_PORT:
+    _default: 6379
+  RMQ_QUEUE_GQL:
+    _default: web_clients_gql_queue
+  RMQ_QUEUE_DATA_LOADER:
+    _default: web_clients_dl_queue
+  RMQ_QUEUE_JOURNALIZATION:
+    _default: web_clients_jz_queue
+  # LOKI_HOST:
+  #   _default: web-clients-backend-loki-master
+  ELASTICSEARCH_NODE:
+    _default: https://es-webclients-infr-es-http:9200
+  KAFKA_BROKER:
+    _default: web-clients-backend-kafka-master
+  KAFKA_CLIENT_ID:
+    _default: web-clients-backend-notifications-service
+  KAFKA_GROUP_ID:
+    _default: web-clients-backend-notifications-group
+  APIME_URI:
+    _default: http://web-clients-api.test.corp.motiv
+    production: http://web-clients-api.test.corp.motiv
+  KEYCLOAK_GUARD:
+    _default: false
+    production: false
+  KEYCLOAK_HOST_PORT:
+    _default: https://web-clients-keycloak.test.corp.motiv/auth
+    production: https://web-clients-keycloak.corp.motiv/auth
+  KEYCLOAK_REALM:
+    _default: wc
+    production: wc
+  KEYCLOAK_CLIENT_ID:
+    _default: wc-auth
+    production: wc-auth
+
+senvs:
+  PG_PASS:
+  REDIS_PASS:
+  RMQ_URL:
+  APIME_PASS:
+  KEYCLOAK_CLIENT_SECRET:
+
+imagePullSecrets: 
+  create: false
+  name: pullsecret
+
+securityContext:
+  runAsUser: 1000
+  runAsGroup: 1000
+  runAsNonRoot: true
+
+ingress:
+  name:
+    _default: 'st-web-clients-backend'
+    production: 'web-clients-backend'
+  domain:
+    _default: '.test.corp.motiv'
+    production: '.corp.motiv'
+  cert_manager_issuer:
+    _default: 'vault-issuer'
+  service: '{{ $.Release.Name }}-graphql'
+
+apps:
+  - name: graphql
+    port: 3010
+    paths:
+      - /graphql
+    probe:
+      enabled: true
+      url: '/gql/health'
+    resources:
+      requests:
+        cpu: 300m
+        memory: 256Mi
+      limits:
+        cpu: 700m
+        memory: 1024Mi
+    replicas:
+      _default: '2'
+      production: '2'
+    serviceMonitor:
+      enabled: true
+      labels:
+        prometheus: main
+      path: /gql/metrics
+      port: http
+
+  - name: data-loader
+    paths:
+      - /temp
+    resources:
+      requests:
+        cpu: 300m
+        memory: 256Mi
+      limits:
+        cpu: 700m
+        memory: 1024Mi
+    replicas:
+      _default: '2'
+      production: '2'
+
+  - name: journalization
+    paths:
+      - /temp
+    resources:
+      requests:
+        cpu: 300m
+        memory: 256Mi
+      limits:
+        cpu: 700m
+        memory: 1024Mi
+    replicas:
+      _default: '2'
+      production: '2'

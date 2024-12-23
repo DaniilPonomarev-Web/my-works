@@ -1,0 +1,842 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@web-clients-backend/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@web-clients-backend/source documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content injectable">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Injectables</li>
+  <li class="breadcrumb-item" >JournalizatingService</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" 
+                class="nav-link"
+                class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" 
+                class="nav-link"
+                
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info">
+        <p class="comment">
+            <h3>File</h3>
+        </p>
+        <p class="comment">
+            <code>libs/journalizating/src/lib/journalizating.service.ts</code>
+        </p>
+
+
+
+
+
+            <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createIndexIfNotExists" >createIndexIfNotExists</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createLog" >createLog</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#createLogData" >createLogData</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#getAllLogs" >getAllLogs</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Async</span>
+                                <a href="#searchLogs" >searchLogs</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+            <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(logsAdminRepo: <a href="../classes/Journal.html" target="_self">Repository&lt;Journal&gt;</a>, esService: ElasticsearchService)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="13" class="link-to-prism">libs/journalizating/src/lib/journalizating.service.ts:13</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>logsAdminRepo</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../classes/Journal.html" target="_self" >Repository&lt;Journal&gt;</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>esService</td>
+                                                  
+                                                        <td>
+                                                                    <code>ElasticsearchService</code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+            <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createIndexIfNotExists"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createIndexIfNotExists</b></span>
+                        <a href="#createIndexIfNotExists"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createIndexIfNotExists()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="24"
+                                    class="link-to-prism">libs/journalizating/src/lib/journalizating.service.ts:24</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Возвращает пустое обещание после выполнения проверки и создания индекса (если необходимо).</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createLog"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createLog</b></span>
+                        <a href="#createLog"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createLog(data: <a href="../interfaces/ICreateJournal.html" target="_self">ICreateJournal</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="57"
+                                    class="link-to-prism">libs/journalizating/src/lib/journalizating.service.ts:57</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>data</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ICreateJournal.html" target="_self" >ICreateJournal</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Данные для создания новой записи лога.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >any</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Возвращает пустое обещание после создания лога.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="createLogData"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>createLogData</b></span>
+                        <a href="#createLogData"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>createLogData(payload: <a href="../interfaces/ICreateJournal.html" target="_self">ICreateJournal</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="66"
+                                    class="link-to-prism">libs/journalizating/src/lib/journalizating.service.ts:66</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ICreateJournal.html" target="_self" >ICreateJournal</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Данные для создания и индексирования записи лога.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;boolean&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Возвращает true, если запись лога была успешно создана и индексирована, иначе false.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getAllLogs"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>getAllLogs</b></span>
+                        <a href="#getAllLogs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getAllLogs()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="86"
+                                    class="link-to-prism">libs/journalizating/src/lib/journalizating.service.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="../interfaces/IJournal.html" target="_self" >Promise&lt;IJournal[]&gt;</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Массив всех записей лога из базы данных.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="searchLogs"></a>
+                    <span class="name">
+                            <span class="modifier">Async</span>
+                        <span ><b>searchLogs</b></span>
+                        <a href="#searchLogs"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>searchLogs(payload: <a href="../interfaces/ISearchJournal.html" target="_self">ISearchJournal</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">libs/journalizating/src/lib/journalizating.service.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>payload</td>
+                                            <td>
+                                                            <code><a href="../interfaces/ISearchJournal.html" target="_self" >ISearchJournal</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <ul>
+<li>Объект фильтров для поиска записей в журналах.</li>
+</ul>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>    <code>Promise&lt;[] | null&gt;</code>
+
+                        </div>
+                            <div class="io-description">
+                                <p>Возвращает массив записей лога, соответствующих условиям поиска, или null, если результаты не найдены.</p>
+
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    </div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import {
+  ICreateJournal,
+  IJournal,
+  ISearchJournal,
+  Journal,
+} from &#x27;@web-clients-backend/shared&#x27;;
+import { Injectable } from &#x27;@nestjs/common&#x27;;
+import { InjectRepository } from &#x27;@nestjs/typeorm&#x27;;
+import { Repository } from &#x27;typeorm&#x27;;
+import { ElasticsearchService } from &#x27;@nestjs/elasticsearch&#x27;;
+
+@Injectable()
+export class JournalizatingService {
+  constructor(
+    @InjectRepository(Journal)
+    private readonly logsAdminRepo: Repository&lt;Journal&gt;,
+    private readonly esService: ElasticsearchService
+  ) {}
+
+  /**
+   * @description Проверяет наличие индекса &#x27;journals&#x27; в Elasticsearch, и если его нет, создает индекс с необходимыми маппингами.
+   * @returns {Promise&lt;void&gt;} Возвращает пустое обещание после выполнения проверки и создания индекса (если необходимо).
+   */
+  async createIndexIfNotExists() {
+    const indexExists &#x3D; await this.esService.indices.exists({
+      index: &#x27;journals&#x27;,
+    });
+    if (!indexExists.body) {
+      await this.esService.indices.create({
+        index: &#x27;journals&#x27;,
+        body: {
+          mappings: {
+            properties: {
+              service: { type: &#x27;text&#x27; },
+              admin: { type: &#x27;text&#x27; },
+              text: { type: &#x27;text&#x27; },
+              additionalData: {
+                properties: {
+                  title: { type: &#x27;text&#x27; },
+                  name: { type: &#x27;text&#x27; },
+                  id: { type: &#x27;keyword&#x27; },
+                },
+              },
+              registred: { type: &#x27;date&#x27; },
+            },
+          },
+        },
+      });
+    }
+  }
+
+  /**
+   * @description Создает новый лог записи в базе данных и Elasticsearch.
+   * @param {ICreateJournal} data - Данные для создания новой записи лога.
+   * @returns {Promise&lt;void&gt;} Возвращает пустое обещание после создания лога.
+   */
+  async createLog(data: ICreateJournal) {
+    await this.createLogData(data);
+  }
+
+  /**
+   * @description Сохраняет лог в базе данных и индексирует его в Elasticsearch.
+   * @param {ICreateJournal} payload - Данные для создания и индексирования записи лога.
+   * @returns {Promise&lt;boolean&gt;} Возвращает true, если запись лога была успешно создана и индексирована, иначе false.
+   */
+  async createLogData(payload: ICreateJournal): Promise&lt;boolean&gt; {
+    await this.createIndexIfNotExists();
+    const log &#x3D; await this.logsAdminRepo.save(payload);
+    if (log) {
+      // Индексируем лог в Elasticsearch после сохранения в базе данных
+      await this.esService.index({
+        index: &#x27;journals&#x27;,
+        id: log.id,
+        body: log,
+      });
+
+      return true;
+    }
+    return false;
+  }
+
+  /**
+   * @description Получает все журналы (логи) из базы данных.
+   * @returns {Promise&lt;IJournal[]&gt;} Массив всех записей лога из базы данных.
+   */
+  async getAllLogs(): Promise&lt;IJournal[]&gt; {
+    return this.logsAdminRepo.find();
+  }
+
+  /**
+   * @description Выполняет поиск журналов (логов) в Elasticsearch с фильтрацией по параметрам, таким как дата, сервис, администратор, и дополнительные данные.
+   * @param {ISearchJournal} payload - Объект фильтров для поиска записей в журналах.
+   * @returns {Promise&lt;IJournal[] | null&gt;} Возвращает массив записей лога, соответствующих условиям поиска, или null, если результаты не найдены.
+   */
+  async searchLogs(payload: ISearchJournal): Promise&lt;IJournal[] | null&gt; {
+    if (payload.fromDate) {
+      const fromDateObj &#x3D; new Date(payload.fromDate);
+      fromDateObj.setHours(0, 0, 0, 0);
+      payload.fromDate &#x3D; fromDateObj.toISOString();
+    }
+
+    if (payload.toDate) {
+      const toDateObj &#x3D; new Date(payload.toDate);
+      toDateObj.setHours(23, 59, 59, 999);
+      payload.toDate &#x3D; toDateObj.toISOString();
+    }
+
+    if (!payload.fromDate || !payload.toDate) {
+      const now &#x3D; new Date();
+
+      const startOfDay &#x3D; new Date(now);
+      startOfDay.setHours(0, 0, 0, 0);
+
+      const endOfDay &#x3D; new Date(now);
+      endOfDay.setHours(23, 59, 59, 999);
+
+      // Использовать текущий день, если даты не были переданы
+      payload.fromDate &#x3D; payload.fromDate || startOfDay.toISOString();
+      payload.toDate &#x3D; payload.toDate || endOfDay.toISOString();
+    }
+
+    const mustConditions: any[] &#x3D; [];
+
+    if (payload.service) {
+      const service &#x3D; payload.service;
+      mustConditions.push({ match: { service } });
+    }
+
+    if (payload.admin) {
+      const admin &#x3D; payload.admin;
+      mustConditions.push({ match: { admin } });
+    }
+
+    if (payload.fromDate &amp;&amp; payload.toDate) {
+      mustConditions.push({
+        range: {
+          registred: {
+            gte: payload.fromDate,
+            lte: payload.toDate,
+          },
+        },
+      });
+    }
+
+    if (payload.title || payload.dataId) {
+      const shouldConditions: any[] &#x3D; [];
+
+      if (payload.title) {
+        const title &#x3D; payload.title;
+        shouldConditions.push(
+          { match: { &#x27;additionalData.title&#x27;: title } },
+          { match: { &#x27;additionalData.name&#x27;: title } }
+        );
+      }
+
+      if (payload.dataId) {
+        const dataId &#x3D; payload.dataId;
+        shouldConditions.push({
+          term: { &#x27;additionalData.id&#x27;: dataId },
+        }); //term для &#x3D;&#x3D;&#x3D;
+      }
+
+      mustConditions.push({
+        bool: {
+          should: shouldConditions,
+          minimum_should_match: 1, // хотя бы одно условие должно быть выполнено
+        },
+      });
+    }
+
+    const response &#x3D; await this.esService.search({
+      index: &#x27;journals&#x27;,
+      size: 1500,
+      body: {
+        query: {
+          bool: {
+            must: mustConditions,
+          },
+        },
+      },
+    });
+
+    const hits &#x3D; response.body.hits?.hits;
+    if (!hits || hits.length &#x3D;&#x3D;&#x3D; 0) {
+      return null;
+    }
+
+    const maphits &#x3D; hits.map((hit: any) &#x3D;&gt; {
+      // const registredDate &#x3D; new Date(hit._source.registred);// Преобразуем строку в объект Date
+      return {
+        ...hit._source,
+        registred: hit._source.registred,
+      } as IJournal;
+    });
+    return maphits;
+  }
+}
+</code></pre>
+    </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'injectable';
+            var COMPODOC_CURRENT_PAGE_URL = 'JournalizatingService.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

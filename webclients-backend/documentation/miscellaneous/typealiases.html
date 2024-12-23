@@ -1,0 +1,438 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>@web-clients-backend/source documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avaoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-block d-sm-none">
+            <a href="../" class="navbar-brand">@web-clients-backend/source documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content miscellaneous-typealiases">
+                   <div class="content-data">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Miscellaneous</li>
+  <li class="breadcrumb-item">Type aliases</li>
+</ol>
+
+<section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <ul class="index-list">
+                        <li>
+                            <a href="#ClassType" title="libs/shared/src/lib/dto/helpersGql/class-type.ts" ><b>ClassType</b>&nbsp;&nbsp;&nbsp;(libs/.../class-type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#EA" title="libs/shared/src/lib/types/mine.type.ts" ><b>EA</b>&nbsp;&nbsp;&nbsp;(libs/.../mine.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#JuridicalType" title="libs/shared/src/lib/types/client/juridical.type.ts" ><b>JuridicalType</b>&nbsp;&nbsp;&nbsp;(libs/.../juridical.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#NN" title="libs/shared/src/lib/types/mine.type.ts" ><b>NN</b>&nbsp;&nbsp;&nbsp;(libs/.../mine.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SegmentType" title="libs/shared/src/lib/types/client/segment.type.ts" ><b>SegmentType</b>&nbsp;&nbsp;&nbsp;(libs/.../segment.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#SN" title="libs/shared/src/lib/types/mine.type.ts" ><b>SN</b>&nbsp;&nbsp;&nbsp;(libs/.../mine.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#StateType" title="libs/shared/src/lib/types/client/state.type.ts" ><b>StateType</b>&nbsp;&nbsp;&nbsp;(libs/.../state.type.ts)</a>
+                        </li>
+                        <li>
+                            <a href="#UserType" title="libs/shared/src/lib/types/optional-property.type.ts" ><b>UserType</b>&nbsp;&nbsp;&nbsp;(libs/.../optional-property.type.ts)</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+    <h3>libs/shared/src/lib/dto/helpersGql/class-type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ClassType"></a>
+                    <span class="name "><b>ClassType</b><a href="#ClassType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Тип <code>ClassType&lt;T&gt;</code> описывает конструктор класса <code>T</code>.
+Он требует нового экземпляра класса, принимающего аргументы любого типа (<code>any[]</code>),
+и возвращает экземпляр класса <code>T</code>. Используется для определения типов,
+представляющих конкретные классы в обобщенных типах.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code></code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/shared/src/lib/types/mine.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="EA"></a>
+                    <span class="name "><b>EA</b><a href="#EA"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Тип <code>EA</code> определяет пустой массив.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>[]</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="NN"></a>
+                    <span class="name "><b>NN</b><a href="#NN"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Тип <code>NN</code> определяет значение, которое может быть числом или <code>null</code>.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>number | null</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SN"></a>
+                    <span class="name "><b>SN</b><a href="#SN"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Тип <code>SN</code> определяет значение, которое может быть строкой или <code>null</code>.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>string | null</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/shared/src/lib/types/client/juridical.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="JuridicalType"></a>
+                    <span class="name "><b>JuridicalType</b><a href="#JuridicalType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Типы юридического лица.</p>
+<ul>
+<li>&#39;Физ. лицо&#39;: Физическое лицо.</li>
+<li>&#39;Юр. лицо&#39;: Юридическое лицо.</li>
+<li>&#39;ИП&#39;: Индивидуальный предприниматель.</li>
+<li>&#39;ЧП&#39;: Частное предприятие.</li>
+</ul>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;Физ. лицо&quot; | &quot;Юр. лицо&quot; | &quot;ИП&quot; | &quot;ЧП&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/shared/src/lib/types/client/segment.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="SegmentType"></a>
+                    <span class="name "><b>SegmentType</b><a href="#SegmentType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Типы сегментов клиентов.</p>
+<ul>
+<li>&#39;Массовый рынок&#39;: Обычные клиенты, не относящиеся к специализированным сегментам.</li>
+<li>&#39;Дилер&#39;: Дилерские клиенты.</li>
+<li>&#39;VIP&#39;: Ключевые клиенты, заслуживающие особого внимания.</li>
+<li>&#39;TEST-клиент&#39;: Клиент на тестировании.</li>
+<li>&#39;Пустой контракт&#39;: Контракт без прикрепленных данных клиента.</li>
+<li>&#39;Роуминговый партнер&#39;: Партнеры по роумингу.</li>
+<li>&#39;Служебный&#39;: Внутренние или служебные клиенты компании.</li>
+<li>&#39;Корпоративный/Кредит&#39;: Корпоративные клиенты или клиенты с кредитной линией.</li>
+<li>&#39;Клиент-шаблон для саморегистрации&#39;: Шаблон для саморегистрации новых клиентов.</li>
+<li>&#39;Линия Бизнеса&#39;: Клиенты определенного направления бизнеса.</li>
+<li>&#39;ТиЛиДа&#39;: Клиенты с определенным видом услуг.</li>
+<li>&#39;ГУИН&#39;: Клиенты с уникальными идентификационными номерами.</li>
+<li>&#39;Организации принимающие платежи&#39;: Организации, принимающие платежи.</li>
+<li>&#39;Не отключать&#39;: Сегмент клиентов, которые не могут быть отключены.</li>
+</ul>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;Массовый рынок&quot; | &quot;Дилер&quot; | &quot;VIP&quot; | &quot;TEST-клиент&quot; | &quot;Пустой контракт&quot; | &quot;Роуминговый партнер&quot; | &quot;Служебный&quot; | &quot;Корпоративный/Кредит&quot; | &quot;Клиент-шаблон для саморегистрации&quot; | &quot;Линия Бизнеса&quot; | &quot;ТиЛиДа&quot; | &quot;ГУИН&quot; | &quot;Организации принимающие платежи&quot; | &quot;Не отключать&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/shared/src/lib/types/client/state.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="StateType"></a>
+                    <span class="name "><b>StateType</b><a href="#StateType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Типы состояний клиента.</p>
+<ul>
+<li>&#39;Активен&#39;: Клиент, который в текущий момент активно использует свои услуги.</li>
+<li>&#39;Блокирован&#39;: Клиент, чьи услуги приостановлены или ограничены.</li>
+<li>&#39;Закрыт&#39;: Клиент, который был удален или закрыт.</li>
+<li>&#39;Приостановлен&#39;: Клиент, чьи услуги временно приостановлены.</li>
+<li>&#39;Заморожен&#39;: Клиент, чьи услуги на некоторое время заморожены для предотвращения изменений.</li>
+<li>&#39;Подготовлен&#39;: Клиент, который находится на стадии подготовки к активному использованию.</li>
+</ul>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;Активен&quot; | &quot;Блокирован&quot; | &quot;Закрыт&quot; | &quot;Приостановлен&quot; | &quot;Заморожен&quot; | &quot;Подготовлен&quot;</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>    <h3>libs/shared/src/lib/types/optional-property.type.ts</h3>
+    <section data-compodoc="block-typealias">
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="UserType"></a>
+                    <span class="name "><b>UserType</b><a href="#UserType"><span class="icon ion-ios-link"></span></a></span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Тип <code>UserType</code> описывает возможные значения типа пользователя.</p>
+</div>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <code>    <code>&quot;M2M&quot; | &quot;Ф.И.О&quot; | &quot;Бюджетная организация&quot; | string</code>
+</code>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'miscellaneous-typealiases';
+            var COMPODOC_CURRENT_PAGE_URL = 'typealiases.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

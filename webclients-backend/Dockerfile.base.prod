@@ -1,0 +1,17 @@
+FROM harbor.corp.motiv/docker/library/node:22.9.0-alpine AS builder
+ENV NODE_EXTRA_CA_CERTS motivca.crt
+WORKDIR /app/builder
+COPY motivca.crt  package.json ./
+# Установка конфигурации yarn
+# RUN npm set registry http://localhost:4873
+RUN npm set registry https://nexus.corp.motiv/repository/npm
+
+RUN yarn config set network-timeout 600000  # Установка таймаута сети на 10 минут
+RUN yarn config set child-concurrency 10  # Установка параллельности процессов
+
+RUN yarn && \
+    yarn cache clean
+
+# --frozen-lockfile
+
+#RUN yarn global add nx
