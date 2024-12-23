@@ -1,0 +1,9 @@
+{
+  "name": "search-synonyms",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/search-synonyms/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project search-synonyms --web",
+  "targets": {}
+}

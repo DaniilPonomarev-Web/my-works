@@ -1,0 +1,9 @@
+{
+  "name": "category_old",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/category_old/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project category --web",
+  "targets": {}
+}

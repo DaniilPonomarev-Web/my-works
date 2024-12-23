@@ -1,0 +1,51 @@
+<div class="container">
+	<a class="button" (click)="navigateToHome()" ariaCurrentWhenActive="page">
+		← Назад
+	</a>
+	<div class="about">
+		<span class="about_h1"> Информация обо мне: </span>
+	</div>
+
+<div class="user-info">
+	<div class="info-card">
+		<div class="info-row">
+			<span class="info-label">Имя:</span>
+			<span class="info-value">{{ userDataTelegram.first_name }}</span>
+		</div>
+		<div class="info-row">
+			<span class="info-label">Фамилия:</span>
+			<span class="info-value">{{ userDataTelegram.last_name }}</span>
+		</div>
+		<div class="info-row">
+			<span class="info-label">ChatID:</span>
+			<span class="info-value">{{ userDataTelegram.id }}</span>
+		</div>
+		<div class="info-row">
+			<span class="info-label">Никнейм:</span>
+			<span class="info-value">{{ userDataTelegram.username }}</span>
+		</div>
+		<div class="info-row">
+			<span class="info-label">Язык:</span>
+			<span class="info-value">{{ userDataTelegram.language_code }}</span>
+		</div>
+	</div>
+</div>
+
+
+
+</div>
+
+
+<!-- <a class="button" (click)="navigateToUsersExpenses()" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+			Пользователей
+		</a> -->
+<!-- <a routerLink="/graphs">test</a>
+<nav>
+	<a class="button" routerLink="/crisis-list" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+		Crisis Center
+	</a>
+	|
+	<a class="button" routerLink="/graphs" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+		graphsgraphs
+	</a>
+</nav> -->

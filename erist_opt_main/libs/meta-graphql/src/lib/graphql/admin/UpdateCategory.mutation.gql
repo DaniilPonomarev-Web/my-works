@@ -1,0 +1,35 @@
+mutation UpdateCategory($input: UpdateCategoryDTO!) {
+  updateCategory(updateCategoryInput: $input) {
+    id
+    image
+    parent_id
+    sort_order
+    status
+    onHomePage
+    descriptions {
+      id
+      name
+      description
+      meta_title
+      meta_h1
+      meta_description
+      meta_keyword
+    }
+    children {
+      id
+      image
+      parent_id
+      sort_order
+      status
+      descriptions {
+        id
+        name
+        description
+        meta_title
+        meta_h1
+        meta_description
+        meta_keyword
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+query randProductsByCategory($mainCategory: String!, $productId: String!) {
+  randProductsByCategory(mainCategory: $mainCategory, productId: $productId) {
+    id
+    description {
+      name
+    }
+    images {
+      id
+      blurDataURL
+      image
+      sortOrder
+    }
+  }
+}

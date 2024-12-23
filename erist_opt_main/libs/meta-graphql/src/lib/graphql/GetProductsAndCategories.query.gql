@@ -1,0 +1,25 @@
+query GetProductsAndCategories($searchInput: SearchInputDTO!) {
+  GetProductsAndCategories(searchInput: $searchInput) {
+    products {
+      id
+      model
+      price
+      quantity
+      description {
+        name
+        description
+      }
+      images {
+        image
+      }
+    }
+    categories {
+      id
+      descriptions {
+        id
+        name
+        description
+      }
+    }
+  }
+}

@@ -1,0 +1,8 @@
+query getAllSocialHrefsForUser {
+  getAllSocialHrefsForUser {
+    id
+    name
+    href
+    sortOrder
+  }
+}

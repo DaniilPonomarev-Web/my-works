@@ -1,0 +1,15 @@
+query GetFeedbackById($input: FeedBackIdInput!) {
+  getFeedbackById(input: $input) {
+    id
+    text
+    status
+    user {
+      id
+      name
+      company {
+        inn
+        name
+      }
+    }
+  }
+}

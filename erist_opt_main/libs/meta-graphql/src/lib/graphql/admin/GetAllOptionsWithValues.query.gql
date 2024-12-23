@@ -1,0 +1,17 @@
+query GetAllOptionsWithValues($pagination: OrdersPaginationAdminDTO!) {
+  getAllOptionsWithValues(pagination: $pagination) {
+    options {
+      id
+      name
+      type
+      sortOrder
+      values {
+        id
+        name
+        sortOrder
+        colorCode
+      }
+    }
+    total
+  }
+}

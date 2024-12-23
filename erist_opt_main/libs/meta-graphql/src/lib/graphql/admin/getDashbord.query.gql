@@ -1,0 +1,13 @@
+query getDashbord {
+  getDashbord {
+    countOrders
+    countUsers
+    countProducts
+    summOrders
+    customer
+    salesData {
+      date
+      amount
+    }
+  }
+}

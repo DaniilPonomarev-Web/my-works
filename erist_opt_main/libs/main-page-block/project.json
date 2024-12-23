@@ -1,0 +1,9 @@
+{
+  "name": "main-page-block",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/main-page-block/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project main-page-block --web",
+  "targets": {}
+}

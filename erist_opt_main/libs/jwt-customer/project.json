@@ -1,0 +1,9 @@
+{
+  "name": "jwt-customer",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/jwt-customer/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project jwt-customer --web",
+  "targets": {}
+}

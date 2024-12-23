@@ -1,0 +1,6 @@
+FROM grafana/grafana:latest
+
+# Установка плагина Redis
+RUN grafana-cli plugins install redis-datasource
+
+COPY ./grafana /etc/grafana/provisioning

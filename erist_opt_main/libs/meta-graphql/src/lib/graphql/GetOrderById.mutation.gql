@@ -1,0 +1,30 @@
+mutation GetOrderById($orderId: ID!) {
+  getOrderById(orderId: $orderId) {
+    id
+    currentID
+    userCompany_inn
+    userCompany_ogrn
+    userCompany_kpp
+    userCompany_name
+    userCompany_bikBank
+    userCompany_bankName
+    userCompany_urAddress
+    userCompany_checkingAccount
+    userCompany_correspondentAccount
+    paymentMethod
+    products {
+      id
+      model
+      price
+      name
+      image
+      optionName
+      quantity
+    }
+    totalAmount
+    discount
+    total
+    state
+    hrefForInvoice
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "local-rmq",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/local-rmq/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "local-rmq:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "local-rmq:build:development"
+        },
+        "production": {
+          "buildTarget": "local-rmq:build:production"
+        }
+      }
+    }
+  }
+}

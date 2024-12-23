@@ -1,0 +1,3 @@
+mutation DeleteSynonymGroup($id: ID!) {
+  deleteSynonymGroup(id: $id)
+}

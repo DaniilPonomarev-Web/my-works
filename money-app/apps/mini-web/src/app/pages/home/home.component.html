@@ -1,0 +1,34 @@
+<div class="container">
+	<div class="header">
+		<span class="home_h1">Меню:</span>
+	</div>
+	<div class="home">
+		<div class="tile expenses" (click)="navigateToMyExpenses()">
+			<span class="tile-title">Мои Расходы</span>
+		</div>
+		<div class="tile incomes" (click)="navigateToMyIncomes()">
+			<span class="tile-title">Мои Доходы</span>
+		</div>
+		<div class="tile groups" (click)="navigateToGroupsExpenses()">
+			<span class="tile-title">Мои группы и пользователи</span>
+		</div>
+		<div class="tile about" (click)="navigateToAboutUser()">
+			<span class="tile-title">Обо мне</span>
+		</div>
+	</div>
+</div>
+
+
+<!-- <a class="button" (click)="navigateToUsersExpenses()" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+			Пользователей
+		</a> -->
+<!-- <a routerLink="/graphs">test</a>
+<nav>
+	<a class="button" routerLink="/crisis-list" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+		Crisis Center
+	</a>
+	|
+	<a class="button" routerLink="/graphs" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+		graphsgraphs
+	</a>
+</nav> -->

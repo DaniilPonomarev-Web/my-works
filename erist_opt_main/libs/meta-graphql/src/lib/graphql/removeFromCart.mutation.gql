@@ -1,0 +1,6 @@
+mutation RemoveFromCart($input: RemoveFromCartInput!) {
+  removeFromCart(input: $input) {
+    status
+    quantity
+  }
+}

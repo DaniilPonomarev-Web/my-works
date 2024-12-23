@@ -1,0 +1,29 @@
+query GetAllLogs(
+  $pagination: OrdersPaginationAdminDTO!
+  $service: String
+  $admin: String
+  $dataId: String
+  $fromDate: String
+  $toDate: String
+  $title: String
+) {
+  getAllLogs(
+    pagination: $pagination
+    dataId: $dataId
+    service: $service
+    admin: $admin
+    fromDate: $fromDate
+    toDate: $toDate
+    title: $title
+  ) {
+    logs {
+      id
+      service
+      admin
+      text
+      registred
+      additionalData
+    }
+    total
+  }
+}

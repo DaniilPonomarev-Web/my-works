@@ -1,0 +1,13 @@
+query GetUserFeedbacks {
+  getUserFeedbacks {
+    id
+    text
+    status
+    user {
+      id
+      company {
+        inn
+      }
+    }
+  }
+}

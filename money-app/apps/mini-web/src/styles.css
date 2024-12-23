@@ -1,0 +1,151 @@
+/* body {
+	background: var(--tg-theme-bg-color);
+	color: var(--tg-theme-text-color);
+} */
+
+body {
+	font-family: 'Arial', sans-serif;
+	background-color: #f5f5f5;
+	margin: 0;
+	padding: 0;
+	/* display: flex; */
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	padding: 20px;
+	border-radius: 10px;
+	max-width: 600px;
+	min-height: 100vh;
+	height: fit-content;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+h1 {
+	color: #0088cc;
+}
+
+p {
+	color: #333;
+}
+
+a {
+	color: #0088cc;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+button {
+	background-color: #3e8ab0;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	margin: 1% auto;
+}
+
+button:hover {
+	background-color: #006699;
+}
+
+.button {
+	box-shadow: inset 0 1px 0 0 #ffffff;
+	border-radius: 6px;
+	border: 1px solid #dcdcdc;
+	display: inline-block;
+	cursor: pointer;
+	color: #666666;
+	font-family: Arial, sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 12px 10px;
+	text-decoration: none;
+	text-shadow: 0 1px 0 #ffffff;
+	outline: 0;
+	width: 100%;
+}
+
+.no-expenses-message {
+	min-height: 100px;
+	margin: 10% 0;
+	text-align: center;
+	align-content: center;
+	color: orangered;
+	FONT-WEIGHT: 800;
+}
+.button-row {
+	margin: 10% 0;
+	display: flex;
+	flex-direction: row;
+	gap: 1%;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+
+
+/*Table*/
+.tableIncomeExpense {
+	margin: 10% 0;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.tableIncomeExpense th,
+.tableIncomeExpense td {
+	font-size: 14px;
+	padding: 8px;
+	text-align: left;
+	border-bottom: 1px solid #ddd;
+	border-right: 1px solid #ddd;
+
+}
+
+.tableIncomeExpense th {
+	background-color: #f2f2f2;
+}
+
+.category-header {
+	font-size: 15px !important;
+	width: 60%;
+
+}
+
+.amount-header {
+	font-size: 15px !important;
+	width: 40%;
+	/* Ширина столбца Сумма */
+}
+
+/* Опциональные стили для четных и нечетных строк */
+.tableIncomeExpense tbody tr:nth-child(odd) {
+	background-color: #f9f9f9;
+}
+.total-label {
+	font-weight: bold;
+}
+
+.total-amount {
+	font-weight: bold;
+}
+
+.graphs_h2 {
+	font-family: Arial, sans-serif;
+	color: #666666;
+	font-size: 18px;
+	margin-right: auto;
+	font-weight: 600;
+	text-shadow: 0 1px 0 #222;
+}

@@ -1,0 +1,9 @@
+query whoIAmCustomer {
+  whoIAmCustomer {
+    id
+    role
+    login
+    email
+    lastLogin
+  }
+}

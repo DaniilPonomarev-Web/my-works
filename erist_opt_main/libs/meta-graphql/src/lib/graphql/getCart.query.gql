@@ -1,0 +1,24 @@
+query getCart {
+  getCart {
+    items {
+      id
+      product {
+        id
+        model
+        price
+        name
+        image
+        optionName
+        availableQuantity
+      }
+      quantity
+      available
+    }
+    totalAmount
+    discount
+    total
+    percentDiscount
+    canCheckout
+    messageError
+  }
+}

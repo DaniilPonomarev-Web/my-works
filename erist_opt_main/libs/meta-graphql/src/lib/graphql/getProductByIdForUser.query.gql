@@ -1,0 +1,76 @@
+query getProductById($id: String!) {
+  getProductById(id: $id) {
+    id
+    model
+    price
+    quantity
+    maincategory
+    hrefCloudPhotos
+    categories
+    status
+    sortOrder
+    dateAdded
+    id1c
+    description {
+      id
+      name
+      description
+      tag
+      meta_title
+      meta_h1
+      meta_description
+      compound
+      model_parameters
+      care
+      parameters
+    }
+    images {
+      id
+      imageNameMinio
+      blurDataURL
+      image
+      sortOrder
+    }
+    options {
+      id
+      name
+      type
+      values {
+        id
+        href
+        price
+        quantity
+        option {
+          id
+          name
+          type
+        }
+        value {
+          id
+          colorCode
+          name
+        }
+      }
+    }
+    productsRelated {
+      id
+      images {
+        image
+        blurDataURL
+      }
+      description {
+        name
+      }
+    }
+    otherColorsProducts {
+      id
+      images {
+        image
+        blurDataURL
+      }
+      description {
+        name
+      }
+    }
+  }
+}

@@ -1,0 +1,30 @@
+mutation CreateOrder {
+  createOrder {
+    id
+    user {
+      name
+      id
+    }
+    userCompany_inn
+    userCompany_kpp
+    userCompany_name
+    userCompany_ogrn
+    userCompany_bikBank
+    userCompany_bankName
+    userCompany_urAddress
+    userCompany_checkingAccount
+    userCompany_correspondentAccount
+    paymentMethod
+    cart {
+      productId
+      quantity
+      optionValueId
+    }
+    currentID
+    totalAmount
+    total
+    discount
+    registred
+    hrefForInvoice
+  }
+}

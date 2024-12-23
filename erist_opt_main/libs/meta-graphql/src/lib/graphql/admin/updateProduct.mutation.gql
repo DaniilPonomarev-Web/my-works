@@ -1,0 +1,75 @@
+mutation UpdateProduct($updateProductInput: InputUpdateProductDTO!) {
+  updateProduct(updateProductInput: $updateProductInput) {
+    id
+    model
+    price
+    quantity
+    maincategory
+    categories
+    status
+    sortOrder
+    hrefCloudPhotos
+    dateAdded
+    description {
+      id
+      name
+      description
+      tag
+      meta_title
+      meta_h1
+      meta_description
+      compound
+      model_parameters
+      care
+      parameters
+    }
+    images {
+      id
+      imageNameMinio
+      image
+      sortOrder
+    }
+    options {
+      id
+      name
+      type
+      values {
+        id
+        href
+        price
+        quantity
+        option {
+          id
+          name
+          type
+        }
+        value {
+          id
+          name
+        }
+      }
+    }
+    productsRelated {
+      id
+      description {
+        name
+      }
+      images {
+        id
+        imageNameMinio
+        image
+        sortOrder
+      }
+    }
+    otherColorsProducts {
+      id
+      images {
+        image
+        blurDataURL
+      }
+      description {
+        name
+      }
+    }
+  }
+}

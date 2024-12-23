@@ -1,0 +1,55 @@
+{
+	"data": {
+		"getAllOptionsWithValues": {
+			"options": [
+				{
+					"id": "da1fa74c-4113-4746-a50d-8a4259077c2c",
+					"name": "Размеры",
+					"type": "radio",
+					"sortOrder": 1,
+					"values": [
+						{
+							"id": "439af0e1-1464-4622-935d-45897bfa19be",
+							"name": "M",
+							"sortOrder": 1
+						},
+						{
+							"id": "6e6e7cca-43b9-4618-9a56-96d7a1cec10d",
+							"name": "S",
+							"sortOrder": 2
+						},
+						{
+							"id": "4fe1fc0f-d436-499e-9e59-443664745147",
+							"name": "M",
+							"sortOrder": 3
+						},
+						{
+							"id": "631df37d-2a14-4f78-8d26-f4618b57bceb",
+							"name": "one size",
+							"sortOrder": 4
+						}
+					]
+				},
+				{
+					"id": "2757142a-505e-4e72-9d46-f91ff025f0e0",
+					"name": "Цвет",
+					"type": "radio",
+					"sortOrder": 2,
+					"values": [
+						{
+							"id": "1a30d96e-cfe1-4861-b550-33eb9bce73cb",
+							"name": "Black",
+							"sortOrder": 1
+						},
+						{
+							"id": "0674ca7f-829e-4985-a6c3-b8bfee049886",
+							"name": "Графит",
+							"sortOrder": 5
+						}
+					]
+				}
+			],
+			"total": 2
+		}
+	}
+}

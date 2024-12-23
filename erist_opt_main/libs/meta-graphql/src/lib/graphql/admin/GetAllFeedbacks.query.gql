@@ -1,0 +1,21 @@
+query GetAllFeedbacks(
+  $pagination: OrdersPaginationAdminDTO!
+  $filter: FeedBackListFilterAdminDTO
+) {
+  getAllFeedbacks(pagination: $pagination, filter: $filter) {
+    data {
+      id
+      text
+      status
+      user {
+        id
+        name
+        company {
+          inn
+          name
+        }
+      }
+    }
+    total
+  }
+}

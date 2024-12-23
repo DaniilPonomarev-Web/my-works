@@ -1,0 +1,9 @@
+{
+  "name": "social-href",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/social-href/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project social-href --web",
+  "targets": {}
+}

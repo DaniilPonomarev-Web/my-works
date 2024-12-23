@@ -1,0 +1,12 @@
+query GetAllSynonymGroups(
+  $pagination: OrdersPaginationAdminDTO!
+  $filter: SynonymGroupFilterAdminDTO!
+) {
+  getAllSynonymGroups(pagination: $pagination, filter: $filter) {
+    data {
+      id
+      synonyms
+    }
+    total
+  }
+}

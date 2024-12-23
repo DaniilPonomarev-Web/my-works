@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@erist-opt/shadcn": [
+        "libs/shadcn/src/index.ts"
+      ],
+      "@erist-opt/shadcn/*": [
+        "libs/shadcn/src/*"
+      ]
+    }
+  }
+}

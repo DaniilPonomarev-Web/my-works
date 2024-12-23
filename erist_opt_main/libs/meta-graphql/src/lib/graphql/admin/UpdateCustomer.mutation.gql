@@ -1,0 +1,9 @@
+mutation UpdateCustomer($updateCustomerDto: UpdateCustomerDTO!) {
+  updateCustomer(updateCustomerDto: $updateCustomerDto) {
+    id
+    login
+    email
+    role
+    lastLogin
+  }
+}

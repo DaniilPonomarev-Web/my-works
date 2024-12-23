@@ -1,0 +1,18 @@
+query GetAllCategories {
+  getAllCategories {
+    id
+    image
+    parent_id
+    sort_order
+    status
+    descriptions {
+      id
+      name
+      description
+      meta_title
+      meta_h1
+      meta_description
+      meta_keyword
+    }
+  }
+}

@@ -1,0 +1,12 @@
+mutation UpdateUser($updateUserDto: UpdateUserDto!) {
+  updateUser(updateUserDto: $updateUserDto) {
+    id
+    name
+    email
+    phone
+    company {
+      inn
+      kpp
+    }
+  }
+}

@@ -1,0 +1,15 @@
+mutation UpdateOptionValues(
+  $updateOptionValuesInput: UpdateOptionValueForOptionInput!
+) {
+  updateOptionValues(updateOptionValuesInput: $updateOptionValuesInput) {
+    id
+    name
+    type
+    sortOrder
+    values {
+      id
+      name
+      sortOrder
+    }
+  }
+}

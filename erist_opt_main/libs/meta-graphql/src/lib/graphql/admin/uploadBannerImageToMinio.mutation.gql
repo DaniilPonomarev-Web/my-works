@@ -1,0 +1,7 @@
+mutation uploadBannerImageToMinio(
+  $BannerUploadImageDTO: InputBannerImageUploadDTO!
+) {
+  uploadBannerImageToMinio(BannerUploadImageDTO: $BannerUploadImageDTO) {
+    imageName
+  }
+}

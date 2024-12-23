@@ -1,0 +1,27 @@
+query getUserById($id: String!) {
+  getUserById(id: $id) {
+    id
+    name
+    phone
+    email
+    registrationDate
+    lastLogin
+    status
+    company {
+      id
+      name
+      inn
+      kpp
+      ogrn
+      urAddress
+      checkingAccount
+      bankName
+      bikBank
+      correspondentAccount
+    }
+    agreement {
+      id
+      signed
+    }
+  }
+}

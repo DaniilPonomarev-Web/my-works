@@ -1,0 +1,9 @@
+query GetParentCategories {
+  getParentCategories {
+    id
+    image
+    parent_id
+    sort_order
+    status
+  }
+}

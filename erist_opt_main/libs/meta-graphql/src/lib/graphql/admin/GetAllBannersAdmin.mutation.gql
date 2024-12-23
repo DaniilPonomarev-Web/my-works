@@ -1,0 +1,24 @@
+query getAllBannersAdmin(
+  $sortBy: String!
+  $sortOrder: String!
+  $pagination: OrdersPaginationAdminDTO!
+) {
+  getAllBannersAdmin(
+    sortBy: $sortBy
+    sortOrder: $sortOrder
+    pagination: $pagination
+  ) {
+    banners {
+      id
+      name
+      title
+      link
+      status
+      image
+      image_mob
+      image_href
+      image_mob_href
+    }
+    total
+  }
+}

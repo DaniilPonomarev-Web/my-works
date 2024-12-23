@@ -1,0 +1,37 @@
+.graphs {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	align-items: center;
+	gap: 15px;
+	width: 100%;
+	max-width: 350px;
+	text-align: -webkit-center;
+	/* padding: 0 15px; */
+	margin-top: 5%;
+}
+
+canvas.chart { 
+	max-width: 350px !important;
+}
+.graphs_h1 {
+	font-family: Arial, sans-serif;
+	color: #666666;
+	font-size: 20px;
+	margin-right: auto;
+	font-weight: 600;
+	text-shadow: 0 1px 0 #222;
+}
+th {
+	font-size: 10px;
+}
+
+.graphs_h2 {
+	font-family: Arial, sans-serif;
+	color: #666666;
+	font-size: 18px;
+	margin-right: auto;
+	font-weight: 600;
+	text-shadow: 0 1px 0 #222;
+}
+

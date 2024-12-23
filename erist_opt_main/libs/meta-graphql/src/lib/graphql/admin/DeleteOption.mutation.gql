@@ -1,0 +1,3 @@
+mutation DeleteOption($optionId: ID!) {
+  deleteOption(optionId: $optionId)
+}

@@ -1,0 +1,41 @@
+{
+    "products": {
+        "id": "id1c",
+        "code": "model",
+        "name": "name",
+        "option_id": "optionIds1C",
+        "category_id": "categoryId1C",
+        "gender": "gender",
+        "color": "color",
+        "compound": "compound",
+        "care": "care",
+        "product_parameters": "parameters",
+        "model_parameters": "model_parameters",
+        "comment": "description"
+    },
+    "categories": {
+        "id": "id1c",
+        "code": "code",
+        "name": "name",
+        "category_id": "categoryId"
+    },
+    "option_types": {
+        "id": "id1c",
+        "name": "name"
+    },
+    "options": {
+        "id": "id1c",
+        "code": "code",
+        "name": "name",
+        "option_type_id": "optionTypeId"
+    },
+    "balances": {
+        "product_id": "productId",
+        "option_id": "optionId",
+        "balance": "balance"
+    },
+    "prices": {
+        "product_id": "productId",
+        "price": "price"
+    }
+}

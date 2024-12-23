@@ -1,0 +1,45 @@
+mutation getOrdersUsersAdmin(
+  $sortBy: String
+  $sortOrder: String
+  $pagination: OrdersPaginationAdminDTO!
+  $filter: OrdersFilterAdminDTO
+) {
+  getOrdersUsersAdmin(
+    sortBy: $sortBy
+    sortOrder: $sortOrder
+    pagination: $pagination
+    filter: $filter
+  ) {
+    orders {
+      id
+      currentID
+      # address
+      userCompany_inn
+      userCompany_kpp
+      userCompany_ogrn
+      userCompany_name
+      userCompany_bikBank
+      userCompany_bankName
+      userCompany_urAddress
+      userCompany_checkingAccount
+      userCompany_correspondentAccount
+      paymentMethod
+      products {
+        id
+        model
+        price
+        name
+        image
+        optionName
+        quantity
+      }
+      totalAmount
+      discount
+      total
+      state
+      hrefForInvoice
+      registred
+    }
+    total
+  }
+}

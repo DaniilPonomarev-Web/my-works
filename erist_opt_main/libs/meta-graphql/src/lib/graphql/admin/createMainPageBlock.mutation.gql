@@ -1,0 +1,33 @@
+mutation createMainPageBlock($input: CreateMainPageBlockInputDTO!) {
+  createMainPageBlock(createMainPageBlockInput: $input) {
+    id
+    name
+    title
+    link
+    status
+    sort
+    products {
+      id
+      model
+      price
+      quantity
+      maincategory
+      categories
+      status
+      sortOrder
+      description {
+        name
+        description
+        tag
+        meta_title
+        meta_h1
+        meta_description
+      }
+      images {
+        id
+        image
+        sortOrder
+      }
+    }
+  }
+}

@@ -1,0 +1,3 @@
+mutation DeleteInformation($id: String!) {
+  deleteInformation(id: $id)
+}

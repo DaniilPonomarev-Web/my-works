@@ -1,0 +1,105 @@
+{
+    "pattern": "sync",
+    "data": [
+        {
+            "key": "option_types",
+            "result": [
+                {
+                    "id1c": "РазмерыОбщие_e2ca45c75de7414193e5952a7da8c001",
+                    "name": "Размеры"
+                }
+            ]
+        },
+        {
+            "key": "options",
+            "result": [
+                {
+                    "id1c": "293b5a22-ac51-11ed-b14d-047c16107d75",
+                    "code": "000000013",
+                    "name": "one size",
+                    "optionTypeId": "РазмерыОбщие_e2ca45c75de7414193e5952a7da8c001"
+                },
+                {
+                    "id1c": "253b5a22-ac51-11ed-b14d-047c16107d75",
+                    "code": "000000014",
+                    "name": "two size",
+                    "optionTypeId": "РазмерыОбщие_e2ca45c75de7414193e5952a7da8c001"
+                },
+                {
+                    "id1c": "263b5a22-ac51-11ed-b14d-047c16107d75",
+                    "code": "000000014",
+                    "name": "three size",
+                    "optionTypeId": "РазмерыОбщие_e2ca45c75de7414193e5952a7da8c001"
+                },
+                {
+                    "id1c": "273b5a22-ac51-11ed-b14d-047c16107d75",
+                    "code": "000000014",
+                    "name": "four size",
+                    "optionTypeId": "РазмерыОбщие_e2ca45c75de7414193e5952a7da8c001"
+                }
+            ]
+        },
+        {
+            "key": "categories",
+            "result": [
+                {
+                    "id1c": "830224c6-ab62-11ed-8d03-ec2e98b2a974",
+                    "code": "НФ-00000003",
+                    "name": "Бейсболки",
+                    "categoryId": "bfd9cf56-b681-11ed-b151-047c16107d75"
+                }
+            ]
+        },
+        {
+            "key": "products",
+            "result": [
+                {
+                    "id1c": "44fc88ba-ab9e-11ed-b14d-047c16107d77",
+                    "code": "НФ-00000013",
+                    "name": "Бейсболка GREEN 1",
+                    "optionIds1C": [
+                        "293b5a22-ac51-11ed-b14d-047c16107d77",
+                        "253b5a22-ac51-11ed-b14d-047c16107d77",
+                        "263b5a22-ac51-11ed-b14d-047c16107d77",
+                        "273b5a22-ac51-11ed-b14d-047c16107d77"
+                    ],
+                    "categoryId1C": [
+                        "830224c6-ab62-11ed-8d03-ec2e98b2a974"
+                    ],
+                    "color": "ЗЕЛЁНЫЙ",
+                    "compound": "хлопок 70%, акрил 30%",
+                    "description": "хлопок 70%, акрил 30%",
+                    "care": "Стирка при температуре не выше 30°\nОтбеливание запрещено\nНе сушите изделие в машине\nРазрешено гладить при температуре не выше 150°\nВозможна сухая чистка\n\nНе стирайте одновременно вещи разного цвета",
+                    "parameters": "Размер OS:\nA - обхват под проймой - 130 см\nB - длина по переду - 67 см\nC - длина рукава - 75 см\nD - длина по спинке - 67 см",
+                    "model_parameters": "Рост - 170 см\nОбхват груди - 78 см\nОбхват талии - 60 см \nОбхват бедер - 90 см",
+                    "options": [
+                        {
+                            "optionId": "293b5a22-ac51-11ed-b14d-047c16107d75",
+                            "price": 1002,
+                            "href": null,
+                            "quantity": 1
+                        },
+                        {
+                            "optionId": "253b5a22-ac51-11ed-b14d-047c16107d75",
+                            "price": 102,
+                            "href": null,
+                            "quantity": 1
+                        },
+                        {
+                            "optionId": "263b5a22-ac51-11ed-b14d-047c16107d75",
+                            "price": 102,
+                            "href": null,
+                            "quantity": 1
+                        },
+                        {
+                            "optionId": "273b5a22-ac51-11ed-b14d-047c16107d75",
+                            "price": 104,
+                            "href": null,
+                            "quantity": 1
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

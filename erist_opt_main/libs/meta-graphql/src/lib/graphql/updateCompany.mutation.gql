@@ -1,0 +1,17 @@
+mutation UpdateCompany($updateCompanyDto: UpdateCompanyDto!) {
+  updateCompany(updateCompanyDto: $updateCompanyDto) {
+    id
+    company {
+      name
+      inn
+      kpp
+      ogrn
+      urAddress
+      checkingAccount
+      correspondentAccount
+      bankName
+      bikBank
+      correspondentAccount
+    }
+  }
+}

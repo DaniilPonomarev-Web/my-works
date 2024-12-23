@@ -1,0 +1,6 @@
+mutation refreshTokenCustomer($refreshToken: String!) {
+  refreshTokenCustomer(refreshToken: $refreshToken) {
+    access_token
+    refresh_token
+  }
+}

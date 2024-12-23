@@ -1,0 +1,9 @@
+mutation RemoveMainPageBlock(
+  $IdMainPageBlockInputDTO: IdMainPageBlockInputDTO!
+) {
+  removeMainPageBlock(IdMainPageBlockInputDTO: $IdMainPageBlockInputDTO) {
+    id
+    name
+    title
+  }
+}

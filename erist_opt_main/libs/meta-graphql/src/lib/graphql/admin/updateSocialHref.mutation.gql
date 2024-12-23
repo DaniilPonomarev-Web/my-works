@@ -1,0 +1,8 @@
+mutation updateSocialHref($input: UpdateSocialHrefInputDTO!) {
+  updateSocialHref(input: $input) {
+    id
+    name
+    href
+    sortOrder
+  }
+}

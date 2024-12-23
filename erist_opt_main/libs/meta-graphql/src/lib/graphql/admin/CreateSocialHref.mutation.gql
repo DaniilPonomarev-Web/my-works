@@ -1,0 +1,8 @@
+mutation CreateSocialHref($input: CreateUpdateSocialHrefInputDTO!) {
+  createSocialHref(input: $input) {
+    id
+    name
+    href
+    sortOrder
+  }
+}

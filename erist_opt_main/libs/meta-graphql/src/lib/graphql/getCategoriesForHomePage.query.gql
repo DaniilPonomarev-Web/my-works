@@ -1,0 +1,9 @@
+query getCategoriesForHomePage {
+  getCategoriesForHomePage {
+    id
+    image
+    descriptions {
+      name
+    }
+  }
+}

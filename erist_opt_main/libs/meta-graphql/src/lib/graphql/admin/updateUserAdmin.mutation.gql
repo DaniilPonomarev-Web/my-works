@@ -1,0 +1,24 @@
+mutation updateUserAdmin($updateUserForAdminDto: UpdateUserForAdminDto!) {
+  updateUserAdmin(updateUserForAdminDto: $updateUserForAdminDto) {
+    id
+    name
+    phone
+    email
+    registrationDate
+    lastLogin
+    status
+    company {
+      id
+      name
+      inn
+      kpp
+      ogrn
+      urAddress
+      checkingAccount
+      correspondentAccount
+      bankName
+      bikBank
+      correspondentAccount
+    }
+  }
+}

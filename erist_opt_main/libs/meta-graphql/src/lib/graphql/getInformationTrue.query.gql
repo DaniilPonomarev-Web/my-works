@@ -1,0 +1,9 @@
+query GetInformationTrue($id: String!) {
+  getInformationTrue(id: $id) {
+    id
+    name
+    title
+    content
+    status
+  }
+}

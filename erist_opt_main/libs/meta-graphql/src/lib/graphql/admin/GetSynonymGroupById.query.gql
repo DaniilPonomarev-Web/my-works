@@ -1,0 +1,6 @@
+query GetSynonymGroupById($id: ID!) {
+  getSynonymGroupById(id: $id) {
+    id
+    synonyms
+  }
+}

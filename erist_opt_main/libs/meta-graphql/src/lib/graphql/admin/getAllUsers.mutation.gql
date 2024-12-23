@@ -1,0 +1,41 @@
+mutation getAllUsers(
+  $sortBy: String
+  $sortOrder: String
+  $pagination: OrdersPaginationAdminDTO!
+  $filter: UsersFilterAdminDTO
+) {
+  getAllUsers(
+    sortBy: $sortBy
+    sortOrder: $sortOrder
+    pagination: $pagination
+    filter: $filter
+  ) {
+    users {
+      id
+      name
+      phone
+      email
+      registrationDate
+      lastLogin
+      status
+      company {
+        id
+        name
+        inn
+        ogrn
+        kpp
+        urAddress
+        checkingAccount
+        correspondentAccount
+        bankName
+        bikBank
+        correspondentAccount
+      }
+      agreement {
+        id
+        signed
+      }
+    }
+    total
+  }
+}

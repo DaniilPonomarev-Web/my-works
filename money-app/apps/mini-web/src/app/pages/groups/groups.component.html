@@ -1,0 +1,41 @@
+<div class="container">
+
+	<a class="button" (click)="navigateToHome()" routerLinkActive="activebutton" ariaCurrentWhenActive="page">
+		← На главную
+	</a>
+
+	<span class="graphs_h2">
+		Мои группы:
+	</span>
+
+	<div class="graphs">
+
+		<div class="groups" *ngIf="(userGroups$ | async) as userGroups">
+			<div class="group" *ngFor="let group of userGroups">
+				<div class="group-info">
+					<p>Название: <b>{{ group.name }}</b></p>
+					<p>Статус: <b>{{ group.status ? 'Включена' : 'Выключена' }}</b></p>
+					<p>Дата создания: <b>{{ group.created | date: 'yyyy-MM-dd' }}</b></p>
+				</div>
+				<div class="users" *ngIf="group.users.length > 0">
+					<h3>Пользователи:</h3>
+					<ul class="user-list">
+						<li *ngFor="let user of group.users">
+							<div class="user-item">
+								<div class="user-info">
+									<p><strong>Имя:</strong> {{ user.firstName }}</p>
+									<p><strong>Фамилия:</strong> {{ user.lastName }}</p>
+									<p><strong>Телефон:</strong> {{ user.phone }}</p>
+								</div>
+								<div class="user-role">
+									<p><strong>Роль:</strong> {{ user.role }}</p>
+								</div>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

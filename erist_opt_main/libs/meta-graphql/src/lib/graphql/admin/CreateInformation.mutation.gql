@@ -1,0 +1,9 @@
+mutation CreateInformation($data: InputCreateInformationDTO!) {
+  createInformation(data: $data) {
+    id
+    name
+    title
+    content
+    status
+  }
+}

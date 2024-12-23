@@ -1,0 +1,22 @@
+query getAllCustomers(
+  $sortBy: String
+  $sortOrder: String
+  $pagination: OrdersPaginationAdminDTO!
+  $filter: CustomersFilterAdminDTO
+) {
+  getAllCustomers(
+    sortBy: $sortBy
+    sortOrder: $sortOrder
+    pagination: $pagination
+    filter: $filter
+  ) {
+    customers {
+      id
+      login
+      email
+      role
+      lastLogin
+    }
+    total
+  }
+}

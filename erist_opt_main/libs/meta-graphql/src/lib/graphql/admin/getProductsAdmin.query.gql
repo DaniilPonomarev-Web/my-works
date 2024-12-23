@@ -1,0 +1,56 @@
+query getProductsAdmin(
+  $sortBy: String
+  $sortOrder: String
+  $pagination: OrdersPaginationAdminDTO!
+  $filter: ProductsFilterAdminDTO
+) {
+  getProductsAdmin(
+    filter: $filter
+    pagination: $pagination
+    sortBy: $sortBy
+    sortOrder: $sortOrder
+  ) {
+    data {
+      id
+      model
+      price
+      quantity
+      maincategory
+      categories
+      status
+      sortOrder
+      dateAdded
+      description {
+        id
+        name
+        description
+        tag
+      }
+      images {
+        id
+        imageNameMinio
+        image
+        sortOrder
+      }
+      options {
+        id
+        name
+        type
+        values {
+          id
+          href
+          price
+          quantity
+          option {
+            name
+            type
+          }
+          value {
+            name
+          }
+        }
+      }
+    }
+    total
+  }
+}

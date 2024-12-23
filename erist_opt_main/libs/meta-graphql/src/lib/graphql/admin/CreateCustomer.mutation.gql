@@ -1,0 +1,9 @@
+mutation CreateCustomer($createCustomerDto: CreateCustomerDTO!) {
+  createCustomer(createCustomerDto: $createCustomerDto) {
+    id
+    login
+    email
+    role
+    lastLogin
+  }
+}

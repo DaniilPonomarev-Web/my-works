@@ -1,0 +1,190 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Категория"""
+type CategoryDto {
+  id: ID!
+
+  """ID аккаунта"""
+  accountId: String!
+
+  """Название категории"""
+  name: String!
+
+  """id группы к которой привязана категория"""
+  groupId: String!
+
+  """Статус категории"""
+  status: Boolean!
+}
+
+type LoginResponse {
+  access_token: String!
+}
+
+type RefreshResponse {
+  access_token: String!
+}
+
+"""Группа"""
+type GroupDto {
+  id: ID!
+
+  """Название группы"""
+  name: String!
+
+  """ID аккаунта"""
+  accountId: String!
+
+  """Статус группы"""
+  status: Boolean!
+}
+
+"""Группа"""
+type GroupWithCategoryDto {
+  id: ID!
+
+  """Название группы"""
+  name: String!
+
+  """ID аккаунта"""
+  accountId: String!
+
+  """Статус группы"""
+  status: Boolean!
+
+  """Категории"""
+  categories: [CategoryDto!]!
+}
+
+"""Приглашения"""
+type InvitedsDto {
+  id: ID!
+
+  """id  группы"""
+  groupId: String!
+
+  """Идентификатор клиента web"""
+  accountId: String!
+
+  """Роль пользователя"""
+  role: String!
+
+  """Имя пользователя бота"""
+  firstName: String!
+
+  """Номер телефона пользователя"""
+  phone: String!
+
+  """ Дата до которой действует инвайт"""
+  validity: DateTime!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Query {
+  uptime: Float!
+  getAllCategoriesByGroup(clientId: String!, groupId: String!): [CategoryDto!]!
+  getAllCategories(clientId: String!): [CategoryDto!]!
+  getCategoriesAndGroups(clientId: String!): [GroupWithCategoryDto!]!
+  getAllGroups(clientId: String!): [GroupDto!]!
+  getAllInviteds(clientId: String!): [InvitedsDto!]!
+  whoiamAndToken: RefreshResponse!
+}
+
+type Mutation {
+  createCategory(categoryInput: CategoryInputDto!): CategoryDto!
+  createDefaultCategories(clientId: String!, groupId: String!): [CategoryDto!]!
+  updateCategory(updateCategory: UpdateCategoryInputDto!): CategoryDto
+  deleteCategory(id: String!): Boolean!
+  createGroup(groupInput: InputCreateGroupDto!): GroupDto!
+  deleteGroup(id: String!): Boolean!
+  updateGroup(updateGroup: InputUpdateGroupDto!): GroupDto!
+  createInvite(InvitedsInput: InvitedsInputDto!): InvitedsDto!
+  deleteInviteds(id: String!): Boolean!
+  login(loginClientInput: LoginClientInput!): LoginResponse!
+}
+
+"""Создание категории"""
+input CategoryInputDto {
+  """Идентификатор клиента web"""
+  accountId: String!
+
+  """Название категории"""
+  name: String!
+
+  """id группы к которой привязана категория"""
+  groupId: String!
+
+  """Статус категории"""
+  status: Boolean! = true
+}
+
+"""Обновление категории категории"""
+input UpdateCategoryInputDto {
+  """Идентификатор клиента web"""
+  clientId: String!
+
+  """Идентификатор категории"""
+  id: String!
+
+  """Новое название категории"""
+  name: String!
+
+  """ID группы """
+  groupId: String!
+
+  """Новый статус категории"""
+  status: Boolean! = true
+}
+
+"""Создание группы"""
+input InputCreateGroupDto {
+  """Идентификатор клиента web"""
+  clientId: String!
+
+  """Название группы"""
+  name: String!
+
+  """Статус группы"""
+  status: Boolean! = true
+}
+
+"""Обновление группы группы"""
+input InputUpdateGroupDto {
+  """Идентификатор клиента web"""
+  clientId: String!
+
+  """Идентификатор группы"""
+  id: String!
+
+  """Новое название группы"""
+  name: String!
+
+  """Новый статус группы"""
+  status: Boolean! = true
+}
+
+"""Создание инвайта"""
+input InvitedsInputDto {
+  """Идентификатор клиента web"""
+  clientId: String!
+
+  """ID группы"""
+  groupId: String!
+
+  """Будущее имя пользователя бота"""
+  firstName: String!
+
+  """Номер телефона пользователя"""
+  phone: String!
+}
+
+input LoginClientInput {
+  phone: String!
+  password: String!
+}

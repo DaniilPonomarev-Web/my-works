@@ -1,0 +1,9 @@
+mutation UpdateInformation($data: InputUpdateInformationDTO!) {
+  updateInformation(data: $data) {
+    id
+    name
+    title
+    content
+    status
+  }
+}

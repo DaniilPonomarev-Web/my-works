@@ -1,0 +1,6 @@
+mutation UpdateSynonymGroup($updateSynonymGroupDto: UpdateSynonymGroupDto!) {
+  updateSynonymGroup(updateSynonymGroupDto: $updateSynonymGroupDto) {
+    id
+    synonyms
+  }
+}

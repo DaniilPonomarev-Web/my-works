@@ -1,0 +1,12 @@
+query getAllInformations($pagination: OrdersPaginationAdminDTO!) {
+  getAllInformations(pagination: $pagination) {
+    data {
+      id
+      name
+      title
+      content
+      status
+    }
+    total
+  }
+}

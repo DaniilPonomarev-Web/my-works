@@ -1,0 +1,9 @@
+{
+  "name": "telegram-notification",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/telegram-notification/src",
+  "projectType": "library",
+  "tags": [],
+  "// targets": "to see all targets run: nx show project telegram-notification --web",
+  "targets": {}
+}

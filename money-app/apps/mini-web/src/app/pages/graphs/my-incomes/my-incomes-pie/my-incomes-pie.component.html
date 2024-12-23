@@ -1,0 +1,62 @@
+<span class="graphs_h2">
+	Мои доходы за периоды времени
+</span>
+<div class="button-row">
+	<button mat-button mat-raised-button color="primary" (click)="updateChartData('day')">
+		Сегодня
+	</button>
+	<button mat-button mat-raised-button color="primary" (click)="updateChartData('week')">
+		Неделя
+	</button>
+	<button mat-button mat-raised-button color="primary" (click)="updateChartData('month')">
+		Месяц
+	</button>
+	<button mat-button mat-raised-button color="primary" (click)="updateChartData('year')">
+		Год
+	</button>
+	<button mat-button mat-raised-button color="primary" (click)="date = !date">
+		Свой период
+	</button>
+</div>
+<div *ngIf="date" class="date-picker-container">
+	<form [formGroup]="dateForm" (ngSubmit)="getDataInputs()" class="date-form">
+		<div class="date-picker">
+			<label for="dateFrom" class="date-label">От:</label>
+			<input type="date" id="dateFrom" formControlName="dateFrom" class="date-input">
+		</div>
+		<div class="date-picker">
+			<label for="dateTo" class="date-label">До:</label>
+			<input type="date" id="dateTo" formControlName="dateTo" class="date-input">
+		</div>
+		<button type="submit" class="submit-button">Показать</button>
+	</form>
+</div>
+
+<div *ngIf="userIncomesByPreiod$ && userIncomesByPreiod$.length > 0; else noExpenses">
+	<canvas baseChart class="chart" [data]="pieChartData" [type]="pieChartType" [options]="pieChartOptions"
+		[plugins]="pieChartPlugins">
+	</canvas>
+	<table class="tableIncomeExpense">
+		<thead>
+			<tr>
+				<th class="category-header">Категория</th>
+				<th class="amount-header">Сумма</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="total-label">Итого</td>
+				<td class="total-amount">{{ calculateTotalExpense() }}</td>
+			</tr>
+			<tr *ngFor="let income of userIncomesByPreiod$">
+				<td>{{ income.category }}</td>
+				<td>{{ income.totalIncome }}</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	</div>
+<ng-template #noExpenses>
+	<div class="no-expenses-message">Нет доходов за выбранный период</div>
+</ng-template>
+

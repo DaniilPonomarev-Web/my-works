@@ -1,0 +1,13 @@
+<users>
+    <!-- If user name was not specified, 'default' user is used. -->
+    <default>
+        <!-- Or -->
+        <!-- <password_sha256_hex>5004B997A7AFF65886B3377F05B406B376F910B3F1E90F8F95E09D4F73508EC0097710FB9C57B10057150FC499F331770DCAAEC709E36A7A785D4A1F2FA27455</password_sha256_hex> -->
+
+        <access_management>1</access_management>
+
+        <networks incl="networks" replace="replace">
+        </networks>
+    </default>
+    <!-- Other users settings -->
+</users>

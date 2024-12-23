@@ -1,0 +1,13 @@
+query GetBanner($id: ID!) {
+  banner(id: $id) {
+    id
+    name
+    status
+    title
+    link
+    image
+    image_mob
+    image_href
+    image_mob_href
+  }
+}

@@ -1,0 +1,48 @@
+query GetProducts(
+  $categoryId: String
+  $mainCategoryId: String
+  $offset: Float!
+  $limit: Float!
+  $sortBy: String
+  $sortOrder: String
+  $filter: ProductsFilterInputDTO
+) {
+  getProducts(
+    categoryId: $categoryId
+    mainCategoryId: $mainCategoryId
+    filter: $filter
+    offset: $offset
+    limit: $limit
+    sortBy: $sortBy
+    sortOrder: $sortOrder
+  ) {
+    data {
+      id
+      price
+      status
+      description {
+        name
+        description
+      }
+      images {
+        image
+        blurDataURL
+      }
+      options {
+        id
+        name
+        type
+        values {
+          option {
+            name
+            type
+          }
+          value {
+            name
+          }
+        }
+      }
+    }
+    total
+  }
+}

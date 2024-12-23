@@ -1,0 +1,7 @@
+mutation uploadProductImageToMinio(
+  $ProductUploadImageDTO: InputProductImageUploadDTO!
+) {
+  uploadProductImageToMinio(ProductUploadImageDTO: $ProductUploadImageDTO) {
+    imageName
+  }
+}

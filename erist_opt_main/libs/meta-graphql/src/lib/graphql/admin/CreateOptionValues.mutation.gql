@@ -1,0 +1,12 @@
+mutation CreateOptionValues(
+  $createOptionValueForOptionInput: CreateOptionValueForOptionInput!
+) {
+  createOptionValues(
+    createOptionValueForOptionInput: $createOptionValueForOptionInput
+  ) {
+    id
+    name
+    sortOrder
+    colorCode
+  }
+}

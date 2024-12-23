@@ -1,0 +1,22 @@
+mutation signUpUser($signUpUserInput: SignUpUserInputDTO!) {
+  signUpUser(signUpUserInput: $signUpUserInput) {
+    id
+    name
+    phone
+    email
+    registrationDate
+    lastLogin
+    company {
+      name
+      inn
+      kpp
+      ogrn
+      urAddress
+      checkingAccount
+      correspondentAccount
+      bankName
+      bikBank
+      correspondentAccount
+    }
+  }
+}

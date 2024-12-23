@@ -1,0 +1,69 @@
+query getProductByIdAdmin($id: String!) {
+  getProductByIdAdmin(id: $id) {
+    id
+    model
+    price
+    quantity
+    maincategory
+    categories
+    status
+    sortOrder
+    dateAdded
+    hrefCloudPhotos
+    description {
+      id
+      name
+      description
+      tag
+      meta_title
+      meta_h1
+      meta_description
+      compound
+      model_parameters
+      care
+      parameters
+    }
+    images {
+      id
+      imageNameMinio
+      image
+      sortOrder
+    }
+    options {
+      id
+      name
+      type
+      values {
+        id
+        href
+        price
+        quantity
+        value {
+          id
+          name
+          colorCode
+        }
+      }
+    }
+    productsRelated {
+      id
+      description {
+        name
+      }
+      images {
+        image
+        blurDataURL
+      }
+    }
+    otherColorsProducts {
+      id
+      images {
+        image
+        blurDataURL
+      }
+      description {
+        name
+      }
+    }
+  }
+}

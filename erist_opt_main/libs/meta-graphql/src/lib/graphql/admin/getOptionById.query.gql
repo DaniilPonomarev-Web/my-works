@@ -1,0 +1,14 @@
+query getOptionById($id: String!) {
+  getOptionById(id: $id) {
+    id
+    name
+    type
+    sortOrder
+    values {
+      id
+      name
+      sortOrder
+      colorCode
+    }
+  }
+}

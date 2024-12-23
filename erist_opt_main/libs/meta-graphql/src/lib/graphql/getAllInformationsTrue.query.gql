@@ -1,0 +1,9 @@
+query getAllInformationsTrue {
+  getAllInformationsTrue {
+    id
+    name
+    title
+    content
+    status
+  }
+}

@@ -1,0 +1,6 @@
+mutation CreateSynonymGroup($createSynonymGroupDto: CreateSynonymGroupDto!) {
+  createSynonymGroup(createSynonymGroupDto: $createSynonymGroupDto) {
+    id
+    synonyms
+  }
+}

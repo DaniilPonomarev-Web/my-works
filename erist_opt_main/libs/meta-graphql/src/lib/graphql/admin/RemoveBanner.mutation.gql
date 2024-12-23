@@ -1,0 +1,11 @@
+mutation RemoveBanner($id: ID!) {
+  removeBanner(id: $id) {
+    id
+    name
+    status
+    title
+    link
+    image
+    image_mob
+  }
+}

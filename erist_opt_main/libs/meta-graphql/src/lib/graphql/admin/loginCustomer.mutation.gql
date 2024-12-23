@@ -1,0 +1,6 @@
+mutation loginCustomer($input: LoginCustomerInputDTO!) {
+  loginCustomer(loginCustomerInput: $input) {
+    access_token
+    refresh_token
+  }
+}

@@ -1,0 +1,12 @@
+global:
+  scrape_interval: 15s
+
+scrape_configs:
+  # - job_name: 'prometheus'
+  #   static_configs:
+  #     - targets: ['localhost:9090'] # Цель для сбора метрик самого Prometheus
+
+  - job_name: 'money-app'
+    static_configs:
+      - targets: ['money-app:3010']
+    metrics_path: /api/metrics

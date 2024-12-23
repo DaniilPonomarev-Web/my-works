@@ -1,0 +1,2570 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""Инпут для добавления товара в корзину"""
+input AddToCartInput {
+  """Тут передавать ID значение,options.values[...].id"""
+  optionValueId: String
+
+  """ID товара"""
+  productId: String!
+
+  """Количество товара"""
+  quantity: Float!
+}
+
+"""Адрес"""
+type Address {
+  """Дополнительные данные об адресе"""
+  data: AddressData
+
+  """Неверность адреса (может быть null)"""
+  invalidity: String
+
+  """Полный адрес"""
+  unrestricted_value: String
+
+  """Адрес в текстовом формате"""
+  value: String
+}
+
+"""Дополнительные данные об адресе"""
+type AddressData {
+  """Название города"""
+  city: String
+
+  """FIAS ID города"""
+  city_fias_id: String
+
+  """KLADR ID города"""
+  city_kladr_id: String
+
+  """Тип города"""
+  city_type: String
+
+  """Полное название типа города"""
+  city_type_full: String
+
+  """Полное название города с типом"""
+  city_with_type: String
+
+  """Страна"""
+  country: String
+
+  """ISO код страны"""
+  country_iso_code: String
+
+  """Федеральный округ"""
+  federal_district: String
+
+  """Состояние актуальности FIAS"""
+  fias_actuality_state: String
+
+  """FIAS код"""
+  fias_code: String
+
+  """FIAS ID"""
+  fias_id: String
+
+  """Уровень FIAS"""
+  fias_level: String
+
+  """Географическая широта"""
+  geo_lat: String
+
+  """Географическая долгота"""
+  geo_lon: String
+
+  """KLADR ID"""
+  kladr_id: String
+
+  """Почтовый индекс"""
+  postal_code: String
+
+  """Название региона"""
+  region: String
+
+  """FIAS ID региона"""
+  region_fias_id: String
+
+  """ISO код региона"""
+  region_iso_code: String
+
+  """KLADR ID региона"""
+  region_kladr_id: String
+
+  """Тип региона"""
+  region_type: String
+
+  """Полное название типа региона"""
+  region_type_full: String
+
+  """Полное название региона с типом"""
+  region_with_type: String
+
+  """Временная зона"""
+  timezone: String
+}
+
+"""DTO баннера"""
+type BannerDTO {
+  """UUID Баннера"""
+  id: ID!
+
+  """Изображение для десктопа"""
+  image: String!
+
+  """Изображение для десктопа ссылка minio"""
+  image_href: String!
+
+  """Изображение для мобилки"""
+  image_mob: String!
+
+  """Изображение для мобилки ссылка minio"""
+  image_mob_href: String!
+
+  """Ссылка на баннере"""
+  link: String
+
+  """Название баннера"""
+  name: String!
+
+  """Статус баннера"""
+  status: Boolean!
+
+  """Заголовок на баннере"""
+  title: String
+}
+
+"""Изображение баннера"""
+type BannerUploadImageDTO {
+  """Название изображения в minio"""
+  imageName: String!
+}
+
+"""Список баннеров"""
+type BannersListDTO {
+  """Список баннеров"""
+  banners: [BannerDTO!]!
+
+  """Количество баннеров"""
+  total: Float!
+}
+
+"""Корзина"""
+type CartDTO {
+  """Возможность оформления заказа"""
+  canCheckout: Boolean!
+
+  """Скидка на общую сумму (если есть)"""
+  discount: Float
+
+  """Список элементов в корзине"""
+  items: [CartItemDetailDTO!]!
+
+  """Сообщение об ошибке если есть"""
+  messageError: String
+
+  """Размер скидки в процентах"""
+  percentDiscount: Float
+
+  """Итоговая сумма к оплате"""
+  total: Float!
+
+  """Общая сумма товаров в корзине"""
+  totalAmount: Float!
+}
+
+"""Товар в оформлении заказа"""
+type CartInput {
+  """ID значения опции,options.values[...].id"""
+  optionValueId: String
+
+  """ID товара"""
+  productId: String!
+
+  """Количество товара"""
+  quantity: Float!
+}
+
+"""Элемент корзины с товарами"""
+type CartItemDetailDTO {
+  """Доступен ли товар для покупки"""
+  available: Boolean!
+
+  """Уникальный идентификатор элемента корзины"""
+  id: String!
+
+  """Идентификатор выбранной опции (если есть)"""
+  optionId: String
+
+  """Детали товара"""
+  product: CartProductDTO!
+
+  """Идентификатор товара"""
+  productId: String!
+
+  """Количество товара в корзине"""
+  quantity: Float!
+}
+
+"""Описание товара в корзине"""
+type CartProductDTO {
+  """Доступное количество товара"""
+  availableQuantity: Float
+
+  """Уникальный идентификатор товара"""
+  id: String!
+
+  """Изображение товара"""
+  image: String
+
+  """Модель товара"""
+  model: String!
+
+  """Наименование товара"""
+  name: String!
+
+  """Наименование выбранной опции (если есть)"""
+  optionName: String
+
+  """ID выбранной ного занчения опции (если есть)"""
+  optionValueId: String
+
+  """Цена товара"""
+  price: Float!
+}
+
+type CategoryDTO {
+  """Дочерняя категория"""
+  children: [CategoryDTO!]
+
+  """Описания категории"""
+  descriptions: [CategoryDescriptionDTO!]
+
+  """id категории"""
+  id: String!
+
+  """Ссылка на изображение"""
+  image: String
+
+  """Отображать в плитке на главной"""
+  onHomePage: Boolean!
+
+  """Родительская категория"""
+  parent_id: String
+
+  """Порядок сортировки"""
+  sort_order: Float!
+
+  """Статус категории"""
+  status: Boolean!
+}
+
+type CategoryDescriptionDTO {
+  """Описание категории"""
+  description: String
+
+  """Принадлежность к категории - id"""
+  id: String!
+
+  """meta_description"""
+  meta_description: String
+
+  """meta_h1"""
+  meta_h1: String
+
+  """meta_keyword"""
+  meta_keyword: String
+
+  """meta_title"""
+  meta_title: String
+
+  """Название категории"""
+  name: String!
+}
+
+input CategoryDescriptionInputDTO {
+  """Описание категории"""
+  description: String
+
+  """meta_description"""
+  meta_description: String
+
+  """meta_h1"""
+  meta_h1: String
+
+  """meta_keyword"""
+  meta_keyword: String
+
+  """meta_title"""
+  meta_title: String
+
+  """Название категории"""
+  name: String!
+}
+
+type CategoryListDTO {
+  """Дерево категорий"""
+  data: [CategoryDTO!]!
+
+  """Количество категорий первого уровня"""
+  total: Float!
+}
+
+"""Инпут для фильтров дерева категорий"""
+input CategoryListFilterAdminDTO {
+  """фильтр по части описания"""
+  filterDescription: String
+
+  """фильтр по родительским и дочерним"""
+  filterMainCategory: Boolean
+
+  """фильтр по части названия """
+  filterName: String
+
+  """фильтр по статусу"""
+  filterStatus: Boolean
+}
+
+"""При изменении товара в корзине"""
+type ChangeCartItemDTO {
+  """Количество товара в корзине"""
+  quantity: Float!
+
+  """ID товара"""
+  status: Boolean!
+}
+
+input ChangePasswordDto {
+  """Текущий пароль пользователя"""
+  currentPassword: String!
+
+  """Новый пароль пользователя"""
+  newPassword: String!
+}
+
+"""Код для восстановления пароля пользователя"""
+input CodeForResetPasswordInputDTO {
+  """код отправленный в письме"""
+  code: Float!
+
+  """email человека"""
+  email: String!
+}
+
+"""DTO для создания баннера"""
+input CreateBannerInputDTO {
+  """Изображение для десктопа"""
+  image: String!
+
+  """Изображение для мобилки"""
+  image_mob: String!
+
+  """Ссылка на баннере"""
+  link: String
+
+  """Название баннера"""
+  name: String!
+
+  """Статус баннера"""
+  status: Boolean!
+
+  """Заголовок на баннере"""
+  title: String
+}
+
+input CreateCategoryWithDescriptionDTO {
+  descriptions: [CategoryDescriptionInputDTO!]!
+
+  """Ссылка на изображение категории"""
+  image: String
+
+  """Родиттельская категория"""
+  parent_id: String
+
+  """Порядок сортировки"""
+  sort_order: Float = 0
+
+  """Cтатус категории"""
+  status: Boolean!
+}
+
+"""Создание пользователя админки"""
+input CreateCustomerDTO {
+  """Почта"""
+  email: String!
+
+  """Логин пользователя"""
+  login: String!
+
+  """Пароль """
+  password: String!
+
+  """Роль пользователя"""
+  role: CustomerRole!
+}
+
+"""Данные, необходимые для создания нового запрос"""
+input CreateFeedBackInput {
+  """Текст запроса"""
+  text: String!
+}
+
+"""DTO для создания блока на главной странице"""
+input CreateMainPageBlockInputDTO {
+  """Ссылка блока"""
+  link: String!
+
+  """Название блока"""
+  name: String!
+
+  """Товары в блоке"""
+  products: [String!]!
+
+  """Ссылка блока"""
+  sort: Float!
+
+  """Статус блока"""
+  status: Boolean!
+
+  """Заголовок блока"""
+  title: String!
+}
+
+"""Создание опции"""
+input CreateOptionInput {
+  name: String!
+  sortOrder: Float
+  type: String!
+  values: [CreateOptionValueInput!]!
+}
+
+input CreateOptionValueForOptionInput {
+  optionId: ID!
+  values: [CreateOptionValueInput!]!
+}
+
+"""Создание значения опции"""
+input CreateOptionValueInput {
+  colorCode: String
+  name: String!
+  sortOrder: Float
+}
+
+"""Входные данные для создания группы синонимов"""
+input CreateSynonymGroupDto {
+  """Список обновленных синонимов, разделенных запятыми"""
+  synonyms: String!
+}
+
+"""DTO для создания или обновления ссылки на соц сеть"""
+input CreateUpdateSocialHrefInputDTO {
+  """Заголовок на баннере"""
+  href: String
+
+  """Название баннера"""
+  name: String!
+
+  """Порядок сортировки"""
+  sortOrder: Float
+}
+
+"""Пользователь админки"""
+type CustomerDTO {
+  """Почта"""
+  email: String!
+
+  """ID пользователя"""
+  id: ID!
+
+  """Последняя авторизация"""
+  lastLogin: DateTime
+
+  """Логин пользователя"""
+  login: String!
+
+  """Роль пользователя"""
+  role: CustomerRole!
+}
+
+"""Роли админов админки :D"""
+enum CustomerRole {
+  """Администратор"""
+  Admin
+
+  """Контекст"""
+  Context
+
+  """Менеджер"""
+  Manager
+}
+
+"""Инпут для фильтров пользователей админки"""
+input CustomersFilterAdminDTO {
+  """фильтр по  email"""
+  filterEmail: String
+
+  """фильтр по логину"""
+  filterLogin: Boolean
+}
+
+"""Пользователи админки сайта"""
+type CustomersResultDTO {
+  """Информация о Customers"""
+  customers: [CustomerDTO!]
+
+  """Общее количество Customers"""
+  total: Float
+}
+
+"""Основной DTO для данных Dadata"""
+type DadataDataDTO {
+  """Адрес"""
+  address: DadataSuggestion
+
+  """Власти (может быть null)"""
+  authorities: String
+
+  """Гражданство (может быть null)"""
+  citizenship: String
+
+  """Документы (может быть null)"""
+  documents: String
+
+  """Электронные адреса (может быть null)"""
+  emails: String
+
+  """Количество сотрудников (может быть null)"""
+  employee_count: String
+
+  """Финансовая информация (может быть null)"""
+  finance: String
+
+  """ФИО"""
+  fio: Fio
+
+  """HID"""
+  hid: String
+
+  """ИНН"""
+  inn: String
+
+  """Лицензии (может быть null)"""
+  licenses: String
+
+  """Название"""
+  name: Name
+
+  """ОГРН"""
+  ogrn: String
+
+  """Дата ОГРН"""
+  ogrn_date: Float
+
+  """ОКАТО"""
+  okato: String
+
+  """ОКФС"""
+  okfs: String
+
+  """ОКОГУ"""
+  okogu: String
+
+  """ОКПО"""
+  okpo: String
+
+  """ОКТМО"""
+  oktmo: String
+
+  """ОКВЭД"""
+  okved: String
+
+  """Тип ОКВЭД"""
+  okved_type: String
+
+  """ОКВЭДs (может быть null)"""
+  okveds: String
+
+  """ОПФ"""
+  opf: Opf
+
+  """Телефоны (может быть null)"""
+  phones: String
+
+  """QC (может быть null)"""
+  qc: String
+
+  """Источник (может быть null)"""
+  source: String
+
+  """Состояние"""
+  state: State
+
+  """Тип"""
+  type: String
+}
+
+"""Предложение Dadata"""
+type DadataSuggestion {
+  """Данные предложения (включает Fio, State и другие поля)"""
+  data: AddressData
+
+  """Полное значение предложения"""
+  unrestricted_value: String
+
+  """Значение предложения"""
+  value: String
+}
+
+"""Данные для админ панели"""
+type DashboardDTO {
+  """всего заказов"""
+  countOrders: Float!
+
+  """Всего товаров"""
+  countProducts: Float!
+
+  """Всего покупателей"""
+  countUsers: Float!
+
+  """User Login"""
+  customer: String!
+  salesData: [SalesDataDTO!]!
+
+  """Сумма заказов"""
+  summOrders: Float!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+"""Представляет запрос пользователя"""
+type FeedBackDto {
+  """Уникальный идентификатор запроса"""
+  id: ID!
+
+  """Статус запроса (например, обработан или нет)"""
+  status: Boolean!
+
+  """Текст запроса"""
+  text: String!
+
+  """Пользователь, оставивший запрос"""
+  user: UserDTO!
+}
+
+"""Данные, необходимые для идентификации запроса по ID"""
+input FeedBackIdInput {
+  """Уникальный идентификатор запроса"""
+  id: ID!
+}
+
+type FeedBackListDTO {
+  """список запросов"""
+  data: [FeedBackDto!]!
+
+  """Количество запросов"""
+  total: Float!
+}
+
+"""Инпут для фильтров дерева категорий"""
+input FeedBackListFilterAdminDTO {
+  """фильтр по статусу"""
+  filterStatus: Boolean
+
+  """фильтр по части текста"""
+  filterText: String
+
+  """фильтр по inn пользователя """
+  filterUserInn: String
+}
+
+"""ФИО"""
+type Fio {
+  """Пол (может быть null)"""
+  gender: String
+
+  """Имя"""
+  name: String!
+
+  """Отчество"""
+  patronymic: String!
+
+  """QC (может быть null)"""
+  qc: String
+
+  """Источник (может быть null)"""
+  source: String
+
+  """Фамилия"""
+  surname: String!
+}
+
+"""DTO c ID блока на главной странице"""
+input IdMainPageBlockInputDTO {
+  """UUID Блока"""
+  id: ID!
+}
+
+"""DTO информационной странички"""
+type InformationDTO {
+  """Контент страницы"""
+  content: String!
+
+  """Идентификатор информационной странички"""
+  id: String!
+
+  """Имя страницы"""
+  name: String!
+
+  """Статус страницы"""
+  status: Boolean!
+
+  """Заголовок страницы"""
+  title: String!
+}
+
+"""DTO информационных странички"""
+type InformationDataDTO {
+  """Информационные страницы"""
+  data: [InformationDTO!]!
+
+  """количество"""
+  total: Float!
+}
+
+"""Инпут для загрузки картинки в MINIO для баннера"""
+input InputBannerImageUploadDTO {
+  """Прикрепить изображение"""
+  image: Upload
+}
+
+"""DTO для создания информационной странички"""
+input InputCreateInformationDTO {
+  """Контент страницы"""
+  content: String!
+
+  """Имя страницы"""
+  name: String!
+
+  """Статус страницы"""
+  status: Boolean!
+
+  """Заголовок страницы"""
+  title: String!
+}
+
+"""Входные данные для создания продукта"""
+input InputCreateProductDTO {
+  """Категории продукта"""
+  categories: [String!]!
+
+  """Описание продукта"""
+  description: InputCreateProductDescriptionDTO!
+
+  """Изображения продукта"""
+  images: [InputCreateProductImageDTO!]!
+
+  """Главная категория"""
+  maincategory: String!
+
+  """Модель продукта"""
+  model: String!
+
+  """Значения опций продукта"""
+  optionValues: [InputCreateProductOptionValueDTO!]!
+
+  """Цена продукта"""
+  price: Float!
+
+  """Количество продукта"""
+  quantity: Float!
+
+  """Порядок сортировки"""
+  sortOrder: Float!
+
+  """Статус продукта"""
+  status: Boolean!
+}
+
+"""Входные данные для создания описания продукта"""
+input InputCreateProductDescriptionDTO {
+  """Уход"""
+  care: String
+
+  """Состав"""
+  compound: String
+
+  """Описание"""
+  description: String!
+
+  """Meta описание"""
+  meta_description: String
+
+  """Meta H1"""
+  meta_h1: String
+
+  """Meta title"""
+  meta_title: String
+
+  """Параметры модели"""
+  model_parameters: String
+
+  """Название"""
+  name: String!
+
+  """Параметры изделия"""
+  parameters: String
+
+  """Тэг"""
+  tag: String
+}
+
+"""Входные данные для создания изображения продукта"""
+input InputCreateProductImageDTO {
+  """Название изображения в Minio"""
+  imageNameMinio: String!
+
+  """Порядок сортировки"""
+  sortOrder: Float!
+}
+
+"""Входные данные для значений опций продукта"""
+input InputCreateProductOptionValueDTO {
+  """Ссылка на другой товар, может его id"""
+  href: String = null
+
+  """ID опции"""
+  optionId: String!
+
+  """Цена значения опции"""
+  price: Float! = 0
+
+  """Количество товара у опции"""
+  quantity: Float! = 0
+
+  """ID значения опции"""
+  valueId: String!
+}
+
+"""Инпут для загрузки картинки в MINIO для товара"""
+input InputProductImageUploadDTO {
+  """Прикрепить изображение"""
+  image: Upload
+}
+
+"""DTO для создания информационной странички"""
+input InputUpdateInformationDTO {
+  """Контент страницы"""
+  content: String!
+
+  """Идентификатор информационной странички"""
+  id: String!
+
+  """Имя страницы"""
+  name: String!
+
+  """Статус страницы"""
+  status: Boolean!
+
+  """Заголовок страницы"""
+  title: String!
+}
+
+"""Входные данные для обноавление продукта"""
+input InputUpdateProductDTO {
+  """Категории продукта"""
+  categories: [String!]
+
+  """Описание продукта"""
+  description: InputCreateProductDescriptionDTO!
+
+  """Ссылка на архив фото"""
+  hrefCloudPhotos: String
+
+  """ID товара"""
+  id: ID!
+
+  """Изображения продукта"""
+  images: [InputCreateProductImageDTO!]
+
+  """Главная категория"""
+  maincategory: String
+
+  """Значения опций продукта"""
+  optionValues: [InputCreateProductOptionValueDTO!]!
+
+  """Список товаров с другим цветом (ID)"""
+  otherColorsProductsIds: [String!]
+
+  """Список связанных товаров (ID)"""
+  relatedProductsIds: [String!]
+
+  """Порядок сортировки"""
+  sortOrder: Float = 0
+
+  """Статус продукта"""
+  status: Boolean! = true
+}
+
+"""
+The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf).
+"""
+scalar JSON
+
+"""Лог"""
+type LogAdminDTO {
+  """Дополнительные данные, связанные с логом"""
+  additionalData: JSON
+
+  """Логин админа который все это сделал"""
+  admin: String
+
+  """Уникальный идентификатор лога"""
+  id: ID!
+
+  """Дата лога"""
+  registred: DateTime!
+
+  """Сервис, в котором это сделано"""
+  service: String!
+
+  """Действие"""
+  text: String!
+}
+
+"""Авторизация для админки"""
+input LoginCustomerInputDTO {
+  """login"""
+  login: String!
+
+  """Пароль"""
+  password: String!
+}
+
+"""Ответ для пользователей"""
+type LoginResponseDTO {
+  """токен доступа"""
+  access_token: String!
+
+  """рефреш токен"""
+  refresh_token: String!
+}
+
+"""Авторизация для пользователя"""
+input LoginUserInputDTO {
+  """email"""
+  email: String!
+
+  """Пароль"""
+  password: String!
+}
+
+"""Список логов"""
+type LogsAdminDTO {
+  """Список логов"""
+  logs: [LogAdminDTO!]!
+
+  """Количество логов"""
+  total: Float!
+}
+
+"""DTO для блока на главной странице"""
+type MainPageBlockDTO {
+  """UUID Блока"""
+  id: ID!
+
+  """Ссылка блока"""
+  link: String
+
+  """Название блока"""
+  name: String
+
+  """Товары в блоке"""
+  products: [ProductDTO!]!
+
+  """Ссылка блока"""
+  sort: Float!
+
+  """Статус блока"""
+  status: Boolean!
+
+  """Заголовок блока"""
+  title: String
+}
+
+"""Список Блоков на главной странице"""
+type MainPageBlockListDTO {
+  """Список блоков """
+  blocks: [MainPageBlockDTO!]!
+
+  """Количество блоков"""
+  total: Float!
+}
+
+type Mutation {
+  """Добавление товара в корзину"""
+  addToCart(input: AddToCartInput!): ChangeCartItemDTO!
+
+  """Изменение пароля пользователя"""
+  changePassword(changePasswordDto: ChangePasswordDto!): UserDTO!
+
+  """Удалить все товары в корзине"""
+  clearCart: Boolean!
+
+  """Создается новый баннер. При статусе true выключает остальные баннеры"""
+  createBanner(createBannerInput: CreateBannerInputDTO!): BannerDTO!
+
+  """Создает новую категорию с описанием"""
+  createCategoryWithDescription(createCategoryWithDescriptionInput: CreateCategoryWithDescriptionDTO!): CategoryDTO!
+
+  """Создание нового пользователя."""
+  createCustomer(createCustomerDto: CreateCustomerDTO!): CustomerDTO!
+
+  """Создание нового отзыва"""
+  createFeedback(createFeedbackInput: CreateFeedBackInput!): FeedBackDto!
+
+  """Создать информационную страничку"""
+  createInformation(data: InputCreateInformationDTO!): InformationDTO!
+
+  """Создание нового блока"""
+  createMainPageBlock(createMainPageBlockInput: CreateMainPageBlockInputDTO!): MainPageBlockDTO!
+
+  """Создать опцию"""
+  createOption(createOptionInput: CreateOptionInput!): OptionDTO!
+
+  """Создать значения опции"""
+  createOptionValues(createOptionValueForOptionInput: CreateOptionValueForOptionInput!): [OptionValueDTO!]!
+  createOrder: OrderDTO!
+
+  """Создание продукта"""
+  createProduct(createProductInput: InputCreateProductDTO!): TransformedProductDTO!
+
+  """Создание ссылки на соц сети"""
+  createSocialHref(input: CreateUpdateSocialHrefInputDTO!): SocialHrefDTO!
+
+  """Создание группы синонимов"""
+  createSynonymGroup(createSynonymGroupDto: CreateSynonymGroupDto!): SynonymGroupDto!
+
+  """Регистрирует нового пользователя в системе."""
+  createUserAdmin(createUserAdminInput: SignUpUserInputDTO!): UserDTO!
+
+  """Удаляет категорию по ID."""
+  deleteCategory(id: String!): Boolean!
+
+  """Удаление пользователя по ID."""
+  deleteCustomer(id: String!): Boolean!
+
+  """Удалить информационную страничку"""
+  deleteInformation(id: String!): Boolean!
+
+  """Удалить опцию со всеми значениями"""
+  deleteOption(optionId: ID!): Boolean!
+
+  """Удалить значение опции"""
+  deleteOptionValue(optionValueId: ID!): Boolean!
+
+  """Удаление заказа по ID"""
+  deleteOrder(orderId: ID!): Boolean!
+
+  """Удаление соц сети"""
+  deleteSocialHref(id: ID!): Boolean!
+
+  """Удалить группу синонимов по ID"""
+  deleteSynonymGroup(id: ID!): Boolean!
+
+  """Получение всех пользователей"""
+  getAllUsers(
+    filter: UsersFilterAdminDTO
+    pagination: OrdersPaginationAdminDTO!
+
+    """параметр сортировки по полю"""
+    sortBy: String = "sortOrder"
+
+    """параметр порядка сортировки"""
+    sortOrder: String = "ASC"
+  ): UsersResultsDTO!
+
+  """
+  Получает информацию о текущем пользователе, авторизованном через токен.
+  """
+  getDadataData(
+    """INN пользователя"""
+    inn: String!
+  ): DadataDataDTO!
+
+  """Получение 1 заказа юзера"""
+  getOrderById(orderId: ID!): OrderWithProductsDTO!
+
+  """Получение 1 заказа для админа"""
+  getOrderByIdAdmin(orderId: ID!): OrderWithProductsDTO!
+
+  """Получение всех заказов юзера"""
+  getOrdersUsers(
+    filter: OrdersFilterDTO
+
+    """По умолчанию 10000"""
+    limit: Float! = 10000
+
+    """ По умолчанию 0"""
+    offset: Float! = 0
+
+    """параметр сортировки по полю"""
+    sortBy: String = "sortOrder"
+
+    """параметр порядка сортировки"""
+    sortOrder: String = "ASC"
+  ): OrderListDTO!
+
+  """Получение всех заказов"""
+  getOrdersUsersAdmin(
+    filter: OrdersFilterAdminDTO
+    pagination: OrdersPaginationAdminDTO!
+
+    """параметр сортировки по полю"""
+    sortBy: String = "sortOrder"
+
+    """параметр порядка сортировки"""
+    sortOrder: String = "ASC"
+  ): OrderListDTO!
+
+  """Выполняет вход пользователя в систему и возвращает токены."""
+  login(loginUserInput: LoginUserInputDTO!): LoginResponseDTO!
+
+  """Выполняет вход пользователя в систему и возвращает токены."""
+  loginCustomer(loginCustomerInput: LoginCustomerInputDTO!): LoginResponseDTO!
+
+  """Обновляет токен доступа с помощью переданного рефреш токена."""
+  refreshToken(refreshToken: String!): RefreshResponseDTO!
+
+  """Обновляет токен доступа с помощью переданного рефреш токена."""
+  refreshTokenCustomer(refreshToken: String!): RefreshResponseDTO!
+
+  """Удаляет баннер"""
+  removeBanner(id: ID!): [BannerDTO!]!
+
+  """Удаление товара из корзины"""
+  removeFromCart(input: RemoveFromCartInput!): ChangeCartItemDTO!
+
+  """Удаление блока по id"""
+  removeMainPageBlock(IdMainPageBlockInputDTO: IdMainPageBlockInputDTO!): [MainPageBlockDTO!]!
+
+  """Регистрирует нового пользователя в системе."""
+  signUpUser(signUpUserInput: SignUpUserInputDTO!): UserDTO!
+
+  """Обновляет баннер. При статусе true выключает остальные баннеры"""
+  updateBanner(updateBannerInput: UpdateBannerInputDTO!): BannerDTO!
+
+  """Обновление количества товара в корзине"""
+  updateCartItemQuantity(input: UpdateCartItemQuantityInput!): ChangeCartItemDTO!
+
+  """бновляет существующую категорию."""
+  updateCategory(updateCategoryInput: UpdateCategoryDTO!): CategoryDTO!
+
+  """Обновление информации о компании пользователя"""
+  updateCompany(updateCompanyDto: UpdateCompanyDto!): UserDTO!
+
+  """Обновление существующего пользователя."""
+  updateCustomer(updateCustomerDto: UpdateCustomerDTO!): CustomerDTO!
+
+  """Обновление статуса отзыва"""
+  updateFeedbackStatus(input: FeedBackIdInput!): FeedBackDto!
+
+  """Обновить информационную страничку"""
+  updateInformation(data: InputUpdateInformationDTO!): InformationDTO!
+
+  """Обновление даты последнего входа в лк пользователя"""
+  updateLastLogin: UserDTO!
+
+  """Обновление блока"""
+  updateMainPageBlock(updateMainPageBlockInput: UpdateMainPageBlockInputDTO!): MainPageBlockDTO!
+
+  """Обновить значения опции"""
+  updateOptionValues(updateOptionValuesInput: UpdateOptionValueForOptionInput!): OptionDTO!
+
+  """Обновление статуса заказа"""
+  updateOrderStatus(newState: StateOrder!, orderId: ID!): OrderWithProductsDTO!
+
+  """Обновление продукта"""
+  updateProduct(updateProductInput: InputUpdateProductDTO!): TransformedProductDTO!
+
+  """Изменение пароля при восстановлении доступа"""
+  updateResetPassword(newPassword: newUserPasswordInputDTO!): Boolean!
+
+  """Обновление ссылки на соц сеть"""
+  updateSocialHref(input: UpdateSocialHrefInputDTO!): SocialHrefDTO!
+
+  """Обновление группы синонимов"""
+  updateSynonymGroup(updateSynonymGroupDto: UpdateSynonymGroupDto!): SynonymGroupDto!
+
+  """Обновление основной информации о пользователе"""
+  updateUser(updateUserDto: UpdateUserDto!): UserDTO!
+
+  """Обновление основной информации о пользователе"""
+  updateUserAdmin(updateUserForAdminDto: UpdateUserForAdminDto!): UserDTO!
+
+  """Изменить статус пользователя (включить/отключить пользователя)"""
+  updateUserStatus(
+    """ID пользователя"""
+    id: String!
+  ): UserDTO!
+
+  """
+  Отправка файла изображения для баннера его в minio. Вернется его название
+  """
+  uploadBannerImageToMinio(
+    """Загрузка изображения в minio для баннера"""
+    BannerUploadImageDTO: InputBannerImageUploadDTO!
+  ): BannerUploadImageDTO!
+
+  """
+  Отправка файла изображения для загрузки его в minio. Вернется его название
+  """
+  uploadProductImageToMinio(
+    """Загрузка изображения в minio"""
+    ProductUploadImageDTO: InputProductImageUploadDTO!
+  ): ProductUploadImageDTO!
+}
+
+"""Название"""
+type Name {
+  """Полное название"""
+  full: String
+
+  """Полное название с ОПФ"""
+  full_with_opf: String
+
+  """Латинское название (может быть null)"""
+  latin: String
+
+  """Краткое название (может быть null)"""
+  short: String
+
+  """Краткое название с ОПФ"""
+  short_with_opf: String
+}
+
+"""ОПФ"""
+type Opf {
+  """Код ОПФ"""
+  code: String
+
+  """Полное название ОПФ"""
+  full: String
+
+  """Сокращенное название ОПФ"""
+  short: String
+
+  """Тип ОПФ"""
+  type: String
+}
+
+"""Опция"""
+type OptionDTO {
+  """ID опции"""
+  id: ID!
+
+  """Название опции"""
+  name: String!
+
+  """Порядок сортировки"""
+  sortOrder: Float!
+
+  """Тип опции"""
+  type: String!
+
+  """Значения опции"""
+  values: [OptionValueDTO!]!
+}
+
+"""Опции для фильтра"""
+type OptionFilterDTO {
+  """ID"""
+  id: ID!
+
+  """Название опции (размер цвет и прочая)"""
+  optionName: String!
+
+  """Актуальные значения"""
+  values: [String!]!
+}
+
+"""Значение опции"""
+type OptionValueDTO {
+  """COD TSVETA"""
+  colorCode: String
+
+  """ID значения опции"""
+  id: ID!
+
+  """Название значения опции"""
+  name: String!
+  option: OptionDTO!
+  productOptionValues: [ProductOptionValueDTO!]!
+
+  """Порядок сортировки"""
+  sortOrder: Float!
+}
+
+"""Список опций"""
+type OptionsListDTO {
+  """Список опций"""
+  options: [OptionDTO!]!
+
+  """Количество опций"""
+  total: Float!
+}
+
+"""Заказ пользователя"""
+type OrderDTO {
+  """Товары в заказе"""
+  cart: [CartInput!]!
+
+  """счетчик заказов"""
+  currentID: Float!
+
+  """Скидка на сумму заказа"""
+  discount: Float
+
+  """Ссылка на ордер в minio"""
+  hrefForInvoice: String
+
+  """Уникальный идентификатор заказа"""
+  id: ID!
+
+  """ID заказа в 1с"""
+  id1c: String
+
+  """Выгружен ли в 1с"""
+  inOneC: Boolean!
+
+  """Способ оплаты"""
+  paymentMethod: String!
+
+  """Дата создания заказа"""
+  registred: String!
+
+  """Статус заказа"""
+  state: String!
+
+  """Итоговая сумма заказа"""
+  total: Float!
+
+  """Общая сумма товаров в заказе"""
+  totalAmount: Float!
+
+  """Пользователь, сделавший заказ"""
+  user: UserDTOForOrder!
+
+  """Название банка"""
+  userCompany_bankName: String!
+
+  """БИК банка"""
+  userCompany_bikBank: String!
+
+  """Расчетный счет"""
+  userCompany_checkingAccount: String!
+
+  """Корреспондентский счет"""
+  userCompany_correspondentAccount: String!
+
+  """ИНН компании"""
+  userCompany_inn: String!
+
+  """КПП компании"""
+  userCompany_kpp: String
+
+  """Наименование компании"""
+  userCompany_name: String!
+
+  """ОГРН(-ИП) компании"""
+  userCompany_ogrn: String!
+
+  """Юридический адрес компании"""
+  userCompany_urAddress: String!
+}
+
+"""Список заказов"""
+type OrderListDTO {
+  """Список заказов"""
+  orders: [OrderWithProductsDTO!]!
+
+  """Количество заказов"""
+  total: Float!
+}
+
+"""Описание товара в заказе"""
+type OrderProductDTO {
+  """Уникальный идентификатор товара"""
+  id: String!
+
+  """Изображение товара"""
+  image: String
+
+  """Модель товара"""
+  model: String!
+
+  """Наименование товара"""
+  name: String!
+
+  """Наименование выбранной опции (если есть)"""
+  optionName: String
+
+  """Цена товара"""
+  price: Float!
+
+  """Доступное количество товара"""
+  quantity: Float
+}
+
+"""Заказ пользователя c товарами и адресом для личного кабинета"""
+type OrderWithProductsDTO {
+  """счетчик заказов"""
+  currentID: Float!
+
+  """Скидка на сумму заказа"""
+  discount: Float
+
+  """Ссылка на ордер в minio"""
+  hrefForInvoice: String
+
+  """Уникальный идентификатор заказа"""
+  id: ID!
+
+  """ID заказа в 1с"""
+  id1c: String
+
+  """Выгружен ли в 1с"""
+  inOneC: Boolean!
+
+  """Способ оплаты"""
+  paymentMethod: String!
+
+  """Товары в заказе"""
+  products: [OrderProductDTO!]!
+
+  """Дата создания заказа"""
+  registred: String!
+
+  """Статус заказа"""
+  state: String!
+
+  """Итоговая сумма заказа"""
+  total: Float!
+
+  """Общая сумма товаров в заказе"""
+  totalAmount: Float!
+
+  """Название банка"""
+  userCompany_bankName: String!
+
+  """БИК банка"""
+  userCompany_bikBank: String!
+
+  """Расчетный счет"""
+  userCompany_checkingAccount: String!
+
+  """Корреспондентский счет"""
+  userCompany_correspondentAccount: String!
+
+  """ИНН компании"""
+  userCompany_inn: String!
+
+  """КПП компании"""
+  userCompany_kpp: String
+
+  """Наименование компании"""
+  userCompany_name: String!
+
+  """ОГРН(-ИП) компании"""
+  userCompany_ogrn: String!
+
+  """Юридический адрес компании"""
+  userCompany_urAddress: String!
+}
+
+"""Инпут для фильтров заказов"""
+input OrdersFilterAdminDTO {
+  """Дата от"""
+  dateFrom: String
+
+  """Дата до"""
+  dateTo: String
+
+  """Поиск по номеру заказа"""
+  orderNumber: Float
+
+  """Часть имени продукта для фильтрации"""
+  productName: String
+
+  """Минимальная цена для фильтрации"""
+  totalAmountFrom: Float
+
+  """Максимальная цена для фильтрации"""
+  totalAmountTo: Float
+}
+
+"""Инпут для фильтров заказов"""
+input OrdersFilterDTO {
+  """Дата от"""
+  dateFrom: String
+
+  """Дата до"""
+  dateTo: String
+
+  """Поиск по номеру заказа"""
+  orderNumber: Float
+
+  """Часть имени продукта для фильтрации"""
+  productName: String
+
+  """Минимальная цена для фильтрации"""
+  totalAmountFrom: Float
+
+  """Максимальная цена для фильтрации"""
+  totalAmountTo: Float
+}
+
+"""Инпут для пагинации заказов"""
+input OrdersPaginationAdminDTO {
+  """Номер страницы"""
+  page: Float! = 1
+
+  """Количество элементов на странице"""
+  perPage: Float! = 10
+}
+
+"""Товары с другими цветами"""
+type OtherColorProductDTO {
+  """Уникальный идентификатор записи"""
+  id: String
+
+  """ID связанного товара"""
+  otherColorProductId: String
+
+  """Связанный товар (основной)"""
+  product: ProductDTO!
+}
+
+"""Продукт"""
+type ProductDTO {
+  """Категории продукта"""
+  categories: [String!]!
+
+  """Дата добавления"""
+  dateAdded: DateTime
+
+  """Описание продукта"""
+  description: ProductDescriptionDTO!
+
+  """Ссылка на облако"""
+  hrefCloudPhotos: String
+
+  """ID продукта"""
+  id: ID!
+
+  """ID продукта в 1сфизи"""
+  id1c: String!
+
+  """Изображения продукта"""
+  images: [ProductImageDTO!]
+
+  """Главная категория"""
+  maincategory: String!
+
+  """Модель продукта"""
+  model: String!
+
+  """Опции продукта"""
+  optionValues: [ProductOptionValueDTO!]!
+
+  """Товары с другим цветом"""
+  otherColorsProducts: [OtherColorProductDTO!]!
+
+  """Цена продукта"""
+  price: Float!
+
+  """Связанные товары"""
+  productsRelated: [ProductRelatedDTO!]!
+
+  """Количество продукта"""
+  quantity: Float!
+
+  """Порядок сортировки"""
+  sortOrder: Float!
+
+  """Статус продукта"""
+  status: Boolean!
+}
+
+"""Описание продукта"""
+type ProductDescriptionDTO {
+  """Уход"""
+  care: String
+
+  """Состав"""
+  compound: String
+
+  """Описание"""
+  description: String
+
+  """ID описания"""
+  id: ID!
+
+  """Meta описание"""
+  meta_description: String
+
+  """Meta H1"""
+  meta_h1: String
+
+  """Meta title"""
+  meta_title: String
+
+  """Параметры модели"""
+  model_parameters: String
+
+  """Название"""
+  name: String!
+
+  """Параметры изделия"""
+  parameters: String
+
+  """Тэг"""
+  tag: String
+}
+
+"""Изображение продукта"""
+type ProductImageDTO {
+  """BASE64 изображения"""
+  blurDataURL: String
+
+  """ID изображения"""
+  id: ID!
+
+  """URL изображения в minio"""
+  image: String
+
+  """Название изображения в minio"""
+  imageNameMinio: String!
+
+  """ID продукта"""
+  productId: ID!
+
+  """Порядок сортировки"""
+  sortOrder: Float!
+}
+
+"""Опция продукта"""
+type ProductOptionDTO {
+  """ID опции"""
+  id: ID!
+
+  """Название опции"""
+  name: String!
+
+  """Тип опции"""
+  type: String!
+
+  """Значения опции"""
+  values: [ProductOptionValueDTO!]!
+}
+
+"""Значение опции продукта"""
+type ProductOptionValueDTO {
+  """Либо ID товара либо ссылка на него сразу"""
+  href: String
+
+  """ID значения опции"""
+  id: ID!
+  option: OptionDTO
+
+  """Цена"""
+  price: Float!
+
+  """Количество товара с этой опцией"""
+  quantity: Float!
+  value: OptionValueDTO
+}
+
+"""Значение опции продукта для пользователя"""
+type ProductOptionValueForUserDTO {
+  """Либо ID товара либо ссылка на него сразу"""
+  href: String
+
+  """ID значения опции"""
+  id: ID!
+  option: OptionDTO
+
+  """Цена"""
+  price: Float!
+
+  """Количество товара с этой опцией"""
+  quantity: Float!
+  value: OptionValueDTO
+}
+
+"""Связанные товары"""
+type ProductRelatedDTO {
+  """Уникальный идентификатор записи"""
+  id: String
+
+  """Связанный товар (основной)"""
+  product: ProductDTO!
+
+  """ID связанного товара"""
+  relatedProductId: String
+}
+
+"""Изображение товара"""
+type ProductUploadImageDTO {
+  """Название изображения в minio"""
+  imageName: String!
+}
+
+"""Продукты и категории"""
+type ProductsAndCategoriesDTO {
+  """Категории"""
+  categories: [CategoryDTO!]
+
+  """Товары"""
+  products: [TransformedProductDTO!]
+}
+
+"""Инпут для фильтров товаров в админке"""
+input ProductsFilterAdminDTO {
+  """Фильтр по категории"""
+  categoryId: String
+
+  """Фильтр по цветам"""
+  colors: [String!]
+
+  """Фильтр по главной категории"""
+  mainCategoryId: String
+
+  """Часть имени продукта для фильтрации"""
+  name: String
+
+  """Минимальная цена для фильтрации"""
+  priceFrom: Float
+
+  """Максимальная цена для фильтрации"""
+  priceTo: Float
+
+  """Фильтр по размерам"""
+  sizes: [String!]
+
+  """Фильтр по статусу"""
+  status: Boolean
+}
+
+"""Инпут для фильтров товаров"""
+input ProductsFilterInputDTO {
+  """Фильтр по цветам"""
+  colors: [String!]
+
+  """Часть имени продукта для фильтрации"""
+  name: String
+
+  """Минимальная цена для фильтрации"""
+  priceFrom: Float
+
+  """Максимальная цена для фильтрации"""
+  priceTo: Float
+
+  """Фильтр по размерам"""
+  sizes: [String!]
+}
+
+type Query {
+  """Получить продукты и категории"""
+  GetProductsAndCategories(searchInput: SearchInputDTO!): ProductsAndCategoriesDTO!
+
+  """Получает один баннер по id"""
+  banner(id: ID!): BannerDTO!
+
+  """Получает один включенный баннер"""
+  bannersTrue: [BannerDTO!]!
+
+  """Проверяет статус пользователя."""
+  checkUserStatus: Boolean!
+
+  """Получает все баннеры"""
+  getAllBannersAdmin(
+    pagination: OrdersPaginationAdminDTO!
+
+    """параметр сортировки по полю"""
+    sortBy: String = "sortOrder"
+
+    """параметр порядка сортировки"""
+    sortOrder: String = "ASC"
+  ): BannersListDTO!
+
+  """Возвращает список всех категорий без детей и описаний"""
+  getAllCategories: [CategoryDTO!]!
+
+  """Возвращает список всех дочерних категорий"""
+  getAllCildrenCategories: [CategoryDTO!]!
+
+  """Получение всех Customers"""
+  getAllCustomers(
+    filter: CustomersFilterAdminDTO
+    pagination: OrdersPaginationAdminDTO!
+
+    """параметр сортировки по полю"""
+    sortBy: String = "sortOrder"
+
+    """параметр порядка сортировки"""
+    sortOrder: String = "ASC"
+  ): CustomersResultDTO!
+
+  """Получение всех отзывов с фильтрацией по статусу"""
+  getAllFeedbacks(filter: FeedBackListFilterAdminDTO, pagination: OrdersPaginationAdminDTO!): FeedBackListDTO!
+
+  """Получить все информационные странички"""
+  getAllInformations(pagination: OrdersPaginationAdminDTO!): InformationDataDTO!
+
+  """Получить все информационные странички"""
+  getAllInformationsTrue: [InformationDTO!]!
+
+  """Получить все логи"""
+  getAllLogs(admin: String, dataId: String, fromDate: String, pagination: OrdersPaginationAdminDTO!, service: String, title: String, toDate: String): LogsAdminDTO!
+
+  """Получить все опции со значениями"""
+  getAllOptionsWithValues(pagination: OrdersPaginationAdminDTO!): OptionsListDTO!
+
+  """Социальные сети в футер и может ещё куда-то для админа"""
+  getAllSocialHrefs(pagination: OrdersPaginationAdminDTO!): SocialHrefsDataDTO!
+
+  """Социальные сети в футер и может ещё куда-то для пользователя"""
+  getAllSocialHrefsForUser: [SocialHrefDTO!]!
+
+  """Получить все группы синонимов"""
+  getAllSynonymGroups(filter: SynonymGroupFilterAdminDTO, pagination: OrdersPaginationAdminDTO!): SynonymGroupListDto!
+
+  """Получение корзины с актуальными ценами и остатками"""
+  getCart: CartDTO!
+
+  """Возвращает дерево категорий только для главной."""
+  getCategoriesForHomePage: [CategoryDTO!]!
+
+  """Возвращает категорию по ID."""
+  getCategoryById(id: String!): CategoryDTO
+
+  """Возвращает категорию по ID с детьми и прочим гавном"""
+  getCategoryByIdForUser(id: String!): CategoryDTO
+
+  """Возвращает дерево категорий."""
+  getCategoryTree(filter: CategoryListFilterAdminDTO, pagination: OrdersPaginationAdminDTO!): CategoryListDTO!
+
+  """Возвращает дерево категорий только со включеннми статусами."""
+  getCategoryTreeForUser: [CategoryDTO!]!
+
+  """Возвращает список всех дочерних категорий"""
+  getChildrenCategories: [CategoryDTO!]!
+
+  """Получает информацию о пользователе админки"""
+  getCustomer(
+    """ID пользователя админки"""
+    id: String!
+  ): CustomerDTO!
+
+  """Получение дашборда для админки"""
+  getDashbord: DashboardDTO!
+
+  """Получение одного отзыва по ID"""
+  getFeedbackById(input: FeedBackIdInput!): FeedBackDto!
+
+  """Получить информационную страничку по ID"""
+  getInformation(id: String!): InformationDTO!
+
+  """Получить информационную страничку по NAME"""
+  getInformationByName(name: String!): InformationDTO!
+
+  """Получить информационную страничку по ID"""
+  getInformationTrue(id: String!): InformationDTO!
+
+  """Запрос по id одного блока"""
+  getMainPageBlock(IdMainPageBlockInputDTO: IdMainPageBlockInputDTO!): MainPageBlockDTO!
+
+  """Запрос только включенных  блоков"""
+  getMainPageBlocksOnlyTrue: [MainPageBlockDTO!]!
+
+  """Получить новинки"""
+  getNewProducts: [TransformedProductDTO!]!
+
+  """Получить опцию по идентификатору"""
+  getOptionById(id: String!): OptionDTO!
+
+  """Получить акутальные опции для фильтра"""
+  getOptionsForFilter: [OptionFilterDTO!]!
+
+  """Возвращает список всех родительских категорий"""
+  getParentCategories: [CategoryDTO!]!
+
+  """Получить продукт по ID"""
+  getProductById(id: String!): TransformedProductDTO!
+
+  """Получить продукт по ID"""
+  getProductByIdAdmin(id: String!): TransformedProductDTO!
+
+  """Получить все продукты"""
+  getProducts(
+    """Если нужен поиск по категориям (исключает mainCategoryId)"""
+    categoryId: String = null
+    filter: ProductsFilterInputDTO
+
+    """По умолчанию 10000"""
+    limit: Float! = 10000
+
+    """Если нужен поиск по главной категории (исключает categoryId)"""
+    mainCategoryId: String = null
+
+    """ По умолчанию 0"""
+    offset: Float! = 0
+
+    """параметр сортировки по полю"""
+    sortBy: String = "sortOrder"
+
+    """параметр порядка сортировки"""
+    sortOrder: String = "asc"
+  ): TransformedProductsDTO!
+
+  """Получить все продукты"""
+  getProductsAdmin(
+    filter: ProductsFilterAdminDTO
+    pagination: OrdersPaginationAdminDTO!
+
+    """параметр сортировки по полю"""
+    sortBy: String = "sortOrder"
+
+    """параметр порядка сортировки"""
+    sortOrder: String = "ASC"
+  ): TransformedProductsDTO!
+
+  """Получить 6 рандомных товарв"""
+  getRandProducts: [TransformedProductDTO!]!
+
+  """Социальная сеть для админа"""
+  getSocialHref(id: ID!): SocialHrefDTO!
+
+  """Получить одну группу синонимов по ID"""
+  getSynonymGroupById(id: ID!): SynonymGroupDto!
+
+  """Получить пользователя по ID"""
+  getUserById(
+    """ID пользователя"""
+    id: String!
+  ): UserDTO!
+
+  """Получение всех отзывов пользователя"""
+  getUserFeedbacks: [FeedBackDto!]!
+
+  """
+  Получает информацию о текущем пользователе по его ID из контекста токена.
+  """
+  getUserInfo: UserDTO
+
+  """Запрос всех блоков"""
+  mainPageBlocks(
+    pagination: OrdersPaginationAdminDTO!
+
+    """параметр сортировки по полю"""
+    sortBy: String = "sortOrder"
+
+    """параметр порядка сортировки"""
+    sortOrder: String = "ASC"
+  ): MainPageBlockListDTO!
+
+  """Получить 12 рандомных товарв из категории"""
+  randProductsByCategory(mainCategory: String!, productId: String!): [TransformedProductDTO!]!
+
+  """
+  Отправляет код подтверждения на email пользователя и сохраняет его у нас в системе
+  """
+  resetPassword(resetPasswordInput: ResetPasswordInputDTO!): Boolean!
+
+  """
+  Отправляет код подтверждения на email пользователя и сохраняет его у нас в системе
+  """
+  sendCodeResetPassword(codeForResetPasswordInput: CodeForResetPasswordInputDTO!): Boolean!
+  uptime: Float!
+
+  """Проверяет валидность токена."""
+  verifyTokenCustomer: Boolean!
+
+  """Проверяет валидность токена."""
+  verifyTokenUser: Boolean!
+
+  """
+  Получает информацию о текущем пользователе, авторизованном через токен.
+  """
+  whoIAm: UserDTO!
+
+  """
+  Получает информацию о текущем пользователе админки, авторизованном через токен.
+  """
+  whoIAmCustomer: CustomerDTO!
+}
+
+"""DTO для обновления токена"""
+type RefreshResponseDTO {
+  """Токен доступа для новой сессии аутентификации"""
+  access_token: String!
+
+  """Токен обновления для получения нового access token"""
+  refresh_token: String!
+}
+
+"""DTO для удаления элемента корзины"""
+input RemoveFromCartInput {
+  """ID элемента корзины"""
+  itemId: String!
+}
+
+"""Входные данные для восстановления пароля пользователя"""
+input ResetPasswordInputDTO {
+  """email человека"""
+  email: String!
+}
+
+type SalesDataDTO {
+  amount: Float!
+  date: String!
+}
+
+"""Передаем строку для поиска"""
+input SearchInputDTO {
+  """
+  Строка с названием либо товара, либо категории. первый раз закинуть null
+  """
+  searchString: String = null
+}
+
+"""Входные данные для создания пользователя"""
+input SignUpUserInputDTO {
+  """Компания пользователя"""
+  company: UserCompanyInputDTO!
+
+  """Почта"""
+  email: String!
+
+  """Имя контактного лица"""
+  name: String!
+
+  """Пароль"""
+  password: String!
+
+  """Номер телефона"""
+  phone: String!
+
+  """Повтор пароля"""
+  secondPassword: String!
+}
+
+"""DTO социальной сети"""
+type SocialHrefDTO {
+  """Ссылка на соц сеть"""
+  href: String!
+
+  """UUID ссылки соц"""
+  id: ID!
+
+  """По большей части тэг, типа vk, inst, telegram, wa и тд"""
+  name: String!
+
+  """Порядок сортировки"""
+  sortOrder: Float!
+}
+
+"""DTO социальных сетей сети"""
+type SocialHrefsDataDTO {
+  """Соц сетей"""
+  data: [SocialHrefDTO!]!
+
+  """Количество"""
+  total: Float!
+}
+
+"""Состояние"""
+type State {
+  """Дата актуальности (в миллисекундах)"""
+  actuality_date: Float
+
+  """Код статуса (может быть null)"""
+  code: String
+
+  """Дата ликвидации (может быть null)"""
+  liquidation_date: Float
+
+  """Дата регистрации (в миллисекундах)"""
+  registration_date: Float
+
+  """Статус (например, ACTIVE)"""
+  status: String
+}
+
+"""Статус заказа"""
+enum StateOrder {
+  """Закрыт"""
+  closed
+
+  """Создан"""
+  created
+
+  """В обработке"""
+  inprocessing
+
+  """Оплачен"""
+  paid
+
+  """Отправлен"""
+  sent
+}
+
+"""группы синонимов"""
+type SynonymGroupDto {
+  """ID группы синонимов"""
+  id: ID!
+
+  """Список обновленных синонимов, разделенных запятыми"""
+  synonyms: String!
+}
+
+"""Инпут для фильтров групп синонимов"""
+input SynonymGroupFilterAdminDTO {
+  """фильтр по статусу"""
+  synonym: String
+}
+
+"""группы синонимов"""
+type SynonymGroupListDto {
+  """ID группы синонимов"""
+  data: [SynonymGroupDto!]!
+
+  """Количество групп синонимов"""
+  total: Float!
+}
+
+"""Трансформированный продукт"""
+type TransformedProductDTO {
+  """Категории продукта"""
+  categories: [String!]!
+
+  """Дата добавления"""
+  dateAdded: DateTime
+
+  """Описание продукта"""
+  description: ProductDescriptionDTO!
+
+  """Ссылка на облако"""
+  hrefCloudPhotos: String
+
+  """ID продукта"""
+  id: ID!
+
+  """ID продукта"""
+  id1c: String!
+
+  """Изображения продукта"""
+  images: [ProductImageDTO!]!
+
+  """Главная категория"""
+  maincategory: String!
+
+  """Модель продукта"""
+  model: String!
+
+  """Опции продукта"""
+  options: [ProductOptionDTO!]!
+
+  """Товары c другими цветами"""
+  otherColorsProducts: [TransformedProductDTO!]
+
+  """Цена продукта"""
+  price: Float!
+
+  """Товары связанные"""
+  productsRelated: [TransformedProductDTO!]
+
+  """Количество продукта"""
+  quantity: Float!
+
+  """Порядок сортировки"""
+  sortOrder: Float!
+
+  """Статус продукта"""
+  status: Boolean!
+}
+
+"""Продукты"""
+type TransformedProductsDTO {
+  """Товары"""
+  data: [TransformedProductDTO!]
+
+  """Общее количество товаров"""
+  total: Float!
+}
+
+"""DTO для обнновления полей баннера"""
+input UpdateBannerInputDTO {
+  """UUID Баннера"""
+  id: ID!
+
+  """Изображение для десктопа"""
+  image: String!
+
+  """Изображение для мобилки"""
+  image_mob: String!
+
+  """Ссылка на баннере"""
+  link: String
+
+  """Название баннера"""
+  name: String!
+
+  """Статус баннера"""
+  status: Boolean!
+
+  """Заголовок на баннере"""
+  title: String
+}
+
+"""DTO для обновления товара"""
+input UpdateCartItemQuantityInput {
+  """ID элемента корзины"""
+  itemId: String!
+
+  """Количество товара"""
+  quantity: Float!
+}
+
+input UpdateCategoryDTO {
+  """Описания категории"""
+  descriptions: [UpdateCategoryDescriptionDTO!]!
+  id: String!
+
+  """Ссылка на изображение"""
+  image: String
+
+  """На главную"""
+  onHomePage: Boolean
+
+  """Родительская категория"""
+  parent_id: String
+
+  """Порядок сортировки"""
+  sort_order: Float!
+
+  """Статус категории"""
+  status: Boolean
+}
+
+input UpdateCategoryDescriptionDTO {
+  """Описание категории"""
+  description: String
+
+  """Принадлежность к категории - id"""
+  id: String!
+
+  """meta_description"""
+  meta_description: String
+
+  """meta_h1"""
+  meta_h1: String
+
+  """meta_keyword"""
+  meta_keyword: String
+
+  """meta_title"""
+  meta_title: String
+
+  """Название категории"""
+  name: String!
+}
+
+input UpdateCompanyDto {
+  """Название банка"""
+  bankName: String!
+
+  """БИК банка"""
+  bikBank: String!
+
+  """расчетный счет"""
+  checkingAccount: String!
+
+  """Корреспондентский счет"""
+  correspondentAccount: String!
+
+  """ИНН"""
+  inn: String!
+
+  """КПП"""
+  kpp: String
+
+  """Наименование компании"""
+  name: String!
+
+  """ОГРН(-ИП)"""
+  ogrn: String
+
+  """Юридический адрес"""
+  urAddress: String!
+}
+
+"""Обновление пользователя админки"""
+input UpdateCustomerDTO {
+  """Почта"""
+  email: String!
+
+  """id пользователя"""
+  id: String!
+
+  """Логин пользователя"""
+  login: String!
+
+  """Пароль Если задан то новый, если нет, то старый"""
+  password: String
+
+  """Роль пользователя"""
+  role: CustomerRole!
+}
+
+"""DTO для обновления блока на главной странице"""
+input UpdateMainPageBlockInputDTO {
+  """UUID Блока"""
+  id: ID!
+
+  """Ссылка блока"""
+  link: String!
+
+  """Название блока"""
+  name: String!
+
+  """Товары в блоке"""
+  products: [String!]!
+
+  """Ссылка блока"""
+  sort: Float!
+
+  """Статус блока"""
+  status: Boolean!
+
+  """Заголовок блока"""
+  title: String!
+}
+
+input UpdateOptionValueForOptionInput {
+  optionId: ID!
+  values: [UpdateOptionValueInput!]!
+}
+
+"""Обновление значения опции"""
+input UpdateOptionValueInput {
+  colorCode: String
+  id: ID
+  name: String!
+  sortOrder: Float
+}
+
+"""DTO для обновления ссылки на соц сеть"""
+input UpdateSocialHrefInputDTO {
+  """Заголовок на баннере"""
+  href: String
+
+  """UUID ссылки на соц сеть"""
+  id: ID!
+
+  """Название баннера"""
+  name: String!
+
+  """Порядок сортировки"""
+  sortOrder: Float
+}
+
+"""Входные данные для обновления группы синонимов"""
+input UpdateSynonymGroupDto {
+  """ID группы синонимов"""
+  id: ID!
+
+  """Список обновленных синонимов, разделенных запятыми"""
+  synonyms: String!
+}
+
+input UpdateUserDto {
+  """Имя контактного лица"""
+  name: String!
+  phone: String!
+  status: Boolean!
+}
+
+input UpdateUserForAdminDto {
+  """ID"""
+  id: String!
+
+  """Имя контактного лица"""
+  name: String!
+  phone: String!
+  status: Boolean!
+}
+
+"""The `Upload` scalar type represents a file upload."""
+scalar Upload
+
+"""Договор пользователя"""
+type UserAgreementDTO {
+  """Дата подписания"""
+  date: DateTime
+
+  """ID Договора"""
+  id: ID!
+
+  """Подписан или нет"""
+  signed: Boolean!
+}
+
+"""Компания пользователя"""
+type UserCompanyDTO {
+  """Название банка"""
+  bankName: String!
+
+  """БИК банка"""
+  bikBank: String!
+
+  """расчетный счет"""
+  checkingAccount: String!
+
+  """Корреспондентский счет"""
+  correspondentAccount: String!
+
+  """ID компании"""
+  id: ID!
+
+  """ИНН"""
+  inn: String!
+
+  """КПП"""
+  kpp: String
+
+  """Наименование компании"""
+  name: String!
+
+  """ОГРН(-ИП)"""
+  ogrn: String
+
+  """Юридический адрес"""
+  urAddress: String
+}
+
+"""Компания пользователя"""
+input UserCompanyInputDTO {
+  """Название банка"""
+  bankName: String!
+
+  """БИК банка"""
+  bikBank: String!
+
+  """расчетный счет"""
+  checkingAccount: String!
+
+  """Корреспондентский счет"""
+  correspondentAccount: String!
+
+  """ИНН"""
+  inn: String!
+
+  """КПП"""
+  kpp: String
+
+  """Наименование компании"""
+  name: String!
+
+  """ОГРН(-ИП)"""
+  ogrn: String
+
+  """Юридический адрес"""
+  urAddress: String!
+}
+
+"""Пользователь"""
+type UserDTO {
+  """Договор пользователя"""
+  agreement: UserAgreementDTO
+
+  """Компания пользователя"""
+  company: UserCompanyDTO!
+
+  """Почта"""
+  email: String!
+
+  """ID пользователя"""
+  id: ID!
+
+  """Последняя авторизация"""
+  lastLogin: DateTime
+
+  """Наименование компании или имя и фамилия контактного лица"""
+  name: String!
+
+  """Номер телфона"""
+  phone: String!
+
+  """Дата регистрации"""
+  registrationDate: DateTime!
+
+  """Статус пользователя"""
+  status: Boolean!
+}
+
+"""Пользователь"""
+type UserDTOForOrder {
+  """Почта"""
+  email: String!
+
+  """ID пользователя"""
+  id: ID!
+
+  """Наименование компании или имя и фамилия контактного лица"""
+  name: String!
+
+  """Номер телфона"""
+  phone: String!
+
+  """Статус пользователя"""
+  status: Boolean!
+}
+
+"""Инпут для фильтров списка пользователей магазина"""
+input UsersFilterAdminDTO {
+  """фильтр по  email"""
+  filterEmail: String
+
+  """фильтр по части Имени """
+  filterName: String
+
+  """фильтр по части номера телефона"""
+  filterPhone: String
+
+  """фильтр по статусу"""
+  filterStatus: Boolean
+}
+
+"""Пользователи магазина"""
+type UsersResultsDTO {
+  """Общее количество пользователей"""
+  total: Float
+
+  """Информация о пользователях"""
+  users: [UserDTO!]
+}
+
+input newUserPasswordInputDTO {
+  """email человека"""
+  email: String!
+
+  """Новый пароль пользователя"""
+  newPassword: String!
+}

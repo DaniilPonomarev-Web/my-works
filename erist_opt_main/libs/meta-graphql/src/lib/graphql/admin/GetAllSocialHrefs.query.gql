@@ -1,0 +1,11 @@
+query GetAllSocialHrefs($pagination: OrdersPaginationAdminDTO!) {
+  getAllSocialHrefs(pagination: $pagination) {
+    data {
+      id
+      name
+      href
+      sortOrder
+    }
+    total
+  }
+}

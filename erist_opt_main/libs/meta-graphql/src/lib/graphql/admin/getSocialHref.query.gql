@@ -1,0 +1,8 @@
+query getSocialHref($id: ID!) {
+  getSocialHref(id: $id) {
+    id
+    name
+    href
+    sortOrder
+  }
+}

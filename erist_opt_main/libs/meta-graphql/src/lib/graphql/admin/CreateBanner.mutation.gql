@@ -1,0 +1,13 @@
+mutation CreateBanner($createBannerInput: CreateBannerInputDTO!) {
+  createBanner(createBannerInput: $createBannerInput) {
+    id
+    name
+    status
+    title
+    link
+    image
+    image_mob
+    image_href
+    image_mob_href
+  }
+}

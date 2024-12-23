@@ -1,0 +1,13 @@
+mutation UpdateBanner($updateBannerInput: UpdateBannerInputDTO!) {
+  updateBanner(updateBannerInput: $updateBannerInput) {
+    id
+    name
+    status
+    title
+    link
+    image
+    image_mob
+    image_href
+    image_mob_href
+  }
+}

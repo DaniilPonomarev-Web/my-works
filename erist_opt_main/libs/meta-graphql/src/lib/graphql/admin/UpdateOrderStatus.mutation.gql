@@ -1,0 +1,31 @@
+mutation UpdateOrderStatus($orderId: ID!, $newState: StateOrder!) {
+  updateOrderStatus(orderId: $orderId, newState: $newState) {
+    id
+    currentID
+    userCompany_inn
+    userCompany_kpp
+    userCompany_ogrn
+    userCompany_name
+    userCompany_bikBank
+    userCompany_bankName
+    userCompany_urAddress
+    userCompany_checkingAccount
+    userCompany_correspondentAccount
+    paymentMethod
+    products {
+      id
+      model
+      price
+      name
+      image
+      optionName
+      quantity
+    }
+    totalAmount
+    discount
+    total
+    state
+    hrefForInvoice
+    registred
+  }
+}

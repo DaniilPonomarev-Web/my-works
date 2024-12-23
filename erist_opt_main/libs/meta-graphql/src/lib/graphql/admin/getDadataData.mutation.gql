@@ -1,0 +1,87 @@
+mutation GetDadataData($inn: String!) {
+  getDadataData(inn: $inn) {
+    citizenship
+    fio {
+      surname
+      name
+      patronymic
+      gender
+      source
+      qc
+    }
+    source
+    qc
+    hid
+    type
+    state {
+      status
+      code
+      actuality_date
+      registration_date
+      liquidation_date
+    }
+    opf {
+      type
+      code
+      full
+      short
+    }
+    name {
+      full_with_opf
+      short_with_opf
+      latin
+      full
+      short
+    }
+    inn
+    ogrn
+    okpo
+    okato
+    oktmo
+    okogu
+    okfs
+    okved
+    okveds
+    authorities
+    documents
+    licenses
+    finance
+    address {
+      value
+      unrestricted_value
+      data {
+        postal_code
+        country
+        country_iso_code
+        federal_district
+        region_fias_id
+        region_kladr_id
+        region_iso_code
+        region_with_type
+        region_type
+        region_type_full
+        region
+        city_fias_id
+        city_kladr_id
+        city_with_type
+        city_type
+        city_type_full
+        city
+        fias_id
+        fias_code
+        fias_level
+        fias_actuality_state
+        kladr_id
+        timezone
+        geo_lat
+        geo_lon
+        timezone
+      }
+    }
+    phones
+    emails
+    ogrn_date
+    okved_type
+    employee_count
+  }
+}

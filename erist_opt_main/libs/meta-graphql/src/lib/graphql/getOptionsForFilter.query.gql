@@ -1,0 +1,7 @@
+query getOptionsForFilter {
+  getOptionsForFilter {
+    id
+    optionName
+    values
+  }
+}

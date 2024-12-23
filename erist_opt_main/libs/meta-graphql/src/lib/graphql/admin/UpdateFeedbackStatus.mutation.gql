@@ -1,0 +1,11 @@
+mutation UpdateFeedbackStatus($input: FeedBackIdInput!) {
+  updateFeedbackStatus(input: $input) {
+    id
+    text
+    status
+    user {
+      id
+      name
+    }
+  }
+}

@@ -1,0 +1,3 @@
+mutation DeleteSocialHref($id: ID!) {
+  deleteSocialHref(id: $id)
+}

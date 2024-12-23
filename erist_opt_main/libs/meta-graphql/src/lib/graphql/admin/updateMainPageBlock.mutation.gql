@@ -1,0 +1,34 @@
+mutation UpdateMainPageBlock(
+  $updateMainPageBlockInput: UpdateMainPageBlockInputDTO!
+) {
+  updateMainPageBlock(updateMainPageBlockInput: $updateMainPageBlockInput) {
+    id
+    name
+    title
+    link
+    status
+    products {
+      id
+      model
+      price
+      quantity
+      maincategory
+      categories
+      status
+      sortOrder
+      description {
+        name
+        description
+        tag
+        meta_title
+        meta_h1
+        meta_description
+      }
+      images {
+        id
+        image
+        sortOrder
+      }
+    }
+  }
+}

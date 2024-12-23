@@ -1,0 +1,9 @@
+query getCustomer($id: String!) {
+  getCustomer(id: $id) {
+    id
+    login
+    email
+    role
+    lastLogin
+  }
+}

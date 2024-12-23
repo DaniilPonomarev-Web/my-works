@@ -1,0 +1,11 @@
+FROM node:22.2.0-alpine AS builder
+WORKDIR /app/builder
+COPY package.json default.conf ./
+# Установка конфигурации yarn
+RUN npm set registry http://192.168.0.4:4873
+RUN yarn config set network-timeout 600000  # Установка таймаута сети на 10 минут
+RUN yarn config set child-concurrency 10  # Установка параллельности процессов
+RUN yarn
+# --frozen-lockfile
+
+#RUN yarn global add nx

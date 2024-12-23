@@ -1,0 +1,13 @@
+mutation CreateOption($createOptionInput: CreateOptionInput!) {
+  createOption(createOptionInput: $createOptionInput) {
+    id
+    name
+    type
+    sortOrder
+    values {
+      id
+      name
+      sortOrder
+    }
+  }
+}

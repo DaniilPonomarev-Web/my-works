@@ -1,0 +1,24 @@
+{
+  "name": "data-loader",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/data-loader/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "data-loader:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "data-loader:build:development"
+        },
+        "production": {
+          "buildTarget": "data-loader:build:production"
+        }
+      }
+    }
+  }
+}

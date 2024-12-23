@@ -1,0 +1,40 @@
+query getRandProducts {
+  getRandProducts {
+    id
+    model
+    price
+    quantity
+    maincategory
+    categories
+    status
+    sortOrder
+    dateAdded
+    description {
+      name
+      description
+    }
+    images {
+      id
+      image
+      sortOrder
+    }
+    options {
+      id
+      name
+      type
+      values {
+        id
+        href
+        price
+        quantity
+        option {
+          name
+          type
+        }
+        value {
+          name
+        }
+      }
+    }
+  }
+}
